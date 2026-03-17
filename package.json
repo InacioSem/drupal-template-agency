@@ -1,16 +1,10 @@
 {
-  "name": "drupalforge",
+  "name": "drupalready",
   "private": true,
-  "description": "DrupalForge — Production-ready Drupal 11 templates",
-  "workspaces": [
-    "website"
-  ],
+  "description": "DrupalReady — Production-ready Drupal 11 templates",
   "scripts": {
-    "dev": "npm run dev --workspace=website",
-    "build": "npm run build --workspace=website",
-    "lint": "npm run lint --workspace=website"
-  },
-  "dependencies": {
-    "playwright": "^1.58.2"
+    "dev": "cd website && npm run dev",
+    "build": "cd website && npm run build",
+    "lint": "cd website && npm run lint"
   }
 }
