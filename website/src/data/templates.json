@@ -1,0 +1,271 @@
+[
+  {
+    "slug": "starter-business",
+    "name": "Starter Business",
+    "tagline": "Production-ready agency & business sites",
+    "description": "A complete Drupal 11 starter template for agencies, consulting firms, and businesses. Includes a blog, case studies, service pages, team profiles, testimonials, and flexible landing pages — all pre-configured with Layout Builder and Paragraphs.",
+    "vertical": "agency-business",
+    "verticalLabel": "Agency & Business",
+    "composerPackage": "drupalforge/starter-business",
+    "composerCommand": "composer create-project drupalforge/starter-business my-site",
+    "version": "1.0.0",
+    "drupalVersion": "11.x",
+    "phpVersion": ">=8.3",
+    "repoUrl": "https://github.com/drupalforge/starter-business",
+    "demoUrl": null,
+    "screenshots": [
+      {
+        "src": "/screenshots/starter-business/hero.png",
+        "alt": "DrupalForge homepage hero section with headline and navigation",
+        "caption": "Homepage hero with navigation, headline, and Composer install command",
+        "isPrimary": true
+      },
+      {
+        "src": "/screenshots/starter-business/template-cards.png",
+        "alt": "Template catalog showing three starter templates",
+        "caption": "Template showcase with cards for Business, Government, and Nonprofit",
+        "isPrimary": false
+      },
+      {
+        "src": "/screenshots/starter-business/features.png",
+        "alt": "Feature grid showing Composer, Drupal 11, Security, Layout Builder, SEO, and Recipes",
+        "caption": "Feature grid highlighting key capabilities",
+        "isPrimary": false
+      },
+      {
+        "src": "/screenshots/starter-business/cta-footer.png",
+        "alt": "Call-to-action banner and footer with navigation links",
+        "caption": "CTA section and organized footer with template, resource, and company links",
+        "isPrimary": false
+      }
+    ],
+    "features": [
+      {
+        "title": "7 Content Types",
+        "description": "Page, Blog Post, Case Study, Service, Team Member, Testimonial, and Landing Page — ready to use.",
+        "icon": "FileText"
+      },
+      {
+        "title": "10 Paragraph Components",
+        "description": "Hero banners, card grids, CTAs, FAQ accordions, pricing tables, and more.",
+        "icon": "LayoutGrid"
+      },
+      {
+        "title": "Layout Builder Ready",
+        "description": "Every content type is pre-configured with Layout Builder for drag-and-drop page building.",
+        "icon": "Layout"
+      },
+      {
+        "title": "SEO Optimized",
+        "description": "Metatag, Pathauto, Simple Sitemap, and Schema.org structured data out of the box.",
+        "icon": "Search"
+      },
+      {
+        "title": "Modern Theme",
+        "description": "Clean, responsive corporate theme with blue/slate palette and full-width hero sections.",
+        "icon": "Palette"
+      },
+      {
+        "title": "Drupal Recipes",
+        "description": "Modular recipes let you enable features independently — blog, portfolio, or commerce.",
+        "icon": "ChefHat"
+      }
+    ],
+    "modules": [
+      { "name": "layout_builder", "humanName": "Layout Builder", "description": "Drag-and-drop page building", "drupalOrgUrl": "https://www.drupal.org/docs/core-modules-and-themes/core-modules/layout-builder", "isCore": true },
+      { "name": "media_library", "humanName": "Media Library", "description": "Centralized media management", "drupalOrgUrl": "https://www.drupal.org/docs/core-modules-and-themes/core-modules/media-library-module", "isCore": true },
+      { "name": "paragraphs", "humanName": "Paragraphs", "description": "Flexible content components", "drupalOrgUrl": "https://www.drupal.org/project/paragraphs", "isCore": false },
+      { "name": "webform", "humanName": "Webform", "description": "Advanced form builder", "drupalOrgUrl": "https://www.drupal.org/project/webform", "isCore": false },
+      { "name": "admin_toolbar", "humanName": "Admin Toolbar", "description": "Enhanced admin navigation", "drupalOrgUrl": "https://www.drupal.org/project/admin_toolbar", "isCore": false },
+      { "name": "gin", "humanName": "Gin Admin Theme", "description": "Modern admin experience", "drupalOrgUrl": "https://www.drupal.org/project/gin", "isCore": false },
+      { "name": "pathauto", "humanName": "Pathauto", "description": "Automatic URL aliases", "drupalOrgUrl": "https://www.drupal.org/project/pathauto", "isCore": false },
+      { "name": "metatag", "humanName": "Metatag", "description": "SEO meta tags", "drupalOrgUrl": "https://www.drupal.org/project/metatag", "isCore": false },
+      { "name": "search_api", "humanName": "Search API", "description": "Full-text search framework", "drupalOrgUrl": "https://www.drupal.org/project/search_api", "isCore": false },
+      { "name": "slick", "humanName": "Slick Carousel", "description": "Content carousels and sliders", "drupalOrgUrl": "https://www.drupal.org/project/slick", "isCore": false }
+    ],
+    "contentTypes": ["Page", "Blog Post", "Case Study", "Service", "Team Member", "Testimonial", "Landing Page"],
+    "paragraphTypes": ["hero_banner", "text_with_image", "card_grid", "cta_section", "stats_counter", "logo_carousel", "video_embed", "accordion_faq", "pricing_table", "contact_form_embed"],
+    "theme": {
+      "name": "drupalforge_business",
+      "baseTheme": "stable9",
+      "description": "Modern corporate theme — blue/slate palette, clean sans-serif typography, full-width hero sections"
+    },
+    "recipes": ["base", "blog", "portfolio", "commerce"],
+    "updatedAt": "2026-03-16",
+    "downloads": 0
+  },
+  {
+    "slug": "starter-government",
+    "name": "Starter Government",
+    "tagline": "Accessible government & education portals",
+    "description": "A WCAG 2.2 AA compliant Drupal 11 template for government agencies, municipalities, and educational institutions. Features content moderation workflows, document management, event calendars, department microsites, and emergency alert systems.",
+    "vertical": "government-education",
+    "verticalLabel": "Government & Education",
+    "composerPackage": "drupalforge/starter-government",
+    "composerCommand": "composer create-project drupalforge/starter-government my-site",
+    "version": "1.0.0",
+    "drupalVersion": "11.x",
+    "phpVersion": ">=8.3",
+    "repoUrl": "https://github.com/drupalforge/starter-government",
+    "demoUrl": null,
+    "screenshots": [
+      {
+        "src": "/screenshots/starter-government/homepage.webp",
+        "alt": "Government portal homepage with service links and news",
+        "caption": "Accessible homepage with quick links and latest news",
+        "isPrimary": true
+      },
+      {
+        "src": "/screenshots/starter-government/documents.webp",
+        "alt": "Document library with filtering and search",
+        "caption": "Document library with type and topic filtering",
+        "isPrimary": false
+      },
+      {
+        "src": "/screenshots/starter-government/events.webp",
+        "alt": "Public events calendar view",
+        "caption": "Event calendar with date and department filters",
+        "isPrimary": false
+      }
+    ],
+    "features": [
+      {
+        "title": "WCAG 2.2 AA Compliant",
+        "description": "Built with accessibility-first design, targeting AAA where feasible. Includes editoria11y for content auditing.",
+        "icon": "Accessibility"
+      },
+      {
+        "title": "Content Moderation",
+        "description": "Draft → In Review → Approved → Published workflow with role-based transitions.",
+        "icon": "ShieldCheck"
+      },
+      {
+        "title": "Document Management",
+        "description": "Full document library with type filtering, search, and PDF export capabilities.",
+        "icon": "FolderOpen"
+      },
+      {
+        "title": "Department Microsites",
+        "description": "Group module enables department-specific content areas with separate permissions.",
+        "icon": "Building2"
+      },
+      {
+        "title": "Emergency Alerts",
+        "description": "Site-wide alert banner system for emergency notifications and announcements.",
+        "icon": "AlertTriangle"
+      },
+      {
+        "title": "8 Content Types",
+        "description": "Pages, news, events, departments, documents, FAQs, public meetings, and alerts.",
+        "icon": "FileText"
+      }
+    ],
+    "modules": [
+      { "name": "content_moderation", "humanName": "Content Moderation", "description": "Editorial workflow management", "drupalOrgUrl": "https://www.drupal.org/docs/core-modules-and-themes/core-modules/content-moderation-module", "isCore": true },
+      { "name": "workflows", "humanName": "Workflows", "description": "Workflow state management", "drupalOrgUrl": "https://www.drupal.org/docs/core-modules-and-themes/core-modules/workflows-module", "isCore": true },
+      { "name": "group", "humanName": "Group", "description": "Department microsites and permissions", "drupalOrgUrl": "https://www.drupal.org/project/group", "isCore": false },
+      { "name": "editoria11y", "humanName": "Editoria11y", "description": "In-page accessibility checker", "drupalOrgUrl": "https://www.drupal.org/project/editoria11y", "isCore": false },
+      { "name": "paragraphs", "humanName": "Paragraphs", "description": "Flexible content components", "drupalOrgUrl": "https://www.drupal.org/project/paragraphs", "isCore": false },
+      { "name": "webform", "humanName": "Webform", "description": "Advanced form builder", "drupalOrgUrl": "https://www.drupal.org/project/webform", "isCore": false },
+      { "name": "gin", "humanName": "Gin Admin Theme", "description": "Modern admin experience", "drupalOrgUrl": "https://www.drupal.org/project/gin", "isCore": false },
+      { "name": "toc_api", "humanName": "TOC API", "description": "Auto-generated table of contents", "drupalOrgUrl": "https://www.drupal.org/project/toc_api", "isCore": false }
+    ],
+    "contentTypes": ["Page", "News Article", "Event", "Department", "Document", "FAQ", "Public Meeting", "Alert"],
+    "paragraphTypes": ["hero_banner", "text_section", "callout_box", "document_list", "contact_card", "accordion", "step_process", "embedded_map", "data_table", "alert_box"],
+    "theme": {
+      "name": "drupalforge_government",
+      "baseTheme": "stable9",
+      "description": "Authoritative, USWDS-inspired — navy/white palette, high contrast, large type scale"
+    },
+    "recipes": ["base", "news", "events", "documents", "departments"],
+    "updatedAt": "2026-03-16",
+    "downloads": 0
+  },
+  {
+    "slug": "starter-nonprofit",
+    "name": "Starter Nonprofit",
+    "tagline": "Warm, engaging nonprofit & healthcare sites",
+    "description": "A people-first Drupal 11 template for nonprofits, charities, clinics, and community organizations. Features impact stories, program showcases, fundraising campaigns, event management, volunteer profiles, and newsletter integration.",
+    "vertical": "nonprofit-healthcare",
+    "verticalLabel": "Nonprofit & Healthcare",
+    "composerPackage": "drupalforge/starter-nonprofit",
+    "composerCommand": "composer create-project drupalforge/starter-nonprofit my-site",
+    "version": "1.0.0",
+    "drupalVersion": "11.x",
+    "phpVersion": ">=8.3",
+    "repoUrl": "https://github.com/drupalforge/starter-nonprofit",
+    "demoUrl": null,
+    "screenshots": [
+      {
+        "src": "/screenshots/starter-nonprofit/homepage.webp",
+        "alt": "Nonprofit homepage with impact stats and story highlights",
+        "caption": "Warm homepage with impact statistics and featured stories",
+        "isPrimary": true
+      },
+      {
+        "src": "/screenshots/starter-nonprofit/programs.webp",
+        "alt": "Programs listing page with area filtering",
+        "caption": "Programs showcase with area-based filtering",
+        "isPrimary": false
+      },
+      {
+        "src": "/screenshots/starter-nonprofit/campaign.webp",
+        "alt": "Fundraising campaign page with progress bar",
+        "caption": "Campaign pages with donation progress tracking",
+        "isPrimary": false
+      }
+    ],
+    "features": [
+      {
+        "title": "Impact Storytelling",
+        "description": "Beautiful story pages with image galleries, quotes, and infinite scroll listing.",
+        "icon": "Heart"
+      },
+      {
+        "title": "Fundraising Campaigns",
+        "description": "Campaign pages with progress tracking, goals, and donation call-to-actions.",
+        "icon": "HandHeart"
+      },
+      {
+        "title": "Newsletter Integration",
+        "description": "Built-in Mailchimp integration for growing your supporter base.",
+        "icon": "Mail"
+      },
+      {
+        "title": "Location Mapping",
+        "description": "Service locations with geocoding, interactive maps, and proximity search.",
+        "icon": "MapPin"
+      },
+      {
+        "title": "Program Showcase",
+        "description": "Organized program listings with area-based filtering and detailed pages.",
+        "icon": "Users"
+      },
+      {
+        "title": "8 Content Types",
+        "description": "Stories, programs, events, resources, people, locations, campaigns, and pages.",
+        "icon": "FileText"
+      }
+    ],
+    "modules": [
+      { "name": "paragraphs", "humanName": "Paragraphs", "description": "Flexible content components", "drupalOrgUrl": "https://www.drupal.org/project/paragraphs", "isCore": false },
+      { "name": "webform", "humanName": "Webform", "description": "Advanced form builder", "drupalOrgUrl": "https://www.drupal.org/project/webform", "isCore": false },
+      { "name": "mailchimp", "humanName": "Mailchimp", "description": "Email newsletter integration", "drupalOrgUrl": "https://www.drupal.org/project/mailchimp", "isCore": false },
+      { "name": "geocoder", "humanName": "Geocoder", "description": "Address geocoding and mapping", "drupalOrgUrl": "https://www.drupal.org/project/geocoder", "isCore": false },
+      { "name": "geofield", "humanName": "Geofield", "description": "Geographic data field type", "drupalOrgUrl": "https://www.drupal.org/project/geofield", "isCore": false },
+      { "name": "smart_date", "humanName": "Smart Date", "description": "Flexible event date handling", "drupalOrgUrl": "https://www.drupal.org/project/smart_date", "isCore": false },
+      { "name": "views_infinite_scroll", "humanName": "Views Infinite Scroll", "description": "Infinite scroll for listings", "drupalOrgUrl": "https://www.drupal.org/project/views_infinite_scroll", "isCore": false },
+      { "name": "gin", "humanName": "Gin Admin Theme", "description": "Modern admin experience", "drupalOrgUrl": "https://www.drupal.org/project/gin", "isCore": false }
+    ],
+    "contentTypes": ["Page", "Story", "Program", "Event", "Resource", "Person", "Location", "Campaign"],
+    "paragraphTypes": ["hero_with_cta", "impact_stats", "story_highlight", "donation_block", "program_cards", "newsletter_signup", "image_gallery", "quote_testimonial", "timeline", "location_map"],
+    "theme": {
+      "name": "drupalforge_nonprofit",
+      "baseTheme": "stable9",
+      "description": "Warm and human — teal/coral accents, rounded corners, photography-forward design"
+    },
+    "recipes": ["base", "stories", "programs", "campaigns", "newsletter"],
+    "updatedAt": "2026-03-16",
+    "downloads": 0
+  }
+]

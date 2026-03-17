@@ -1,0 +1,30 @@
+name: Template CI
+
+on:
+  push:
+    branches: [main]
+    paths: ['templates/**']
+  pull_request:
+    branches: [main]
+    paths: ['templates/**']
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        template: [starter-business, starter-government, starter-nonprofit]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: gd, xml, mbstring, curl, zip
+          tools: composer:v2
+
+      - name: Validate composer.json
+        working-directory: templates/${{ matrix.template }}
+        run: composer validate --strict

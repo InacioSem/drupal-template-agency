@@ -1,0 +1,43 @@
+.paragraph--type--hero-banner {
+  position: relative;
+  padding: var(--space-3xl) 0;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+}
+
+.paragraph--type--hero-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.9), rgba(30, 64, 175, 0.85));
+}
+
+.paragraph--type--hero-banner .container {
+  position: relative;
+  z-index: 1;
+}
+
+.paragraph--type--hero-banner h1 {
+  color: white;
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--space-md);
+}
+
+.paragraph--type--hero-banner p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--font-size-lg);
+  max-width: 600px;
+  margin: 0 auto var(--space-xl);
+}
+
+@media (min-width: 768px) {
+  .paragraph--type--hero-banner {
+    padding: 6rem 0;
+  }
+
+  .paragraph--type--hero-banner h1 {
+    font-size: 3.5rem;
+  }
+}

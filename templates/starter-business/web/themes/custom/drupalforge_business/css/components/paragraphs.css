@@ -1,0 +1,98 @@
+/* Text with Image */
+.paragraph--type--text-with-image {
+  padding: var(--space-2xl) 0;
+}
+
+.paragraph--type--text-with-image .container {
+  display: grid;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .paragraph--type--text-with-image .container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Card Grid */
+.paragraph--type--card-grid {
+  padding: var(--space-2xl) 0;
+}
+
+/* CTA Section */
+.paragraph--type--cta-section {
+  padding: var(--space-3xl) 0;
+  background-color: var(--color-primary);
+  color: white;
+  text-align: center;
+}
+
+.paragraph--type--cta-section h2 {
+  color: white;
+}
+
+.paragraph--type--cta-section p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Stats Counter */
+.paragraph--type--stats-counter {
+  padding: var(--space-2xl) 0;
+  background-color: var(--color-surface);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.stat-number {
+  font-size: var(--font-size-4xl);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Accordion FAQ */
+.paragraph--type--accordion-faq {
+  padding: var(--space-2xl) 0;
+}
+
+.accordion-item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.accordion-trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md) 0;
+  background: none;
+  border: none;
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-text);
+  cursor: pointer;
+  text-align: left;
+}
+
+.accordion-content {
+  padding-bottom: var(--space-md);
+  color: var(--color-text-muted);
+}

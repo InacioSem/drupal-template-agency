@@ -1,0 +1,9 @@
+name: DrupalForge Business Core
+type: module
+description: 'Core functionality for the DrupalForge Business template.'
+package: DrupalForge
+core_version_requirement: ^11
+dependencies:
+  - drupal:node
+  - drupal:views
+  - paragraphs:paragraphs

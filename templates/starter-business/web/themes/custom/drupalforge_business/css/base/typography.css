@@ -1,0 +1,22 @@
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text);
+  margin-top: 0;
+}
+
+h1 { font-size: var(--font-size-4xl); margin-bottom: var(--space-lg); }
+h2 { font-size: var(--font-size-3xl); margin-bottom: var(--space-md); }
+h3 { font-size: var(--font-size-2xl); margin-bottom: var(--space-md); }
+h4 { font-size: var(--font-size-xl); margin-bottom: var(--space-sm); }
+
+p {
+  margin-top: 0;
+  margin-bottom: var(--space-md);
+  color: var(--color-text-muted);
+}
+
+.lead {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
+}

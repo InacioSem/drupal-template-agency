@@ -1,0 +1,47 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the DrupalForge Business theme.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_preprocess_HOOK() for html.html.twig.
+ */
+function drupalforge_business_preprocess_html(array &$variables): void {
+  // Add body classes based on path.
+  $route = \Drupal::routeMatch()->getRouteName();
+  if ($route === 'view.frontpage.page_1' || $route === '<front>') {
+    $variables['attributes']['class'][] = 'is-front';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for page.html.twig.
+ */
+function drupalforge_business_preprocess_page(array &$variables): void {
+  $variables['site_name'] = \Drupal::config('system.site')->get('name');
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for node.html.twig.
+ */
+function drupalforge_business_preprocess_node(array &$variables): void {
+  // Add date formatting for blog posts.
+  if ($variables['node']->bundle() === 'blog_post') {
+    $variables['date_formatted'] = \Drupal::service('date.formatter')
+      ->format($variables['node']->getCreatedTime(), 'custom', 'F j, Y');
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function drupalforge_business_form_alter(array &$form, FormStateInterface $form_state, string $form_id): void {
+  if ($form_id === 'search_block_form') {
+    $form['keys']['#attributes']['placeholder'] = t('Search...');
+    $form['actions']['submit']['#value'] = t('Search');
+  }
+}
