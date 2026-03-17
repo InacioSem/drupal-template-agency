@@ -267,5 +267,260 @@
     "recipes": ["base", "stories", "programs", "campaigns", "newsletter"],
     "updatedAt": "2026-03-16",
     "downloads": 0
+  },
+  {
+    "slug": "starter-healthcare",
+    "name": "Starter Healthcare",
+    "tagline": "Modern sites for clinics, practices, and health organizations",
+    "description": "A patient-first Drupal 11 template for healthcare clinics, medical groups, and wellness organizations. Features provider profiles, appointment booking, service pages, patient resources, and location finder — all HIPAA-conscious and accessibility-compliant.",
+    "vertical": "healthcare",
+    "verticalLabel": "Healthcare",
+    "composerPackage": "drupalforge/starter-healthcare",
+    "composerCommand": "composer create-project drupalforge/starter-healthcare my-site",
+    "version": "1.0.0",
+    "drupalVersion": "11.x",
+    "phpVersion": ">=8.3",
+    "repoUrl": "https://github.com/drupalforge/starter-healthcare",
+    "demoUrl": null,
+    "screenshots": [
+      {
+        "src": "/screenshots/starter-healthcare/homepage.png",
+        "alt": "Healthcare clinic homepage with hero, appointment booking, and services grid",
+        "caption": "Homepage with provider hero, appointment CTA, and services overview",
+        "isPrimary": true
+      },
+      {
+        "src": "/screenshots/starter-healthcare/services.png",
+        "alt": "Services section showing primary care, pediatrics, cardiology, and behavioral health",
+        "caption": "Service cards with icons for each medical specialty",
+        "isPrimary": false
+      },
+      {
+        "src": "/screenshots/starter-healthcare/providers.png",
+        "alt": "Provider directory with doctor profiles and specialties",
+        "caption": "Provider cards with photos, specialties, and credentials",
+        "isPrimary": false
+      }
+    ],
+    "features": [
+      {
+        "title": "Provider Profiles",
+        "description": "Doctor and staff profiles with specialties, credentials, education, and appointment links.",
+        "icon": "Stethoscope"
+      },
+      {
+        "title": "Appointment Booking",
+        "description": "Online appointment request forms with scheduling integration and confirmation workflows.",
+        "icon": "Calendar"
+      },
+      {
+        "title": "Service Pages",
+        "description": "Detailed service and procedure pages organized by medical specialty.",
+        "icon": "HeartPulse"
+      },
+      {
+        "title": "Patient Resources",
+        "description": "Downloadable forms, insurance info, patient portal links, and health resources.",
+        "icon": "FileText"
+      },
+      {
+        "title": "Location Finder",
+        "description": "Multi-location office pages with maps, hours, and directions.",
+        "icon": "MapPin"
+      },
+      {
+        "title": "Accessibility First",
+        "description": "WCAG 2.2 AA compliant with high contrast, large touch targets, and screen reader support.",
+        "icon": "Accessibility"
+      }
+    ],
+    "modules": [
+      { "name": "paragraphs", "humanName": "Paragraphs", "description": "Flexible content components", "drupalOrgUrl": "https://www.drupal.org/project/paragraphs", "isCore": false },
+      { "name": "webform", "humanName": "Webform", "description": "Appointment and intake forms", "drupalOrgUrl": "https://www.drupal.org/project/webform", "isCore": false },
+      { "name": "geocoder", "humanName": "Geocoder", "description": "Address geocoding for locations", "drupalOrgUrl": "https://www.drupal.org/project/geocoder", "isCore": false },
+      { "name": "geofield", "humanName": "Geofield", "description": "Geographic data fields", "drupalOrgUrl": "https://www.drupal.org/project/geofield", "isCore": false },
+      { "name": "smart_date", "humanName": "Smart Date", "description": "Office hours and scheduling", "drupalOrgUrl": "https://www.drupal.org/project/smart_date", "isCore": false },
+      { "name": "gin", "humanName": "Gin Admin Theme", "description": "Modern admin experience", "drupalOrgUrl": "https://www.drupal.org/project/gin", "isCore": false }
+    ],
+    "contentTypes": ["Page", "Provider", "Service", "Location", "Patient Resource", "FAQ", "News"],
+    "paragraphTypes": ["hero_with_image", "service_grid", "provider_spotlight", "appointment_cta", "testimonial_slider", "location_map", "insurance_list", "stats_counter", "faq_accordion", "contact_form"],
+    "theme": {
+      "name": "drupalforge_healthcare",
+      "baseTheme": "stable9",
+      "description": "Clean, trustworthy — cyan/teal palette, split-hero layout, card-based service showcase"
+    },
+    "recipes": ["base", "providers", "services", "appointments", "locations"],
+    "updatedAt": "2026-03-17",
+    "downloads": 0
+  },
+  {
+    "slug": "starter-legal",
+    "name": "Starter Legal",
+    "tagline": "Professional sites for law firms and legal practices",
+    "description": "An authoritative Drupal 11 template for law firms, legal practices, and attorneys. Features attorney profiles, practice area pages, case results, client testimonials, and free consultation forms — designed to build trust and convert visitors into clients.",
+    "vertical": "legal",
+    "verticalLabel": "Legal",
+    "composerPackage": "drupalforge/starter-legal",
+    "composerCommand": "composer create-project drupalforge/starter-legal my-site",
+    "version": "1.0.0",
+    "drupalVersion": "11.x",
+    "phpVersion": ">=8.3",
+    "repoUrl": "https://github.com/drupalforge/starter-legal",
+    "demoUrl": null,
+    "screenshots": [
+      {
+        "src": "/screenshots/starter-legal/homepage.png",
+        "alt": "Law firm homepage with dark hero, gold CTA, and practice areas",
+        "caption": "Authoritative homepage with consultation CTA and practice area grid",
+        "isPrimary": true
+      },
+      {
+        "src": "/screenshots/starter-legal/practices.png",
+        "alt": "Practice areas section with business law, real estate, litigation cards",
+        "caption": "Practice area cards with indigo accent and descriptions",
+        "isPrimary": false
+      },
+      {
+        "src": "/screenshots/starter-legal/results.png",
+        "alt": "Track record section showing cases won, recoveries, and satisfaction rate",
+        "caption": "Results showcase with animated stat counters",
+        "isPrimary": false
+      }
+    ],
+    "features": [
+      {
+        "title": "Attorney Profiles",
+        "description": "Professional profiles with practice areas, education, bar admissions, and contact.",
+        "icon": "Scale"
+      },
+      {
+        "title": "Practice Areas",
+        "description": "Detailed pages for each practice area with related attorneys and case results.",
+        "icon": "Briefcase"
+      },
+      {
+        "title": "Case Results",
+        "description": "Showcase successful outcomes with case type, result amount, and descriptions.",
+        "icon": "Trophy"
+      },
+      {
+        "title": "Consultation Forms",
+        "description": "Free consultation request forms with practice area routing and follow-up workflows.",
+        "icon": "MessageSquare"
+      },
+      {
+        "title": "Legal Blog",
+        "description": "Blog with category filtering for legal insights, news, and thought leadership.",
+        "icon": "PenLine"
+      },
+      {
+        "title": "Trust Signals",
+        "description": "Awards, memberships, testimonials, and track record sections that build credibility.",
+        "icon": "Shield"
+      }
+    ],
+    "modules": [
+      { "name": "paragraphs", "humanName": "Paragraphs", "description": "Flexible content components", "drupalOrgUrl": "https://www.drupal.org/project/paragraphs", "isCore": false },
+      { "name": "webform", "humanName": "Webform", "description": "Consultation and intake forms", "drupalOrgUrl": "https://www.drupal.org/project/webform", "isCore": false },
+      { "name": "search_api", "humanName": "Search API", "description": "Full-text search", "drupalOrgUrl": "https://www.drupal.org/project/search_api", "isCore": false },
+      { "name": "metatag", "humanName": "Metatag", "description": "SEO meta tags", "drupalOrgUrl": "https://www.drupal.org/project/metatag", "isCore": false },
+      { "name": "schema_metatag", "humanName": "Schema Metatag", "description": "Legal practice structured data", "drupalOrgUrl": "https://www.drupal.org/project/schema_metatag", "isCore": false },
+      { "name": "gin", "humanName": "Gin Admin Theme", "description": "Modern admin experience", "drupalOrgUrl": "https://www.drupal.org/project/gin", "isCore": false }
+    ],
+    "contentTypes": ["Page", "Attorney", "Practice Area", "Case Result", "Testimonial", "Blog Post", "FAQ", "Office Location"],
+    "paragraphTypes": ["hero_banner", "practice_area_grid", "attorney_spotlight", "case_results_counter", "testimonial_slider", "consultation_cta", "awards_bar", "faq_accordion", "office_locations", "blog_highlights"],
+    "theme": {
+      "name": "drupalforge_legal",
+      "baseTheme": "stable9",
+      "description": "Authoritative and trustworthy — deep indigo/gold palette, subtle patterns, serif accents"
+    },
+    "recipes": ["base", "attorneys", "practices", "case-results", "blog"],
+    "updatedAt": "2026-03-17",
+    "downloads": 0
+  },
+  {
+    "slug": "starter-saas",
+    "name": "Starter SaaS",
+    "tagline": "Marketing sites for software products and startups",
+    "description": "A conversion-optimized Drupal 11 template for SaaS products, startups, and tech companies. Features product showcases, pricing tables, feature grids, changelog, documentation hub, customer logos, and CTA-optimized landing pages.",
+    "vertical": "saas",
+    "verticalLabel": "SaaS & Startup",
+    "composerPackage": "drupalforge/starter-saas",
+    "composerCommand": "composer create-project drupalforge/starter-saas my-site",
+    "version": "1.0.0",
+    "drupalVersion": "11.x",
+    "phpVersion": ">=8.3",
+    "repoUrl": "https://github.com/drupalforge/starter-saas",
+    "demoUrl": null,
+    "screenshots": [
+      {
+        "src": "/screenshots/starter-saas/homepage.png",
+        "alt": "SaaS marketing site with dark hero, gradient text, and product dashboard preview",
+        "caption": "Dark-mode hero with gradient headline, version badge, and product preview",
+        "isPrimary": true
+      },
+      {
+        "src": "/screenshots/starter-saas/features.png",
+        "alt": "Feature grid showing deploys, analytics, security, integrations, CDN, and AI",
+        "caption": "Feature cards with colored icons and descriptive copy",
+        "isPrimary": false
+      },
+      {
+        "src": "/screenshots/starter-saas/pricing.png",
+        "alt": "Three-tier pricing table with Starter, Pro, and Enterprise plans",
+        "caption": "Pricing page with feature comparison and highlighted popular plan",
+        "isPrimary": false
+      }
+    ],
+    "features": [
+      {
+        "title": "Product Showcase",
+        "description": "Feature grids, product screenshots, and interactive demos to highlight your product.",
+        "icon": "Rocket"
+      },
+      {
+        "title": "Pricing Tables",
+        "description": "Flexible pricing page with plan comparison, feature lists, and highlighted tiers.",
+        "icon": "CreditCard"
+      },
+      {
+        "title": "Documentation Hub",
+        "description": "Searchable docs section with sidebar navigation, code blocks, and API references.",
+        "icon": "BookOpen"
+      },
+      {
+        "title": "Changelog",
+        "description": "Version-by-version release notes with dates, categories, and feature descriptions.",
+        "icon": "History"
+      },
+      {
+        "title": "Customer Logos",
+        "description": "Social proof section with customer logos, testimonials, and case study links.",
+        "icon": "Users"
+      },
+      {
+        "title": "CTA-Optimized",
+        "description": "Every section designed for conversion — trial signups, demo requests, and contact forms.",
+        "icon": "Target"
+      }
+    ],
+    "modules": [
+      { "name": "paragraphs", "humanName": "Paragraphs", "description": "Flexible content components", "drupalOrgUrl": "https://www.drupal.org/project/paragraphs", "isCore": false },
+      { "name": "webform", "humanName": "Webform", "description": "Trial signup and contact forms", "drupalOrgUrl": "https://www.drupal.org/project/webform", "isCore": false },
+      { "name": "search_api", "humanName": "Search API", "description": "Documentation search", "drupalOrgUrl": "https://www.drupal.org/project/search_api", "isCore": false },
+      { "name": "metatag", "humanName": "Metatag", "description": "SEO meta tags", "drupalOrgUrl": "https://www.drupal.org/project/metatag", "isCore": false },
+      { "name": "google_analytics", "humanName": "Google Analytics", "description": "Conversion tracking", "drupalOrgUrl": "https://www.drupal.org/project/google_analytics", "isCore": false },
+      { "name": "gin", "humanName": "Gin Admin Theme", "description": "Modern admin experience", "drupalOrgUrl": "https://www.drupal.org/project/gin", "isCore": false }
+    ],
+    "contentTypes": ["Page", "Feature", "Pricing Plan", "Changelog Entry", "Blog Post", "Documentation Page", "Customer Story", "Landing Page"],
+    "paragraphTypes": ["hero_dark", "feature_grid", "pricing_table", "logo_cloud", "testimonial_carousel", "cta_banner", "product_screenshot", "stats_counter", "integration_grid", "comparison_table"],
+    "theme": {
+      "name": "drupalforge_saas",
+      "baseTheme": "stable9",
+      "description": "Bold and modern — dark mode hero, amber/orange accents, gradient text, startup aesthetic"
+    },
+    "recipes": ["base", "features", "pricing", "changelog", "docs", "blog"],
+    "updatedAt": "2026-03-17",
+    "downloads": 0
   }
 ]

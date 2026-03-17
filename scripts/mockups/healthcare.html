@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Evergreen Medical Group</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', -apple-system, sans-serif; color: #1e293b; background: #fff; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  .header { background: white; border-bottom: 1px solid #e2e8f0; padding: 0; position: sticky; top: 0; z-index: 100; }
+  .header .container { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+  .logo { font-size: 20px; font-weight: 800; color: #0891b2; display: flex; align-items: center; gap: 8px; }
+  .logo-icon { font-size: 24px; }
+  .nav ul { list-style: none; display: flex; gap: 28px; }
+  .nav a { font-size: 14px; font-weight: 500; color: #64748b; text-decoration: none; }
+  .nav a:hover { color: #0891b2; }
+  .book-btn { background: #0891b2; color: white; padding: 10px 24px; border-radius: 8px; font-weight: 700; font-size: 14px; text-decoration: none; }
+
+  .hero { background: linear-gradient(135deg, #0891b2 0%, #0e7490 50%, #155e75 100%); color: white; padding: 72px 0; position: relative; overflow: hidden; }
+  .hero::after { content: ''; position: absolute; right: -60px; bottom: -60px; width: 400px; height: 400px; background: rgba(255,255,255,0.05); border-radius: 50%; }
+  .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .hero h1 { font-size: 44px; font-weight: 800; line-height: 1.1; margin-bottom: 16px; }
+  .hero p { font-size: 17px; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 28px; max-width: 480px; }
+  .hero-btns { display: flex; gap: 12px; }
+  .btn { padding: 14px 28px; border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; }
+  .btn-white { background: white; color: #0891b2; }
+  .btn-outline-w { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.4); }
+  .hero-img { background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05)); border-radius: 16px; height: 320px; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.1); }
+  .hero-img-text { color: rgba(255,255,255,0.4); font-size: 14px; }
+
+  .services { padding: 56px 0; background: #f8fafc; }
+  .services h2 { font-size: 28px; font-weight: 800; text-align: center; margin-bottom: 8px; }
+  .services .subtitle { text-align: center; color: #64748b; margin-bottom: 36px; }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .service-card { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 28px; text-align: center; transition: all 0.2s; }
+  .service-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); transform: translateY(-2px); }
+  .service-icon { width: 52px; height: 52px; border-radius: 12px; background: #ecfeff; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 24px; }
+  .service-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+  .service-card p { font-size: 13px; color: #64748b; line-height: 1.5; }
+
+  .providers { padding: 56px 0; }
+  .providers h2 { font-size: 28px; font-weight: 800; text-align: center; margin-bottom: 8px; }
+  .providers .subtitle { text-align: center; color: #64748b; margin-bottom: 36px; }
+  .providers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .provider-card { border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; }
+  .provider-img { height: 200px; background: linear-gradient(135deg, #cffafe, #a5f3fc); }
+  .provider-content { padding: 20px; }
+  .provider-name { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+  .provider-title { font-size: 14px; color: #0891b2; font-weight: 600; margin-bottom: 8px; }
+  .provider-desc { font-size: 13px; color: #64748b; }
+
+  .cta { padding: 56px 0; }
+  .cta-card { background: linear-gradient(135deg, #0891b2, #0e7490); border-radius: 20px; padding: 56px; color: white; text-align: center; }
+  .cta-card h2 { font-size: 32px; font-weight: 800; margin-bottom: 12px; }
+  .cta-card p { color: rgba(255,255,255,0.85); font-size: 17px; max-width: 500px; margin: 0 auto 28px; }
+
+  .footer { background: #0f172a; color: rgba(255,255,255,0.6); padding: 48px 0 24px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer h3 { color: white; font-size: 14px; font-weight: 700; margin-bottom: 16px; }
+  .footer ul { list-style: none; }
+  .footer li { margin-bottom: 8px; font-size: 13px; }
+  .footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+  .footer-bottom { margin-top: 32px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 12px; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="logo"><span class="logo-icon">+</span> Evergreen Medical Group</div>
+    <nav class="nav">
+      <ul>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Our Providers</a></li>
+        <li><a href="#">Locations</a></li>
+        <li><a href="#">Patient Resources</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#" class="book-btn">Book Appointment</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <h1>Your Health, Our Priority</h1>
+        <p>Comprehensive healthcare for the whole family. From routine checkups to specialized care, our experienced providers are here for you.</p>
+        <div class="hero-btns">
+          <a href="#" class="btn btn-white">Book Appointment</a>
+          <a href="#" class="btn btn-outline-w">Find a Provider</a>
+        </div>
+      </div>
+      <div class="hero-img"><span class="hero-img-text">Provider Image</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="container">
+    <h2>Our Services</h2>
+    <p class="subtitle">Comprehensive care across all stages of life</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🏥</div>
+        <h3>Primary Care</h3>
+        <p>Routine checkups, preventive care, and chronic disease management</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">👶</div>
+        <h3>Pediatrics</h3>
+        <p>Specialized care for infants, children, and adolescents</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">❤️</div>
+        <h3>Cardiology</h3>
+        <p>Heart health screenings, diagnostics, and treatment plans</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🧠</div>
+        <h3>Behavioral Health</h3>
+        <p>Mental health counseling, therapy, and wellness programs</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="providers">
+  <div class="container">
+    <h2>Meet Our Providers</h2>
+    <p class="subtitle">Experienced, compassionate healthcare professionals</p>
+    <div class="providers-grid">
+      <div class="provider-card">
+        <div class="provider-img"></div>
+        <div class="provider-content">
+          <div class="provider-name">Dr. Sarah Chen</div>
+          <div class="provider-title">Family Medicine</div>
+          <div class="provider-desc">Board-certified with 15 years of experience in comprehensive family care.</div>
+        </div>
+      </div>
+      <div class="provider-card">
+        <div class="provider-img" style="background:linear-gradient(135deg,#bae6fd,#7dd3fc);"></div>
+        <div class="provider-content">
+          <div class="provider-name">Dr. James Rivera</div>
+          <div class="provider-title">Internal Medicine</div>
+          <div class="provider-desc">Specializing in preventive medicine and chronic disease management.</div>
+        </div>
+      </div>
+      <div class="provider-card">
+        <div class="provider-img" style="background:linear-gradient(135deg,#ccfbf1,#99f6e4);"></div>
+        <div class="provider-content">
+          <div class="provider-name">Dr. Priya Patel</div>
+          <div class="provider-title">Pediatrics</div>
+          <div class="provider-desc">Dedicated to providing nurturing care for children of all ages.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <div class="cta-card">
+      <h2>Ready to Schedule Your Visit?</h2>
+      <p>New patients welcome. Same-day appointments available for urgent needs.</p>
+      <a href="#" class="btn btn-white">Book Online Now</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom:16px;"><span class="logo-icon">+</span> Evergreen Medical Group</div>
+        <p style="font-size:13px;">Providing compassionate care since 2005.<br>1200 Wellness Drive, Suite 100</p>
+      </div>
+      <div><h3>Services</h3><ul><li><a href="#">Primary Care</a></li><li><a href="#">Pediatrics</a></li><li><a href="#">Cardiology</a></li><li><a href="#">Behavioral Health</a></li></ul></div>
+      <div><h3>Patients</h3><ul><li><a href="#">Book Appointment</a></li><li><a href="#">Patient Portal</a></li><li><a href="#">Insurance</a></li><li><a href="#">Forms</a></li></ul></div>
+      <div><h3>About</h3><ul><li><a href="#">Our Team</a></li><li><a href="#">Locations</a></li><li><a href="#">Careers</a></li><li><a href="#">Contact</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 Evergreen Medical Group. All rights reserved.</div>
+  </div>
+</footer>
+</body>
+</html>

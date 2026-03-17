@@ -1,9 +1,63 @@
 import { chromium } from 'playwright';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import { mkdirSync } from 'fs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const screenshotsDir = join(__dirname, '..', 'website', 'public', 'screenshots');
+
+const pages = [
+  {
+    name: 'government',
+    file: 'government.html',
+    dir: 'starter-government',
+    shots: [
+      { name: 'homepage', scroll: 0 },
+      { name: 'services', scroll: 600 },
+      { name: 'news', scroll: 1100 },
+    ],
+  },
+  {
+    name: 'nonprofit',
+    file: 'nonprofit.html',
+    dir: 'starter-nonprofit',
+    shots: [
+      { name: 'homepage', scroll: 0 },
+      { name: 'stories', scroll: 800 },
+      { name: 'campaign', scroll: 1500 },
+    ],
+  },
+  {
+    name: 'healthcare',
+    file: 'healthcare.html',
+    dir: 'starter-healthcare',
+    shots: [
+      { name: 'homepage', scroll: 0 },
+      { name: 'services', scroll: 550 },
+      { name: 'providers', scroll: 1050 },
+    ],
+  },
+  {
+    name: 'legal',
+    file: 'legal.html',
+    dir: 'starter-legal',
+    shots: [
+      { name: 'homepage', scroll: 0 },
+      { name: 'practices', scroll: 600 },
+      { name: 'results', scroll: 1150 },
+    ],
+  },
+  {
+    name: 'saas',
+    file: 'saas.html',
+    dir: 'starter-saas',
+    shots: [
+      { name: 'homepage', scroll: 0 },
+      { name: 'features', scroll: 850 },
+      { name: 'pricing', scroll: 1450 },
+    ],
+  },
+];
 
 async function capture() {
   const browser = await chromium.launch();
@@ -12,58 +66,29 @@ async function capture() {
     deviceScaleFactor: 2,
   });
 
-  // Government screenshots
-  console.log('Capturing Government template screenshots...');
-  const govPage = await context.newPage();
-  await govPage.goto(`file://${join(__dirname, 'mockups', 'government.html')}`);
-  await govPage.waitForTimeout(500);
+  for (const site of pages) {
+    console.log(`Capturing ${site.name}...`);
 
-  // Full homepage view
-  await govPage.screenshot({
-    path: join(screenshotsDir, 'starter-government', 'homepage.png'),
-  });
+    const dir = join(screenshotsDir, site.dir);
+    mkdirSync(dir, { recursive: true });
 
-  // Scroll to services section
-  await govPage.evaluate(() => window.scrollTo(0, 600));
-  await govPage.waitForTimeout(300);
-  await govPage.screenshot({
-    path: join(screenshotsDir, 'starter-government', 'services.png'),
-  });
+    const page = await context.newPage();
+    await page.goto(`file://${join(__dirname, 'mockups', site.file)}`);
+    await page.waitForTimeout(500);
 
-  // Scroll to news section
-  await govPage.evaluate(() => window.scrollTo(0, 1100));
-  await govPage.waitForTimeout(300);
-  await govPage.screenshot({
-    path: join(screenshotsDir, 'starter-government', 'news.png'),
-  });
+    for (const shot of site.shots) {
+      await page.evaluate((y) => window.scrollTo(0, y), shot.scroll);
+      await page.waitForTimeout(300);
+      await page.screenshot({
+        path: join(dir, `${shot.name}.png`),
+      });
+    }
 
-  // Nonprofit screenshots
-  console.log('Capturing Nonprofit template screenshots...');
-  const npPage = await context.newPage();
-  await npPage.goto(`file://${join(__dirname, 'mockups', 'nonprofit.html')}`);
-  await npPage.waitForTimeout(500);
-
-  // Full homepage view
-  await npPage.screenshot({
-    path: join(screenshotsDir, 'starter-nonprofit', 'homepage.png'),
-  });
-
-  // Scroll to stories section
-  await npPage.evaluate(() => window.scrollTo(0, 800));
-  await npPage.waitForTimeout(300);
-  await npPage.screenshot({
-    path: join(screenshotsDir, 'starter-nonprofit', 'stories.png'),
-  });
-
-  // Scroll to campaign section
-  await npPage.evaluate(() => window.scrollTo(0, 1500));
-  await npPage.waitForTimeout(300);
-  await npPage.screenshot({
-    path: join(screenshotsDir, 'starter-nonprofit', 'campaign.png'),
-  });
+    await page.close();
+  }
 
   await browser.close();
-  console.log('Done! Screenshots saved.');
+  console.log('Done!');
 }
 
 capture().catch(console.error);

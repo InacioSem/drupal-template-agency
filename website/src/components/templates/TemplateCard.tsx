@@ -18,6 +18,18 @@ const verticalColors: Record<string, { gradient: string; badge: string }> = {
     gradient: "from-emerald-600/80 to-teal-600/80",
     badge: "bg-emerald-500/10 text-emerald-700 border-emerald-200",
   },
+  "healthcare": {
+    gradient: "from-cyan-600/80 to-teal-600/80",
+    badge: "bg-cyan-500/10 text-cyan-700 border-cyan-200",
+  },
+  "legal": {
+    gradient: "from-indigo-600/80 to-violet-600/80",
+    badge: "bg-indigo-500/10 text-indigo-700 border-indigo-200",
+  },
+  "saas": {
+    gradient: "from-amber-500/80 to-orange-500/80",
+    badge: "bg-amber-500/10 text-amber-700 border-amber-200",
+  },
 };
 
 export function TemplateCard({ template }: { template: DrupalTemplate }) {
