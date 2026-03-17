@@ -1,0 +1,71 @@
+name: Hero Banner
+description: 'Full-width hero section with headline, body text, CTA buttons, and optional background image. Used as the primary visual element on landing pages.'
+status: experimental
+props:
+  type: object
+  required:
+    - headline
+  properties:
+    headline:
+      type: string
+      title: Headline
+      description: 'The main heading text for the hero section.'
+      examples:
+        - 'Welcome to Our Company'
+    subheadline:
+      type: string
+      title: Subheadline
+      description: 'Supporting text displayed below the headline.'
+      examples:
+        - 'We build solutions that make a difference.'
+    cta_primary_text:
+      type: string
+      title: Primary CTA Text
+      description: 'Text for the primary call-to-action button.'
+      examples:
+        - 'Get Started'
+    cta_primary_url:
+      type: string
+      title: Primary CTA URL
+      format: uri
+      description: 'URL for the primary call-to-action button.'
+    cta_secondary_text:
+      type: string
+      title: Secondary CTA Text
+      description: 'Text for the secondary (outline) button.'
+      examples:
+        - 'Learn More'
+    cta_secondary_url:
+      type: string
+      title: Secondary CTA URL
+      format: uri
+      description: 'URL for the secondary button.'
+    background_image_url:
+      type: string
+      title: Background Image URL
+      format: uri
+      description: 'URL for the background image. If not provided, a gradient background is used.'
+    alignment:
+      type: string
+      title: Text Alignment
+      description: 'Horizontal alignment of the hero content.'
+      enum:
+        - left
+        - center
+      default: center
+    size:
+      type: string
+      title: Hero Size
+      description: 'Height of the hero section.'
+      enum:
+        - default
+        - large
+        - fullscreen
+      default: default
+slots:
+  extra_content:
+    title: Extra Content
+    description: 'Optional additional content rendered below the CTA buttons.'
+libraryOverrides:
+  dependencies:
+    - core/drupal

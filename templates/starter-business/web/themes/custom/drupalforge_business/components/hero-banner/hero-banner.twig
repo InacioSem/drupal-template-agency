@@ -1,0 +1,74 @@
+{#
+/**
+ * @file
+ * DrupalForge Hero Banner — Single Directory Component.
+ *
+ * Props:
+ * - headline: string (required) — Main heading text.
+ * - subheadline: string — Supporting text.
+ * - cta_primary_text: string — Primary button text.
+ * - cta_primary_url: string — Primary button URL.
+ * - cta_secondary_text: string — Secondary button text.
+ * - cta_secondary_url: string — Secondary button URL.
+ * - background_image_url: string — Background image URL.
+ * - alignment: 'left' | 'center' — Text alignment.
+ * - size: 'default' | 'large' | 'fullscreen' — Hero height.
+ *
+ * Slots:
+ * - extra_content: Additional content below the CTAs.
+ */
+#}
+
+{% set alignment = alignment|default('center') %}
+{% set size = size|default('default') %}
+
+{% set size_classes = {
+  'default': 'df-hero--default',
+  'large': 'df-hero--large',
+  'fullscreen': 'df-hero--fullscreen',
+} %}
+
+<section
+  class="df-hero {{ size_classes[size] }} df-hero--{{ alignment }}"
+  {% if background_image_url %}
+    style="background-image: url('{{ background_image_url }}');"
+  {% endif %}
+  role="banner"
+  aria-label="{{ headline }}"
+>
+  {% if background_image_url %}
+    <div class="df-hero__overlay"></div>
+  {% endif %}
+
+  <div class="df-hero__container">
+    <div class="df-hero__content">
+      <h1 class="df-hero__headline">{{ headline }}</h1>
+
+      {% if subheadline %}
+        <p class="df-hero__subheadline">{{ subheadline }}</p>
+      {% endif %}
+
+      {% if cta_primary_text or cta_secondary_text %}
+        <div class="df-hero__actions">
+          {% if cta_primary_text and cta_primary_url %}
+            <a href="{{ cta_primary_url }}" class="df-hero__btn df-hero__btn--primary">
+              {{ cta_primary_text }}
+            </a>
+          {% endif %}
+
+          {% if cta_secondary_text and cta_secondary_url %}
+            <a href="{{ cta_secondary_url }}" class="df-hero__btn df-hero__btn--secondary">
+              {{ cta_secondary_text }}
+            </a>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if extra_content %}
+        <div class="df-hero__extra">
+          {{ extra_content }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,59 @@
+[
+  {
+    "slug": "starter-healthcare",
+    "name": "Starter Healthcare",
+    "tagline": "Modern sites for clinics, practices, and health organizations",
+    "vertical": "healthcare",
+    "verticalLabel": "Healthcare",
+    "icon": "Stethoscope",
+    "color": "#06b6d4",
+    "features": [
+      "Provider profiles with specialties and credentials",
+      "Appointment request forms with scheduling",
+      "Service and procedure pages",
+      "Patient resource library",
+      "Insurance and plan information blocks",
+      "HIPAA-conscious form handling",
+      "Location finder with maps",
+      "Telehealth integration ready"
+    ]
+  },
+  {
+    "slug": "starter-legal",
+    "name": "Starter Legal",
+    "tagline": "Professional sites for law firms and legal practices",
+    "vertical": "legal",
+    "verticalLabel": "Legal",
+    "icon": "Scale",
+    "color": "#8b5cf6",
+    "features": [
+      "Attorney profiles with practice areas",
+      "Case results and testimonials",
+      "Practice area landing pages",
+      "Free consultation request forms",
+      "Blog with legal insights",
+      "FAQ by legal topic",
+      "Client portal integration ready",
+      "Multi-location office pages"
+    ]
+  },
+  {
+    "slug": "starter-saas",
+    "name": "Starter SaaS",
+    "tagline": "Marketing sites for software products and startups",
+    "vertical": "saas",
+    "verticalLabel": "SaaS & Startup",
+    "icon": "Rocket",
+    "color": "#f59e0b",
+    "features": [
+      "Product feature showcases",
+      "Pricing page with plan comparison",
+      "Changelog and release notes",
+      "Documentation hub with search",
+      "Customer testimonials and logos",
+      "Integration marketplace page",
+      "Blog with categories and tags",
+      "CTA-optimized landing pages"
+    ]
+  }
+]

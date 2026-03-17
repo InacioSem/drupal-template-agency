@@ -1,0 +1,170 @@
+/* ==========================================================================
+   Hero Banner — Single Directory Component
+   ========================================================================== */
+
+.df-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  overflow: hidden;
+}
+
+/* Gradient fallback when no background image */
+.df-hero:not([style*="background-image"]) {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary, #2563eb) 0%,
+    var(--color-primary-dark, #1d4ed8) 50%,
+    var(--color-primary, #2563eb) 100%
+  );
+}
+
+/* Dark overlay for background images */
+.df-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.88),
+    rgba(30, 64, 175, 0.85)
+  );
+  z-index: 1;
+}
+
+/* Size variants */
+.df-hero--default {
+  padding: 4rem 0;
+  min-height: 400px;
+}
+
+.df-hero--large {
+  padding: 6rem 0;
+  min-height: 560px;
+}
+
+.df-hero--fullscreen {
+  padding: 4rem 0;
+  min-height: 100vh;
+}
+
+/* Container */
+.df-hero__container {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-width, 1280px);
+  margin: 0 auto;
+  padding: 0 var(--container-padding, 1rem);
+  width: 100%;
+}
+
+/* Alignment */
+.df-hero--center .df-hero__content {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.df-hero--left .df-hero__content {
+  text-align: left;
+  max-width: 650px;
+}
+
+/* Headline */
+.df-hero__headline {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: white;
+  margin: 0 0 1rem;
+}
+
+/* Subheadline */
+.df-hero__subheadline {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 2rem;
+}
+
+.df-hero--center .df-hero__subheadline {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 580px;
+}
+
+/* CTA Buttons */
+.df-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.df-hero--center .df-hero__actions {
+  justify-content: center;
+}
+
+.df-hero__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  border-radius: var(--border-radius, 0.5rem);
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.df-hero__btn--primary {
+  background: white;
+  color: var(--color-primary, #2563eb);
+}
+
+.df-hero__btn--primary:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  color: var(--color-primary, #2563eb);
+}
+
+.df-hero__btn--secondary {
+  background: transparent;
+  color: white;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.df-hero__btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  color: white;
+}
+
+/* Extra content slot */
+.df-hero__extra {
+  margin-top: 2rem;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .df-hero--default {
+    padding: 5rem 0;
+  }
+
+  .df-hero--large {
+    padding: 8rem 0;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .df-hero__btn--primary:hover {
+    transform: none;
+  }
+}

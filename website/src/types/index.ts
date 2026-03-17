@@ -1,7 +1,21 @@
 export type TemplateVertical =
   | "agency-business"
   | "government-education"
-  | "nonprofit-healthcare";
+  | "nonprofit-healthcare"
+  | "healthcare"
+  | "legal"
+  | "saas";
+
+export interface ComingSoonTemplate {
+  slug: string;
+  name: string;
+  tagline: string;
+  vertical: TemplateVertical;
+  verticalLabel: string;
+  icon: string;
+  color: string;
+  features: string[];
+}
 
 export interface Screenshot {
   src: string;

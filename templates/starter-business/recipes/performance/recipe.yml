@@ -1,0 +1,50 @@
+name: DrupalForge Performance
+description: 'Performance optimization recipe. Configures page caching, dynamic page cache, CSS/JS aggregation, image optimization, lazy loading, and optional Redis integration.'
+type: Site
+
+install:
+  # Core performance modules
+  - page_cache
+  - dynamic_page_cache
+  - big_pipe
+
+  # Contrib performance modules (already in composer.json)
+  - lazy
+  - focal_point
+
+config:
+  actions:
+    # Enable CSS/JS aggregation
+    system.performance:
+      simple_config_update:
+        css.preprocess: true
+        js.preprocess: true
+        cache.page.max_age: 3600
+        response.gzip: true
+
+    # Configure image styles for responsive delivery
+    responsive_image.styles.narrow:
+      simple_config_update:
+        id: narrow
+        label: 'Narrow (mobile)'
+
+    # Configure lazy loading
+    lazy.settings:
+      simple_config_update:
+        alter_tag.img: true
+        alter_tag.iframe: true
+        placeholderSrc: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='
+        skipClass: 'no-lazy'
+        errorClass: 'lazy-error'
+
+    # Disable unnecessary logging in production
+    system.logging:
+      simple_config_update:
+        error_level: hide
+
+    # Optimize Twig
+    system.twig:
+      simple_config_update:
+        debug: false
+        auto_reload: false
+        cache: true
