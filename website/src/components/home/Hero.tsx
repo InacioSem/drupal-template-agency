@@ -7,7 +7,7 @@ import { CopyButton } from "@/components/shared/CopyButton";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const INSTALL_CMD = "composer create-project drupalforge/starter-business my-site";
+const INSTALL_CMD = "composer create-project drupalready/starter-business my-site";
 
 const TYPING_TEXTS = [
   "in minutes, not months",

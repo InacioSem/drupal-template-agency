@@ -1,9 +1,9 @@
-export const SITE_NAME = "DrupalForge";
+export const SITE_NAME = "DrupalReady";
 export const SITE_DESCRIPTION =
   "Production-ready Drupal 11 templates for agencies, governments, and nonprofits. Install in 60 seconds with Composer.";
-export const SITE_URL = "https://drupalforge.dev";
-export const GITHUB_ORG = "https://github.com/drupalforge";
-export const CONTACT_EMAIL = "hello@drupalforge.dev";
+export const SITE_URL = "https://drupalready.dev";
+export const GITHUB_ORG = "https://github.com/InacioSem";
+export const CONTACT_EMAIL = "hello@drupalready.dev";
 
 export const NAV_LINKS = [
   { label: "Templates", href: "/templates" },

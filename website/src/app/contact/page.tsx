@@ -8,7 +8,7 @@ import { CONTACT_EMAIL, GITHUB_ORG } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with DrupalForge for custom templates, support, or questions.",
+    "Get in touch with DrupalReady for custom templates, support, or questions.",
 };
 
 export default function ContactPage() {
@@ -52,7 +52,7 @@ export default function ContactPage() {
                 join the conversation on GitHub.
               </p>
               <a
-                href={`${GITHUB_ORG}/drupalforge/discussions`}
+                href={`${GITHUB_ORG}/drupal-template-agency/discussions`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cn(buttonVariants({ variant: "outline" }))}

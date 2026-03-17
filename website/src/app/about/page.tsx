@@ -7,7 +7,7 @@ import { SITE_NAME } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "DrupalForge provides production-ready Drupal 11 templates for agencies, governments, and nonprofits.",
+    "DrupalReady provides production-ready Drupal 11 templates for agencies, governments, and nonprofits.",
 };
 
 export default function AboutPage() {

@@ -17,7 +17,7 @@ import { CONTACT_EMAIL } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "DrupalForge templates are free and open source. Premium support and custom development available.",
+    "DrupalReady templates are free and open source. Premium support and custom development available.",
 };
 
 const tiers = [
@@ -85,7 +85,7 @@ export default function PricingPage() {
             <span className="text-muted-foreground">Support is optional.</span>
           </h1>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Every DrupalForge template is free, open source, and GPL-licensed.
+            Every DrupalReady template is free, open source, and GPL-licensed.
             If you need help setting up, customizing, or maintaining your site —
             we&apos;re here.
           </p>

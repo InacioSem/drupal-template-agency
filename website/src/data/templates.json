@@ -6,17 +6,17 @@
     "description": "A complete Drupal 11 starter template for agencies, consulting firms, and businesses. Includes a blog, case studies, service pages, team profiles, testimonials, and flexible landing pages — all pre-configured with Layout Builder and Paragraphs.",
     "vertical": "agency-business",
     "verticalLabel": "Agency & Business",
-    "composerPackage": "drupalforge/starter-business",
-    "composerCommand": "composer create-project drupalforge/starter-business my-site",
+    "composerPackage": "drupalready/starter-business",
+    "composerCommand": "composer create-project drupalready/starter-business my-site",
     "version": "1.0.0",
     "drupalVersion": "11.x",
     "phpVersion": ">=8.3",
-    "repoUrl": "https://github.com/drupalforge/starter-business",
+    "repoUrl": "https://github.com/drupalready/starter-business",
     "demoUrl": null,
     "screenshots": [
       {
         "src": "/screenshots/starter-business/hero.png",
-        "alt": "DrupalForge homepage hero section with headline and navigation",
+        "alt": "DrupalReady homepage hero section with headline and navigation",
         "caption": "Homepage hero with navigation, headline, and Composer install command",
         "isPrimary": true
       },
@@ -86,7 +86,7 @@
     "contentTypes": ["Page", "Blog Post", "Case Study", "Service", "Team Member", "Testimonial", "Landing Page"],
     "paragraphTypes": ["hero_banner", "text_with_image", "card_grid", "cta_section", "stats_counter", "logo_carousel", "video_embed", "accordion_faq", "pricing_table", "contact_form_embed"],
     "theme": {
-      "name": "drupalforge_business",
+      "name": "drupalready_business",
       "baseTheme": "stable9",
       "description": "Modern corporate theme — blue/slate palette, clean sans-serif typography, full-width hero sections"
     },
@@ -101,12 +101,12 @@
     "description": "A WCAG 2.2 AA compliant Drupal 11 template for government agencies, municipalities, and educational institutions. Features content moderation workflows, document management, event calendars, department microsites, and emergency alert systems.",
     "vertical": "government-education",
     "verticalLabel": "Government & Education",
-    "composerPackage": "drupalforge/starter-government",
-    "composerCommand": "composer create-project drupalforge/starter-government my-site",
+    "composerPackage": "drupalready/starter-government",
+    "composerCommand": "composer create-project drupalready/starter-government my-site",
     "version": "1.0.0",
     "drupalVersion": "11.x",
     "phpVersion": ">=8.3",
-    "repoUrl": "https://github.com/drupalforge/starter-government",
+    "repoUrl": "https://github.com/drupalready/starter-government",
     "demoUrl": null,
     "screenshots": [
       {
@@ -173,7 +173,7 @@
     "contentTypes": ["Page", "News Article", "Event", "Department", "Document", "FAQ", "Public Meeting", "Alert"],
     "paragraphTypes": ["hero_banner", "text_section", "callout_box", "document_list", "contact_card", "accordion", "step_process", "embedded_map", "data_table", "alert_box"],
     "theme": {
-      "name": "drupalforge_government",
+      "name": "drupalready_government",
       "baseTheme": "stable9",
       "description": "Authoritative, USWDS-inspired — navy/white palette, high contrast, large type scale"
     },
@@ -188,12 +188,12 @@
     "description": "A people-first Drupal 11 template for nonprofits, charities, clinics, and community organizations. Features impact stories, program showcases, fundraising campaigns, event management, volunteer profiles, and newsletter integration.",
     "vertical": "nonprofit-healthcare",
     "verticalLabel": "Nonprofit & Healthcare",
-    "composerPackage": "drupalforge/starter-nonprofit",
-    "composerCommand": "composer create-project drupalforge/starter-nonprofit my-site",
+    "composerPackage": "drupalready/starter-nonprofit",
+    "composerCommand": "composer create-project drupalready/starter-nonprofit my-site",
     "version": "1.0.0",
     "drupalVersion": "11.x",
     "phpVersion": ">=8.3",
-    "repoUrl": "https://github.com/drupalforge/starter-nonprofit",
+    "repoUrl": "https://github.com/drupalready/starter-nonprofit",
     "demoUrl": null,
     "screenshots": [
       {
@@ -260,7 +260,7 @@
     "contentTypes": ["Page", "Story", "Program", "Event", "Resource", "Person", "Location", "Campaign"],
     "paragraphTypes": ["hero_with_cta", "impact_stats", "story_highlight", "donation_block", "program_cards", "newsletter_signup", "image_gallery", "quote_testimonial", "timeline", "location_map"],
     "theme": {
-      "name": "drupalforge_nonprofit",
+      "name": "drupalready_nonprofit",
       "baseTheme": "stable9",
       "description": "Warm and human — teal/coral accents, rounded corners, photography-forward design"
     },
@@ -275,12 +275,12 @@
     "description": "A patient-first Drupal 11 template for healthcare clinics, medical groups, and wellness organizations. Features provider profiles, appointment booking, service pages, patient resources, and location finder — all HIPAA-conscious and accessibility-compliant.",
     "vertical": "healthcare",
     "verticalLabel": "Healthcare",
-    "composerPackage": "drupalforge/starter-healthcare",
-    "composerCommand": "composer create-project drupalforge/starter-healthcare my-site",
+    "composerPackage": "drupalready/starter-healthcare",
+    "composerCommand": "composer create-project drupalready/starter-healthcare my-site",
     "version": "1.0.0",
     "drupalVersion": "11.x",
     "phpVersion": ">=8.3",
-    "repoUrl": "https://github.com/drupalforge/starter-healthcare",
+    "repoUrl": "https://github.com/drupalready/starter-healthcare",
     "demoUrl": null,
     "screenshots": [
       {
@@ -345,7 +345,7 @@
     "contentTypes": ["Page", "Provider", "Service", "Location", "Patient Resource", "FAQ", "News"],
     "paragraphTypes": ["hero_with_image", "service_grid", "provider_spotlight", "appointment_cta", "testimonial_slider", "location_map", "insurance_list", "stats_counter", "faq_accordion", "contact_form"],
     "theme": {
-      "name": "drupalforge_healthcare",
+      "name": "drupalready_healthcare",
       "baseTheme": "stable9",
       "description": "Clean, trustworthy — cyan/teal palette, split-hero layout, card-based service showcase"
     },
@@ -360,12 +360,12 @@
     "description": "An authoritative Drupal 11 template for law firms, legal practices, and attorneys. Features attorney profiles, practice area pages, case results, client testimonials, and free consultation forms — designed to build trust and convert visitors into clients.",
     "vertical": "legal",
     "verticalLabel": "Legal",
-    "composerPackage": "drupalforge/starter-legal",
-    "composerCommand": "composer create-project drupalforge/starter-legal my-site",
+    "composerPackage": "drupalready/starter-legal",
+    "composerCommand": "composer create-project drupalready/starter-legal my-site",
     "version": "1.0.0",
     "drupalVersion": "11.x",
     "phpVersion": ">=8.3",
-    "repoUrl": "https://github.com/drupalforge/starter-legal",
+    "repoUrl": "https://github.com/drupalready/starter-legal",
     "demoUrl": null,
     "screenshots": [
       {
@@ -430,7 +430,7 @@
     "contentTypes": ["Page", "Attorney", "Practice Area", "Case Result", "Testimonial", "Blog Post", "FAQ", "Office Location"],
     "paragraphTypes": ["hero_banner", "practice_area_grid", "attorney_spotlight", "case_results_counter", "testimonial_slider", "consultation_cta", "awards_bar", "faq_accordion", "office_locations", "blog_highlights"],
     "theme": {
-      "name": "drupalforge_legal",
+      "name": "drupalready_legal",
       "baseTheme": "stable9",
       "description": "Authoritative and trustworthy — deep indigo/gold palette, subtle patterns, serif accents"
     },
@@ -445,12 +445,12 @@
     "description": "A conversion-optimized Drupal 11 template for SaaS products, startups, and tech companies. Features product showcases, pricing tables, feature grids, changelog, documentation hub, customer logos, and CTA-optimized landing pages.",
     "vertical": "saas",
     "verticalLabel": "SaaS & Startup",
-    "composerPackage": "drupalforge/starter-saas",
-    "composerCommand": "composer create-project drupalforge/starter-saas my-site",
+    "composerPackage": "drupalready/starter-saas",
+    "composerCommand": "composer create-project drupalready/starter-saas my-site",
     "version": "1.0.0",
     "drupalVersion": "11.x",
     "phpVersion": ">=8.3",
-    "repoUrl": "https://github.com/drupalforge/starter-saas",
+    "repoUrl": "https://github.com/drupalready/starter-saas",
     "demoUrl": null,
     "screenshots": [
       {
@@ -515,7 +515,7 @@
     "contentTypes": ["Page", "Feature", "Pricing Plan", "Changelog Entry", "Blog Post", "Documentation Page", "Customer Story", "Landing Page"],
     "paragraphTypes": ["hero_dark", "feature_grid", "pricing_table", "logo_cloud", "testimonial_carousel", "cta_banner", "product_screenshot", "stats_counter", "integration_grid", "comparison_table"],
     "theme": {
-      "name": "drupalforge_saas",
+      "name": "drupalready_saas",
       "baseTheme": "stable9",
       "description": "Bold and modern — dark mode hero, amber/orange accents, gradient text, startup aesthetic"
     },

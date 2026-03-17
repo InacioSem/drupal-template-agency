@@ -5,7 +5,7 @@ import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/ca
 
 export const metadata: Metadata = {
   title: "Documentation",
-  description: "Learn how to install, customize, and deploy DrupalForge templates.",
+  description: "Learn how to install, customize, and deploy DrupalReady templates.",
 };
 
 const docs = [
@@ -13,7 +13,7 @@ const docs = [
     slug: "getting-started",
     title: "Getting Started",
     description:
-      "Install your first DrupalForge template and get a Drupal 11 site running in minutes.",
+      "Install your first DrupalReady template and get a Drupal 11 site running in minutes.",
     icon: BookOpen,
   },
   {
@@ -27,7 +27,7 @@ const docs = [
     slug: "deployment",
     title: "Deployment Guide",
     description:
-      "Deploy your DrupalForge site to Platform.sh, Pantheon, Acquia, or any hosting provider.",
+      "Deploy your DrupalReady site to Platform.sh, Pantheon, Acquia, or any hosting provider.",
     icon: Rocket,
   },
 ];
@@ -38,7 +38,7 @@ export default function DocsPage() {
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-bold tracking-tight">Documentation</h1>
         <p className="mt-4 text-lg text-muted-foreground">
-          Everything you need to install, customize, and deploy DrupalForge
+          Everything you need to install, customize, and deploy DrupalReady
           templates.
         </p>
 

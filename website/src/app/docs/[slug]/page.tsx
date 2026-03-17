@@ -10,7 +10,7 @@ const docsContent: Record<
 > = {
   "getting-started": {
     title: "Getting Started",
-    description: "Install your first DrupalForge template in minutes.",
+    description: "Install your first DrupalReady template in minutes.",
     sections: [
       {
         heading: "Prerequisites",
@@ -20,7 +20,7 @@ const docsContent: Record<
       {
         heading: "Step 1: Create Your Project",
         content:
-          'Choose a template and create your project with Composer:\n\n```\n# For agency/business sites\ncomposer create-project drupalforge/starter-business my-site\n\n# For government/education sites\ncomposer create-project drupalforge/starter-government my-site\n\n# For nonprofit/healthcare sites\ncomposer create-project drupalforge/starter-nonprofit my-site\n```\n\nThis downloads Drupal 11, all required modules, the custom theme, and configuration.',
+          'Choose a template and create your project with Composer:\n\n```\n# For agency/business sites\ncomposer create-project drupalready/starter-business my-site\n\n# For government/education sites\ncomposer create-project drupalready/starter-government my-site\n\n# For nonprofit/healthcare sites\ncomposer create-project drupalready/starter-nonprofit my-site\n```\n\nThis downloads Drupal 11, all required modules, the custom theme, and configuration.',
       },
       {
         heading: "Step 2: Start Local Development",
@@ -46,12 +46,12 @@ const docsContent: Record<
   },
   customization: {
     title: "Customization Guide",
-    description: "Tailor your DrupalForge template to match your project.",
+    description: "Tailor your DrupalReady template to match your project.",
     sections: [
       {
         heading: "Theme Customization",
         content:
-          "Each template includes a custom theme in `web/themes/custom/drupalforge_{vertical}/`. The theme uses Stable9 as its base and includes:\n\n- **CSS** organized in `css/base/`, `css/components/`, and `css/layout/`\n- **Twig templates** in `templates/` for overriding markup\n- **JavaScript** in `js/` for interactive components\n- **Libraries** defined in `{theme}.libraries.yml`\n\nModify colors, typography, and spacing by editing the CSS files. Override any Drupal template by copying it to the appropriate `templates/` subdirectory.",
+          "Each template includes a custom theme in `web/themes/custom/drupalready_{vertical}/`. The theme uses Stable9 as its base and includes:\n\n- **CSS** organized in `css/base/`, `css/components/`, and `css/layout/`\n- **Twig templates** in `templates/` for overriding markup\n- **JavaScript** in `js/` for interactive components\n- **Libraries** defined in `{theme}.libraries.yml`\n\nModify colors, typography, and spacing by editing the CSS files. Override any Drupal template by copying it to the appropriate `templates/` subdirectory.",
       },
       {
         heading: "Content Types",
@@ -66,13 +66,13 @@ const docsContent: Record<
       {
         heading: "Recipes",
         content:
-          "DrupalForge templates use Drupal Recipes for modular configuration. Each recipe is in the `recipes/` directory and can be applied independently.\n\nTo create a custom recipe, add a new directory under `recipes/` with a `recipe.yml` file defining the modules, configuration, and content to apply.",
+          "DrupalReady templates use Drupal Recipes for modular configuration. Each recipe is in the `recipes/` directory and can be applied independently.\n\nTo create a custom recipe, add a new directory under `recipes/` with a `recipe.yml` file defining the modules, configuration, and content to apply.",
       },
     ],
   },
   deployment: {
     title: "Deployment Guide",
-    description: "Deploy your DrupalForge site to production.",
+    description: "Deploy your DrupalReady site to production.",
     sections: [
       {
         heading: "Preparing for Deployment",
@@ -87,7 +87,7 @@ const docsContent: Record<
       {
         heading: "Pantheon",
         content:
-          "For Pantheon hosting:\n\n1. Create a new Drupal site on Pantheon\n2. Clone the Pantheon repo and merge your DrupalForge project\n3. Push to the `master` branch to deploy to Dev\n4. Use the Pantheon dashboard to deploy to Test and Live",
+          "For Pantheon hosting:\n\n1. Create a new Drupal site on Pantheon\n2. Clone the Pantheon repo and merge your DrupalReady project\n3. Push to the `master` branch to deploy to Dev\n4. Use the Pantheon dashboard to deploy to Test and Live",
       },
       {
         heading: "Traditional Hosting",
