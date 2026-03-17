@@ -1,0 +1,23 @@
+drupalforge_dashboard.main:
+  path: '/admin/dashboard'
+  defaults:
+    _controller: '\Drupal\drupalforge_dashboard\Controller\DashboardController::dashboard'
+    _title: 'Dashboard'
+  requirements:
+    _permission: 'access content overview'
+
+drupalforge_dashboard.checklist_dismiss:
+  path: '/admin/dashboard/checklist/{item}/dismiss'
+  defaults:
+    _controller: '\Drupal\drupalforge_dashboard\Controller\DashboardController::dismissChecklist'
+  requirements:
+    _permission: 'administer site configuration'
+  methods: [POST]
+
+drupalforge_dashboard.tour:
+  path: '/admin/dashboard/tour'
+  defaults:
+    _controller: '\Drupal\drupalforge_dashboard\Controller\DashboardController::tour'
+    _title: 'Guided Tour'
+  requirements:
+    _permission: 'access content overview'

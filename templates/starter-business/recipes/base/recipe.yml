@@ -44,8 +44,10 @@ install:
   - viewsreference
   - webform
 
-  # Custom module
+  # Custom modules
   - drupalforge_business_core
+  - drupalforge_dashboard
+  - drupalforge_editor
 
 config:
   actions:

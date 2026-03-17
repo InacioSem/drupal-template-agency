@@ -1,0 +1,59 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for DrupalForge Dashboard module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function drupalforge_dashboard_theme(): array {
+  return [
+    'drupalforge_dashboard' => [
+      'variables' => [
+        'greeting' => '',
+        'quick_actions' => [],
+        'content_stats' => [],
+        'recent_content' => [],
+        'checklist' => [],
+        'checklist_progress' => 0,
+      ],
+      'template' => 'drupalforge-dashboard',
+    ],
+    'drupalforge_dashboard_tour' => [
+      'variables' => [
+        'steps' => [],
+      ],
+      'template' => 'drupalforge-dashboard-tour',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_toolbar_alter().
+ */
+function drupalforge_dashboard_toolbar_alter(&$items): void {
+  // Add Dashboard as the first item in the toolbar.
+  if (isset($items['administration'])) {
+    $items['administration']['#links']['dashboard'] = [
+      'title' => t('Dashboard'),
+      'url' => \Drupal\Core\Url::fromRoute('drupalforge_dashboard.main'),
+      'attributes' => [
+        'class' => ['toolbar-icon', 'toolbar-icon-dashboard'],
+        'title' => t('Dashboard'),
+      ],
+      'weight' => -100,
+    ];
+  }
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function drupalforge_dashboard_page_attachments(array &$attachments): void {
+  $route = \Drupal::routeMatch()->getRouteName();
+  if ($route === 'drupalforge_dashboard.main') {
+    $attachments['#attached']['library'][] = 'drupalforge_dashboard/dashboard';
+  }
+}

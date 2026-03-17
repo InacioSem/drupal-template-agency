@@ -1,0 +1,149 @@
+/* ==========================================================================
+   DrupalForge Editor — Modern Content Form Styling
+   ========================================================================== */
+
+:root {
+  --dfe-primary: #7c3aed;
+  --dfe-primary-light: #a78bfa;
+  --dfe-accent: #06b6d4;
+  --dfe-success: #10b981;
+  --dfe-warning: #f59e0b;
+  --dfe-danger: #ef4444;
+  --dfe-surface: #ffffff;
+  --dfe-bg: #f8fafc;
+  --dfe-text: #0f172a;
+  --dfe-text-muted: #64748b;
+  --dfe-border: #e2e8f0;
+  --dfe-radius: 12px;
+  --dfe-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Node form wrapper */
+.df-node-form {
+  font-family: var(--dfe-font);
+}
+
+/* Improve field descriptions */
+.df-node-form .description,
+.df-node-form .form-item__description {
+  font-size: 12px;
+  color: var(--dfe-text-muted);
+  margin-top: 6px;
+  line-height: 1.5;
+  padding: 8px 12px;
+  background: #f1f5f9;
+  border-radius: 6px;
+  border-left: 3px solid var(--dfe-primary);
+}
+
+/* Save button styling */
+.df-btn-save {
+  background: linear-gradient(135deg, var(--dfe-primary), #6d28d9) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 12px 32px !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  cursor: pointer !important;
+  transition: all 200ms ease !important;
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.25) !important;
+}
+
+.df-btn-save:hover {
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.35) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Draft button */
+.df-btn-draft {
+  background: var(--dfe-surface) !important;
+  color: var(--dfe-text) !important;
+  border: 1px solid var(--dfe-border) !important;
+  border-radius: 8px !important;
+  padding: 12px 24px !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  cursor: pointer !important;
+  transition: all 200ms ease !important;
+}
+
+.df-btn-draft:hover {
+  background: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* Required field indicator with better visibility */
+.df-node-form .form-required::after {
+  content: ' (required)';
+  color: var(--dfe-danger);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Error messages with better styling */
+.df-node-form .messages--error {
+  background: #fef2f2 !important;
+  border: 1px solid #fecaca !important;
+  border-left: 4px solid var(--dfe-danger) !important;
+  border-radius: 8px !important;
+  padding: 16px 20px !important;
+  color: #991b1b !important;
+  font-size: 14px !important;
+}
+
+/* Help icon styles */
+.df-node-form .field-help-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--dfe-primary);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  margin-left: 6px;
+  cursor: help;
+  vertical-align: middle;
+}
+
+/* Fieldgroup improvements */
+.df-node-form details {
+  border: 1px solid var(--dfe-border) !important;
+  border-radius: var(--dfe-radius) !important;
+  margin-bottom: 16px !important;
+}
+
+.df-node-form details summary {
+  padding: 16px 20px !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  cursor: pointer !important;
+  background: #fafafa !important;
+  border-radius: var(--dfe-radius) var(--dfe-radius) 0 0 !important;
+}
+
+.df-node-form details[open] summary {
+  border-bottom: 1px solid var(--dfe-border) !important;
+}
+
+/* Accessibility warning highlight */
+.form-item--error input,
+.form-item--error textarea,
+.form-item--error select {
+  border-color: var(--dfe-danger) !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
+}
+
+/* Image alt text field highlight */
+.df-node-form .image-widget .form-item--alt input {
+  border: 2px solid var(--dfe-warning) !important;
+  background: #fffbeb !important;
+}
+
+.df-node-form .image-widget .form-item--alt input:focus {
+  border-color: var(--dfe-primary) !important;
+  background: white !important;
+}

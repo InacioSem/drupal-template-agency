@@ -46,8 +46,10 @@ install:
   - views_infinite_scroll
   - webform
 
-  # Custom module
+  # Custom modules
   - drupalforge_nonprofit_core
+  - drupalforge_dashboard
+  - drupalforge_editor
 
 config:
   actions:

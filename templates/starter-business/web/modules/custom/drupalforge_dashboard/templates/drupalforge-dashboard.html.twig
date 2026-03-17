@@ -1,0 +1,154 @@
+{#
+/**
+ * @file
+ * DrupalForge Dashboard template.
+ *
+ * Variables:
+ * - greeting: Time-based greeting with user name.
+ * - quick_actions: Array of quick action links.
+ * - content_stats: Array of content statistics.
+ * - recent_content: Array of recently edited content.
+ * - checklist: Array of getting-started checklist items.
+ * - checklist_progress: Integer progress percentage.
+ */
+#}
+
+<div class="df-dashboard">
+
+  {# Header with greeting #}
+  <div class="df-dashboard__header">
+    <div class="df-dashboard__greeting">
+      <h1>{{ greeting }}</h1>
+      <p>{{ 'Here\'s what\'s happening with your site.'|t }}</p>
+    </div>
+    <div class="df-dashboard__header-actions">
+      <a href="/admin/dashboard/tour" class="df-btn df-btn--outline">
+        <span class="df-icon" data-icon="rocket"></span>
+        {{ 'Take a Tour'|t }}
+      </a>
+    </div>
+  </div>
+
+  {# Getting Started Checklist #}
+  {% if checklist_progress < 100 %}
+  <div class="df-dashboard__checklist">
+    <div class="df-card">
+      <div class="df-card__header">
+        <div>
+          <h2>{{ 'Getting Started'|t }}</h2>
+          <p class="df-text-muted">{{ 'Complete these steps to set up your site.'|t }}</p>
+        </div>
+        <div class="df-checklist__progress">
+          <span class="df-checklist__progress-text">{{ checklist_progress }}%</span>
+        </div>
+      </div>
+      <div class="df-checklist__bar">
+        <div class="df-checklist__bar-fill" style="width: {{ checklist_progress }}%"></div>
+      </div>
+      <div class="df-checklist__items">
+        {% for item in checklist %}
+          {% if not item.dismissed %}
+          <div class="df-checklist__item {{ item.completed ? 'is-completed' : '' }}" data-checklist-id="{{ item.id }}">
+            <div class="df-checklist__item-check">
+              {% if item.completed %}
+                <span class="df-icon df-icon--success" data-icon="check-circle"></span>
+              {% else %}
+                <span class="df-icon df-icon--pending" data-icon="circle"></span>
+              {% endif %}
+            </div>
+            <div class="df-checklist__item-content">
+              <h3>{{ item.label }}</h3>
+              <p>{{ item.description }}</p>
+            </div>
+            <div class="df-checklist__item-actions">
+              {% if not item.completed %}
+                <a href="{{ item.url }}" class="df-btn df-btn--sm df-btn--primary">
+                  {{ 'Do This'|t }}
+                </a>
+              {% endif %}
+              <button class="df-btn df-btn--sm df-btn--ghost df-checklist-dismiss" data-item="{{ item.id }}" aria-label="{{ 'Dismiss this item'|t }}">
+                {{ 'Dismiss'|t }}
+              </button>
+            </div>
+          </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  {# Content Stats #}
+  <div class="df-dashboard__stats">
+    {% for stat in content_stats %}
+    <div class="df-stat-card">
+      <div class="df-stat-card__icon" style="color: {{ stat.color }}; background-color: {{ stat.color }}15;">
+        <span class="df-icon" data-icon="{{ stat.icon }}"></span>
+      </div>
+      <div class="df-stat-card__content">
+        <span class="df-stat-card__count">{{ stat.count }}</span>
+        <span class="df-stat-card__label">{{ stat.label }}</span>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="df-dashboard__grid">
+
+    {# Quick Actions #}
+    <div class="df-dashboard__actions">
+      <div class="df-card">
+        <div class="df-card__header">
+          <h2>{{ 'Quick Actions'|t }}</h2>
+        </div>
+        <div class="df-actions-grid">
+          {% for action in quick_actions %}
+          <a href="{{ action.url }}" class="df-action-card" title="{{ action.description }}">
+            <div class="df-action-card__icon" style="color: {{ action.color }}; background-color: {{ action.color }}12;">
+              <span class="df-icon" data-icon="{{ action.icon }}"></span>
+            </div>
+            <span class="df-action-card__label">{{ action.label }}</span>
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    {# Recent Content #}
+    <div class="df-dashboard__recent">
+      <div class="df-card">
+        <div class="df-card__header">
+          <h2>{{ 'Recent Content'|t }}</h2>
+          <a href="/admin/content" class="df-link">{{ 'View All'|t }} →</a>
+        </div>
+        {% if recent_content %}
+        <div class="df-recent-list">
+          {% for item in recent_content %}
+          <div class="df-recent-item">
+            <div class="df-recent-item__content">
+              <a href="{{ item.edit_url }}" class="df-recent-item__title">{{ item.title }}</a>
+              <div class="df-recent-item__meta">
+                <span class="df-badge df-badge--{{ item.status }}">{{ item.status }}</span>
+                <span class="df-text-muted">{{ item.type }}</span>
+                <span class="df-text-muted">· {{ item.changed }}</span>
+              </div>
+            </div>
+            <div class="df-recent-item__actions">
+              <a href="{{ item.edit_url }}" class="df-btn df-btn--sm df-btn--ghost" aria-label="{{ 'Edit'|t }}">{{ 'Edit'|t }}</a>
+              <a href="{{ item.view_url }}" class="df-btn df-btn--sm df-btn--ghost" aria-label="{{ 'View'|t }}">{{ 'View'|t }}</a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% else %}
+        <div class="df-empty-state">
+          <span class="df-icon df-icon--lg" data-icon="file-plus"></span>
+          <p>{{ 'No content yet. Create your first page to get started!'|t }}</p>
+          <a href="/node/add/page" class="df-btn df-btn--primary">{{ 'Create a Page'|t }}</a>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,76 @@
+langcode: en
+status: true
+dependencies: {}
+id: content_editor
+label: 'Content Editor'
+weight: 3
+is_admin: false
+permissions:
+  # Content overview
+  - 'access content overview'
+  - 'access content'
+
+  # Create all content types
+  - 'create page content'
+  - 'create blog_post content'
+  - 'create case_study content'
+  - 'create service content'
+  - 'create team_member content'
+  - 'create testimonial content'
+  - 'create landing_page content'
+
+  # Edit own content
+  - 'edit own page content'
+  - 'edit own blog_post content'
+  - 'edit own case_study content'
+  - 'edit own service content'
+  - 'edit own team_member content'
+  - 'edit own testimonial content'
+  - 'edit own landing_page content'
+
+  # Edit any content
+  - 'edit any page content'
+  - 'edit any blog_post content'
+  - 'edit any case_study content'
+  - 'edit any service content'
+  - 'edit any team_member content'
+  - 'edit any testimonial content'
+  - 'edit any landing_page content'
+
+  # Delete own content
+  - 'delete own page content'
+  - 'delete own blog_post content'
+  - 'delete own case_study content'
+
+  # Media
+  - 'access media overview'
+  - 'create media'
+  - 'update any media'
+  - 'view media'
+
+  # Taxonomy
+  - 'access taxonomy overview'
+
+  # Admin toolbar
+  - 'access toolbar'
+  - 'access administration pages'
+
+  # Webform
+  - 'access webform overview'
+  - 'view any webform submission'
+
+  # Content scheduling
+  - 'schedule publishing of nodes'
+
+  # Pathauto
+  - 'create url aliases'
+
+  # Revisions
+  - 'view all revisions'
+  - 'revert all revisions'
+
+  # Layout builder
+  - 'configure any layout'
+
+  # Menu
+  - 'administer menu'

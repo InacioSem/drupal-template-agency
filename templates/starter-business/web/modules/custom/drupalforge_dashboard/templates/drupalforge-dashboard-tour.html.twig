@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * DrupalForge Dashboard guided tour template.
+ *
+ * Variables:
+ * - steps: Array of tour steps with title, description, icon.
+ */
+#}
+
+<div class="df-tour">
+  <div class="df-tour__container">
+    <div class="df-tour__progress">
+      <div class="df-tour__progress-bar">
+        <div class="df-tour__progress-fill" data-tour-progress></div>
+      </div>
+      <span class="df-tour__progress-text" data-tour-step-text>{{ 'Step 1 of @total'|t({'@total': steps|length}) }}</span>
+    </div>
+
+    <div class="df-tour__steps" data-tour-steps>
+      {% for step in steps %}
+      <div class="df-tour__step {{ loop.first ? 'is-active' : '' }}" data-tour-step="{{ loop.index0 }}">
+        <div class="df-tour__step-icon">
+          <span class="df-icon df-icon--xl" data-icon="{{ step.icon }}"></span>
+        </div>
+        <h2 class="df-tour__step-title">{{ step.title }}</h2>
+        <p class="df-tour__step-description">{{ step.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="df-tour__nav">
+      <button class="df-btn df-btn--outline" data-tour-prev disabled>
+        {{ 'Previous'|t }}
+      </button>
+      <button class="df-btn df-btn--primary" data-tour-next>
+        {{ 'Next'|t }}
+      </button>
+      <a href="/admin/dashboard" class="df-btn df-btn--primary" data-tour-finish style="display:none;">
+        {{ 'Go to Dashboard'|t }}
+      </a>
+    </div>
+  </div>
+</div>

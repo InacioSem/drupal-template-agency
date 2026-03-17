@@ -1,0 +1,10 @@
+name: DrupalForge Dashboard
+type: module
+description: 'Modern, intuitive admin dashboard that replaces the default Drupal dashboard. Provides quick actions, content overview, and getting started checklist for content editors.'
+package: DrupalForge
+core_version_requirement: ^11
+dependencies:
+  - drupal:node
+  - drupal:user
+  - drupal:views
+  - drupal:block

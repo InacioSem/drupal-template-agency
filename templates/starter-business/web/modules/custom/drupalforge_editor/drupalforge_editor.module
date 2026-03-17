@@ -1,0 +1,242 @@
+<?php
+
+/**
+ * @file
+ * DrupalForge Editor Experience module.
+ *
+ * Improves content editing with:
+ * - Simplified content forms with contextual help
+ * - Accessibility enforcement (required alt text, heading order)
+ * - Curated editor role that hides admin complexity
+ * - Modern form styling
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Element;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Enhances all node forms with better UX.
+ */
+function drupalforge_editor_form_alter(array &$form, FormStateInterface $form_state, string $form_id): void {
+  // Only alter node forms.
+  if (!str_starts_with($form_id, 'node_') || !str_ends_with($form_id, '_form') && !str_ends_with($form_id, '_edit_form')) {
+    return;
+  }
+
+  // Attach our editor styles.
+  $form['#attached']['library'][] = 'drupalforge_editor/editor';
+
+  // Add a wrapper class for styling.
+  $form['#attributes']['class'][] = 'df-node-form';
+
+  // Simplify the form for non-admin users.
+  $current_user = \Drupal::currentUser();
+  $is_admin = $current_user->hasPermission('administer nodes');
+
+  // Move advanced options into a collapsible group.
+  if (!$is_admin) {
+    // Hide confusing admin fields from editors.
+    $hidden_fields = [
+      'revision_information',
+      'revision_log',
+      'langcode',
+      'uid',
+      'created',
+      'promote',
+      'sticky',
+    ];
+
+    foreach ($hidden_fields as $field_name) {
+      if (isset($form[$field_name])) {
+        $form[$field_name]['#access'] = FALSE;
+      }
+    }
+
+    // Simplify the URL alias field.
+    if (isset($form['path'])) {
+      $form['path']['#group'] = 'advanced';
+      $form['path']['#open'] = FALSE;
+    }
+
+    // Simplify meta tags if present.
+    if (isset($form['field_metatag'])) {
+      $form['field_metatag']['#group'] = 'advanced';
+      $form['field_metatag']['#open'] = FALSE;
+    }
+  }
+
+  // Add helpful descriptions to common fields.
+  drupalforge_editor_add_field_help($form);
+
+  // Add save button text improvements.
+  if (isset($form['actions']['submit'])) {
+    $form['actions']['submit']['#value'] = t('Save & Publish');
+    $form['actions']['submit']['#attributes']['class'][] = 'df-btn-save';
+  }
+
+  // Add a "Save as Draft" button if content moderation is available.
+  if (isset($form['moderation_state'])) {
+    $form['actions']['save_draft'] = [
+      '#type' => 'submit',
+      '#value' => t('Save as Draft'),
+      '#weight' => -10,
+      '#attributes' => [
+        'class' => ['df-btn-draft'],
+      ],
+      '#submit' => $form['actions']['submit']['#submit'] ?? [],
+    ];
+  }
+}
+
+/**
+ * Adds contextual help text to common form fields.
+ */
+function drupalforge_editor_add_field_help(array &$form): void {
+  $help_text = [
+    'title' => t('The main headline for this content. Keep it clear, concise, and under 70 characters for best SEO.'),
+    'body' => t('The main content area. Use headings (H2, H3) to organize your content. Add images and links using the toolbar.'),
+    'field_image' => t('Upload a featured image. Recommended size: 1200x630 pixels. Always add alt text for accessibility.'),
+    'field_summary' => t('A short summary shown in listings and search results. If left empty, the first part of the body will be used.'),
+    'field_tags' => t('Add relevant tags to help visitors find related content. Start typing to see existing tags.'),
+    'field_category' => t('Choose the most relevant category for this content.'),
+  ];
+
+  foreach ($help_text as $field_name => $help) {
+    if (isset($form[$field_name])) {
+      // Add help text as a description if none exists.
+      if (isset($form[$field_name]['widget'])) {
+        foreach (Element::children($form[$field_name]['widget']) as $delta) {
+          if (empty($form[$field_name]['widget'][$delta]['#description'])) {
+            $form[$field_name]['widget'][$delta]['#description'] = $help;
+          }
+        }
+      }
+      elseif (empty($form[$field_name]['#description'])) {
+        $form[$field_name]['#description'] = $help;
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for media image forms.
+ *
+ * Enforces alt text as required on all image media.
+ */
+function drupalforge_editor_form_media_image_add_form_alter(array &$form, FormStateInterface $form_state): void {
+  drupalforge_editor_enforce_alt_text($form);
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for media image edit forms.
+ */
+function drupalforge_editor_form_media_image_edit_form_alter(array &$form, FormStateInterface $form_state): void {
+  drupalforge_editor_enforce_alt_text($form);
+}
+
+/**
+ * Enforces alt text as required on image fields.
+ */
+function drupalforge_editor_enforce_alt_text(array &$form): void {
+  // Find all image fields and make alt text required.
+  foreach (Element::children($form) as $field_name) {
+    if (isset($form[$field_name]['widget'])) {
+      foreach (Element::children($form[$field_name]['widget']) as $delta) {
+        if (isset($form[$field_name]['widget'][$delta]['#type']) &&
+            $form[$field_name]['widget'][$delta]['#type'] === 'managed_file') {
+          // Make alt text required with clear messaging.
+          if (isset($form[$field_name]['widget'][$delta]['alt'])) {
+            $form[$field_name]['widget'][$delta]['alt']['#required'] = TRUE;
+            $form[$field_name]['widget'][$delta]['alt']['#description'] = t(
+              'Describe this image for screen readers and search engines. Example: "Team members collaborating in a meeting room." This is required for accessibility (WCAG 2.2 AA).'
+            );
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_field_widget_single_element_form_alter().
+ *
+ * Adds accessibility hints to image widgets.
+ */
+function drupalforge_editor_field_widget_single_element_form_alter(array &$element, FormStateInterface $form_state, array $context): void {
+  // Add alt text requirement to image fields.
+  if (isset($element['#type']) && $element['#type'] === 'managed_file') {
+    if (isset($element['alt'])) {
+      $element['alt']['#required'] = TRUE;
+      if (empty($element['alt']['#description'])) {
+        $element['alt']['#description'] = t(
+          'Required: Describe this image for visitors who cannot see it. Be specific and concise.'
+        );
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_form_node_form_validate().
+ *
+ * Custom validation for accessibility checks.
+ */
+function drupalforge_editor_node_validate(array &$form, FormStateInterface $form_state): void {
+  // Check for heading order in body fields.
+  $body_value = $form_state->getValue('body');
+  if (is_array($body_value) && isset($body_value[0]['value'])) {
+    $content = $body_value[0]['value'];
+    drupalforge_editor_validate_heading_order($content, $form_state);
+  }
+}
+
+/**
+ * Validates heading order in content.
+ */
+function drupalforge_editor_validate_heading_order(string $content, FormStateInterface $form_state): void {
+  // Find all headings.
+  preg_match_all('/<h([1-6])/i', $content, $matches);
+
+  if (empty($matches[1])) {
+    return;
+  }
+
+  $headings = array_map('intval', $matches[1]);
+  $prev_level = 0;
+
+  foreach ($headings as $level) {
+    // Warn if heading skips a level (e.g., H2 to H4).
+    if ($prev_level > 0 && $level > $prev_level + 1) {
+      $form_state->setErrorByName('body', t(
+        'Accessibility issue: Heading levels should not skip. Found H@current after H@previous. Use H@expected instead. This helps screen reader users navigate your content.',
+        [
+          '@current' => $level,
+          '@previous' => $prev_level,
+          '@expected' => $prev_level + 1,
+        ]
+      ));
+      break;
+    }
+    $prev_level = $level;
+  }
+
+  // Warn if content starts with H1 (page title should be the only H1).
+  if (!empty($headings) && $headings[0] === 1) {
+    $form_state->setErrorByName('body', t(
+      'Accessibility issue: Don\'t use H1 in the body — the page title is already H1. Start with H2 for your content sections.'
+    ));
+  }
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function drupalforge_editor_page_attachments(array &$attachments): void {
+  // Add editor styles on admin pages.
+  if (\Drupal::service('router.admin_context')->isAdminRoute()) {
+    $attachments['#attached']['library'][] = 'drupalforge_editor/editor';
+  }
+}

@@ -1,0 +1,10 @@
+name: DrupalForge Editor Experience
+type: module
+description: 'Improves the content editing experience with simplified forms, contextual help, accessibility enforcement, and curated editor permissions.'
+package: DrupalForge
+core_version_requirement: ^11
+dependencies:
+  - drupal:node
+  - drupal:user
+  - drupal:field
+  - drupal:media
