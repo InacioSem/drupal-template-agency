@@ -1,0 +1,83 @@
+/* Campaign progress */
+.campaign-progress {
+  margin: var(--space-xl) 0;
+}
+
+.campaign-progress__bar {
+  height: 12px;
+  background-color: var(--color-border);
+  border-radius: var(--border-radius-full);
+  overflow: hidden;
+  margin-bottom: var(--space-sm);
+}
+
+.campaign-progress__fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+  border-radius: var(--border-radius-full);
+  transition: width 1s ease-out;
+}
+
+.campaign-progress__stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.campaign-progress__amount {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.campaign-progress__goal {
+  color: var(--color-text-muted);
+}
+
+/* Donation block */
+.paragraph--type--donation-block {
+  background: linear-gradient(135deg, var(--color-secondary), #fb923c);
+  color: white;
+  padding: var(--space-3xl);
+  border-radius: var(--border-radius-lg);
+  text-align: center;
+}
+
+.paragraph--type--donation-block h2 {
+  color: white;
+  margin-bottom: var(--space-md);
+}
+
+.paragraph--type--donation-block p {
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 500px;
+  margin: 0 auto var(--space-xl);
+}
+
+.donation-amounts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.donation-amount {
+  padding: var(--space-md) var(--space-xl);
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: var(--border-radius-full);
+  color: white;
+  font-weight: 700;
+  font-size: var(--font-size-lg);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.donation-amount:hover,
+.donation-amount.is-selected {
+  background-color: white;
+  color: var(--color-secondary);
+  border-color: white;
+}

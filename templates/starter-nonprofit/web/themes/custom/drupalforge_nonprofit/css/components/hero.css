@@ -1,0 +1,52 @@
+.paragraph--type--hero-with-cta {
+  position: relative;
+  padding: var(--space-3xl) 0;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.paragraph--type--hero-with-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(13, 148, 136, 0.85), rgba(15, 118, 110, 0.9));
+}
+
+.paragraph--type--hero-with-cta .container {
+  position: relative;
+  z-index: 1;
+}
+
+.paragraph--type--hero-with-cta h1 {
+  color: white;
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--space-md);
+  max-width: 700px;
+}
+
+.paragraph--type--hero-with-cta p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--font-size-lg);
+  max-width: 550px;
+  margin-bottom: var(--space-xl);
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .paragraph--type--hero-with-cta {
+    padding: 6rem 0;
+  }
+
+  .paragraph--type--hero-with-cta h1 {
+    font-size: 3.25rem;
+  }
+}

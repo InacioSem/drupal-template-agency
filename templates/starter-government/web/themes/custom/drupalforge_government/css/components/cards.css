@@ -1,0 +1,64 @@
+.card {
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.card__image {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__content {
+  padding: var(--space-lg);
+}
+
+.card__title {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-sm);
+}
+
+.card__title a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.card__description {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+}
+
+.card__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+/* Flag card for highlighted content */
+.card--flag {
+  display: flex;
+  border-left: 4px solid var(--color-primary);
+}
+
+.card--flag .card__image {
+  width: 200px;
+  flex-shrink: 0;
+  aspect-ratio: auto;
+}
+
+.card--flag .card__content {
+  flex: 1;
+}

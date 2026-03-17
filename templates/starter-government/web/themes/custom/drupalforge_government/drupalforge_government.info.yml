@@ -1,0 +1,26 @@
+name: DrupalForge Government
+type: theme
+description: 'Accessible government and education theme. USWDS-inspired design with navy/white palette, high contrast, and large type scale. Targets WCAG 2.2 AA compliance.'
+core_version_requirement: ^11
+base theme: false
+starterkit: true
+
+regions:
+  alert: Alert Banner
+  header: Header
+  primary_menu: Primary Menu
+  secondary_menu: Secondary Menu
+  hero: Hero
+  highlighted: Highlighted
+  breadcrumb: Breadcrumb
+  content: Content
+  sidebar_first: Sidebar First
+  sidebar_second: Sidebar Second
+  footer_first: Footer First
+  footer_second: Footer Second
+  footer_third: Footer Third
+  footer_bottom: Footer Bottom
+
+libraries:
+  - drupalforge_government/global-styling
+  - drupalforge_government/global-scripts

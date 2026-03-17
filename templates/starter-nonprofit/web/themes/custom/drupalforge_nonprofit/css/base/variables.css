@@ -1,0 +1,54 @@
+:root {
+  /* Colors - Warm teal/coral palette */
+  --color-primary: #0d9488;
+  --color-primary-dark: #0f766e;
+  --color-primary-light: #14b8a6;
+  --color-secondary: #f97066;
+  --color-secondary-dark: #ef4444;
+  --color-accent: #f59e0b;
+  --color-background: #ffffff;
+  --color-surface: #fafaf9;
+  --color-warm: #fef3c7;
+  --color-text: #1c1917;
+  --color-text-muted: #78716c;
+  --color-border: #e7e5e4;
+
+  /* Typography */
+  --font-sans: 'DM Sans', 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Lora', Georgia, serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.5rem;
+  --line-height-base: 1.7;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* Layout */
+  --max-width: 1280px;
+  --container-padding: 1rem;
+  --border-radius: 0.75rem;
+  --border-radius-lg: 1rem;
+  --border-radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --container-padding: 2rem;
+  }
+}

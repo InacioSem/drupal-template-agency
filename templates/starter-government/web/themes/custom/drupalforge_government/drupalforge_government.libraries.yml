@@ -1,0 +1,28 @@
+global-styling:
+  version: 1.0.0
+  css:
+    base:
+      css/base/reset.css: {}
+      css/base/typography.css: {}
+      css/base/variables.css: {}
+      css/base/accessibility.css: {}
+    component:
+      css/components/header.css: {}
+      css/components/footer.css: {}
+      css/components/hero.css: {}
+      css/components/cards.css: {}
+      css/components/buttons.css: {}
+      css/components/paragraphs.css: {}
+      css/components/alerts.css: {}
+      css/components/documents.css: {}
+      css/components/breadcrumb.css: {}
+    layout:
+      css/layout/layout.css: {}
+
+global-scripts:
+  version: 1.0.0
+  js:
+    js/main.js: {}
+  dependencies:
+    - core/drupal
+    - core/once

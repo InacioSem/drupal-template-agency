@@ -1,0 +1,75 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(8px);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4.5rem;
+}
+
+.site-logo {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.site-logo:hover {
+  text-decoration: none;
+}
+
+.main-nav {
+  display: none;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--space-xl);
+}
+
+.main-nav a {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.main-nav a:hover,
+.main-nav a.is-active {
+  color: var(--color-primary);
+}
+
+.donate-btn {
+  background-color: var(--color-secondary);
+  color: white;
+  padding: 0.625rem 1.5rem;
+  border-radius: var(--border-radius-full);
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.donate-btn:hover {
+  background-color: var(--color-secondary-dark);
+  color: white;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .main-nav {
+    display: block;
+  }
+}

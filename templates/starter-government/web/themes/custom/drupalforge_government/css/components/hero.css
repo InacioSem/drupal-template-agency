@@ -1,0 +1,25 @@
+.paragraph--type--hero-banner {
+  background-color: var(--color-primary);
+  color: white;
+  padding: var(--space-3xl) 0;
+}
+
+.paragraph--type--hero-banner h1 {
+  color: white;
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--space-md);
+  max-width: 800px;
+}
+
+.paragraph--type--hero-banner p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--font-size-lg);
+  max-width: 600px;
+  margin-bottom: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+  .paragraph--type--hero-banner {
+    padding: 5rem 0;
+  }
+}

@@ -1,0 +1,78 @@
+name: DrupalForge Nonprofit Base
+description: 'Base recipe for DrupalForge Nonprofit template. Configures content types, views, roles, and permissions.'
+type: Site
+
+install:
+  # Core modules
+  - block_content
+  - content_translation
+  - layout_builder
+  - layout_discovery
+  - media
+  - media_library
+  - menu_ui
+  - path
+  - responsive_image
+  - taxonomy
+  - views
+  - views_ui
+
+  # Contributed modules
+  - admin_toolbar
+  - admin_toolbar_tools
+  - color_field
+  - config_split
+  - easy_breadcrumb
+  - entity_usage
+  - eu_cookie_compliance
+  - field_group
+  - focal_point
+  - geocoder
+  - geofield
+  - gin
+  - gin_toolbar
+  - honeypot
+  - linkit
+  - mailchimp
+  - metatag
+  - paragraphs
+  - pathauto
+  - redirect
+  - scheduler
+  - seckit
+  - simple_sitemap
+  - smart_date
+  - social_media_links
+  - views_infinite_scroll
+  - webform
+
+  # Custom module
+  - drupalforge_nonprofit_core
+
+config:
+  actions:
+    # Set Gin as admin theme
+    system.theme:
+      simple_config_update:
+        admin: gin
+
+    # Configure pathauto patterns
+    pathauto.pattern.content:
+      simple_config_update:
+        id: content
+        label: 'Content'
+        type: 'canonical_entities:node'
+        pattern: '[node:content-type:machine-name]/[node:title]'
+        status: true
+
+    # Configure honeypot
+    honeypot.settings:
+      simple_config_update:
+        protect_all_forms: true
+        time_limit: 5
+
+    # Configure seckit
+    seckit.settings:
+      simple_config_update:
+        seckit_xss.csp.checkbox: true
+        seckit_clickjacking.x_frame: SAMEORIGIN

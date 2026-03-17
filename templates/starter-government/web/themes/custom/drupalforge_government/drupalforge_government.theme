@@ -1,0 +1,72 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the DrupalForge Government theme.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_preprocess_HOOK() for html.html.twig.
+ */
+function drupalforge_government_preprocess_html(array &$variables): void {
+  // Add body classes.
+  $route = \Drupal::routeMatch()->getRouteName();
+  if ($route === 'view.frontpage.page_1' || $route === '<front>') {
+    $variables['attributes']['class'][] = 'is-front';
+  }
+
+  // Add skip link target.
+  $variables['skip_link_target'] = 'main-content';
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for page.html.twig.
+ */
+function drupalforge_government_preprocess_page(array &$variables): void {
+  $variables['site_name'] = \Drupal::config('system.site')->get('name');
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for node.html.twig.
+ */
+function drupalforge_government_preprocess_node(array &$variables): void {
+  $node = $variables['node'];
+
+  // Add formatted date for news articles.
+  if ($node->bundle() === 'news_article') {
+    $variables['date_formatted'] = \Drupal::service('date.formatter')
+      ->format($node->getCreatedTime(), 'custom', 'F j, Y');
+  }
+
+  // Add moderation state label.
+  if ($node->hasField('moderation_state')) {
+    $variables['moderation_state'] = $node->get('moderation_state')->value;
+  }
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function drupalforge_government_page_attachments_alter(array &$attachments): void {
+  // Add accessibility meta tags.
+  $meta_viewport = [
+    '#tag' => 'meta',
+    '#attributes' => [
+      'name' => 'viewport',
+      'content' => 'width=device-width, initial-scale=1, shrink-to-fit=no',
+    ],
+  ];
+  $attachments['#attached']['html_head'][] = [$meta_viewport, 'viewport'];
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function drupalforge_government_form_alter(array &$form, FormStateInterface $form_state, string $form_id): void {
+  if ($form_id === 'search_block_form') {
+    $form['keys']['#attributes']['placeholder'] = t('Search this site...');
+    $form['keys']['#attributes']['aria-label'] = t('Search');
+  }
+}

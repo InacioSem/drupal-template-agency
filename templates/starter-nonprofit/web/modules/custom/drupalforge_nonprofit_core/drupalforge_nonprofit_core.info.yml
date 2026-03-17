@@ -1,0 +1,9 @@
+name: DrupalForge Nonprofit Core
+type: module
+description: 'Core functionality for the DrupalForge Nonprofit template. Includes campaign progress, newsletter integration, and location mapping helpers.'
+package: DrupalForge
+core_version_requirement: ^11
+dependencies:
+  - drupal:node
+  - drupal:views
+  - paragraphs:paragraphs

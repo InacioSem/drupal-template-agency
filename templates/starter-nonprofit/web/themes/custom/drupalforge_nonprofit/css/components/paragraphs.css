@@ -1,0 +1,143 @@
+/* Program Cards */
+.paragraph--type--program-cards {
+  padding: var(--space-2xl) 0;
+}
+
+/* Image Gallery */
+.paragraph--type--image-gallery {
+  padding: var(--space-2xl) 0;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.gallery-item {
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Quote / Testimonial */
+.paragraph--type--quote-testimonial {
+  padding: var(--space-3xl) 0;
+  text-align: center;
+}
+
+.testimonial-quote {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-2xl);
+  font-style: italic;
+  color: var(--color-text);
+  max-width: 700px;
+  margin: 0 auto var(--space-xl);
+  line-height: 1.5;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+.testimonial-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--border-radius-full);
+  object-fit: cover;
+}
+
+.testimonial-name {
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.testimonial-role {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+/* Timeline */
+.paragraph--type--timeline {
+  padding: var(--space-2xl) 0;
+}
+
+.timeline {
+  position: relative;
+  padding-left: var(--space-2xl);
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 12px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--color-primary);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: var(--space-xl);
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--space-2xl) + 6px);
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  background-color: var(--color-primary);
+  border: 3px solid white;
+  border-radius: var(--border-radius-full);
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+
+.timeline-date {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-xs);
+}
+
+.timeline-title {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-sm);
+}
+
+/* Location Map */
+.paragraph--type--location-map {
+  padding: var(--space-2xl) 0;
+}
+
+.location-map {
+  aspect-ratio: 16 / 9;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}

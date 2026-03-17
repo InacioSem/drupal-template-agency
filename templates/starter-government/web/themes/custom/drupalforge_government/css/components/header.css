@@ -1,0 +1,77 @@
+.site-header {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.site-header__top {
+  background-color: var(--color-primary-dark);
+  padding: var(--space-xs) 0;
+  font-size: 0.8125rem;
+}
+
+.site-header__top .container {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-md);
+}
+
+.site-header__top a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+}
+
+.site-header__top a:hover {
+  color: white;
+}
+
+.site-header__main {
+  padding: var(--space-md) 0;
+}
+
+.site-header__main .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-logo {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.site-logo:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.main-nav {
+  background-color: var(--color-primary-light);
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  display: block;
+  padding: var(--space-md) var(--space-lg);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border-bottom: 3px solid transparent;
+}
+
+.main-nav a:hover,
+.main-nav a.is-active {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-bottom-color: white;
+}

@@ -1,0 +1,35 @@
+name: drupalforge-government
+recipe: drupal11
+config:
+  php: '8.3'
+  composer_version: '2'
+  via: nginx
+  webroot: web
+  database: mariadb:11
+  drush: false
+  xdebug: false
+
+services:
+  appserver:
+    build:
+      - composer install
+  mailhog:
+    type: mailhog
+    hogfrom:
+      - appserver
+
+tooling:
+  drush:
+    service: appserver
+    cmd: vendor/bin/drush
+  phpcs:
+    service: appserver
+    cmd: vendor/bin/phpcs
+  recipe:
+    service: appserver
+    cmd: vendor/bin/drush recipe
+    description: Apply a Drupal recipe
+
+proxy:
+  mailhog:
+    - mail.drupalforge-government.lndo.site

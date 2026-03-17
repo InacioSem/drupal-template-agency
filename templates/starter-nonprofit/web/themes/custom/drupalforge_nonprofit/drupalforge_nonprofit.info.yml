@@ -1,0 +1,25 @@
+name: DrupalForge Nonprofit
+type: theme
+description: 'Warm, human-centered theme for nonprofits and healthcare organizations. Teal/coral accents, rounded corners, photography-forward design.'
+core_version_requirement: ^11
+base theme: false
+starterkit: true
+
+regions:
+  header: Header
+  primary_menu: Primary Menu
+  hero: Hero
+  highlighted: Highlighted
+  breadcrumb: Breadcrumb
+  content: Content
+  sidebar_first: Sidebar First
+  sidebar_second: Sidebar Second
+  donate_cta: Donate CTA
+  footer_first: Footer First
+  footer_second: Footer Second
+  footer_third: Footer Third
+  footer_bottom: Footer Bottom
+
+libraries:
+  - drupalforge_nonprofit/global-styling
+  - drupalforge_nonprofit/global-scripts

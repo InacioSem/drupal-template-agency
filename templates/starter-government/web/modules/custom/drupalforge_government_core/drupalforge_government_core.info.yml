@@ -1,0 +1,11 @@
+name: DrupalForge Government Core
+type: module
+description: 'Core functionality for the DrupalForge Government template. Includes content moderation workflows and accessibility enhancements.'
+package: DrupalForge
+core_version_requirement: ^11
+dependencies:
+  - drupal:node
+  - drupal:views
+  - drupal:content_moderation
+  - drupal:workflows
+  - paragraphs:paragraphs
