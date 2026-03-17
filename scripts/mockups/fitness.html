@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Forge Fitness - Stronger Every Day</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Inter', -apple-system, sans-serif; color: #fff; background: #111; }
@@ -18,12 +19,11 @@
   .nav a:hover { color: #84cc16; }
   .trial-btn { background: #84cc16; color: #111; padding: 10px 24px; border-radius: 8px; font-weight: 800; font-size: 13px; text-decoration: none; text-transform: uppercase; letter-spacing: 0.03em; }
 
-  .hero { background: linear-gradient(135deg, #111 0%, #1a1a1a 50%, #0a0a0a 100%); padding: 96px 0 80px; text-align: center; position: relative; overflow: hidden; }
-  .hero::before { content: ''; position: absolute; top: -150px; left: 50%; transform: translateX(-50%); width: 700px; height: 700px; background: radial-gradient(circle, rgba(132,204,22,0.1), transparent 60%); }
+  .hero { background: linear-gradient(rgba(17,17,17,0.55), rgba(10,10,10,0.65)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1400&h=600&fit=crop') center/cover no-repeat; padding: 96px 0 80px; text-align: center; position: relative; overflow: hidden; }
   .hero .container { position: relative; z-index: 1; }
   .hero h1 { font-size: 60px; font-weight: 900; line-height: 1.0; margin-bottom: 20px; text-transform: uppercase; letter-spacing: -0.02em; }
   .hero h1 span { color: #84cc16; }
-  .hero p { font-size: 18px; color: rgba(255,255,255,0.4); max-width: 520px; margin: 0 auto 32px; line-height: 1.6; }
+  .hero p { font-size: 18px; color: rgba(255,255,255,0.6); max-width: 520px; margin: 0 auto 32px; line-height: 1.6; }
   .hero-btns { display: flex; gap: 12px; justify-content: center; }
   .btn-lime { background: #84cc16; color: #111; padding: 14px 36px; border-radius: 8px; font-weight: 800; font-size: 15px; text-decoration: none; text-transform: uppercase; }
   .btn-dark { color: rgba(255,255,255,0.6); padding: 14px 36px; border-radius: 8px; font-weight: 600; font-size: 15px; text-decoration: none; border: 1px solid rgba(255,255,255,0.15); }
@@ -34,11 +34,9 @@
   .class-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
   .class-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; overflow: hidden; }
   .class-card:hover { border-color: #84cc16; }
-  .class-img { height: 160px; display: flex; align-items: center; justify-content: center; font-size: 40px; }
-  .class-card:nth-child(1) .class-img { background: linear-gradient(135deg, #1a1a0a, #2a2a0a); }
-  .class-card:nth-child(2) .class-img { background: linear-gradient(135deg, #0a1a0a, #0a2a1a); }
-  .class-card:nth-child(3) .class-img { background: linear-gradient(135deg, #1a0a0a, #2a1a0a); }
-  .class-card:nth-child(4) .class-img { background: linear-gradient(135deg, #0a0a1a, #1a0a2a); }
+  .class-img { height: 160px; overflow: hidden; }
+  .class-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+  .class-card:hover .class-img img { transform: scale(1.05); }
   .class-body { padding: 16px; }
   .class-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
   .class-card p { font-size: 12px; color: rgba(255,255,255,0.4); margin-bottom: 8px; }
@@ -102,10 +100,10 @@
     <div class="section-title">Popular Classes</div>
     <p class="section-sub">Something for every fitness level</p>
     <div class="class-grid">
-      <div class="class-card"><div class="class-img">🏋️</div><div class="class-body"><h3>Power Lift</h3><p>High-intensity strength training with compound movements.</p><div class="class-time">Mon / Wed / Fri — 6:00 AM</div></div></div>
-      <div class="class-card"><div class="class-img">🥊</div><div class="class-body"><h3>Fight Club</h3><p>Boxing-inspired cardio and conditioning workout.</p><div class="class-time">Tue / Thu — 7:00 PM</div></div></div>
-      <div class="class-card"><div class="class-img">🧘</div><div class="class-body"><h3>Flow Yoga</h3><p>Dynamic vinyasa flow for flexibility and recovery.</p><div class="class-time">Daily — 8:00 AM</div></div></div>
-      <div class="class-card"><div class="class-img">🚴</div><div class="class-body"><h3>Spin Surge</h3><p>45-minute rhythm cycling with peak intervals.</p><div class="class-time">Mon / Wed / Sat — 5:30 PM</div></div></div>
+      <div class="class-card"><div class="class-img"><img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=300&h=200&fit=crop" alt="Power Lift"></div><div class="class-body"><h3>Power Lift</h3><p>High-intensity strength training with compound movements.</p><div class="class-time">Mon / Wed / Fri — 6:00 AM</div></div></div>
+      <div class="class-card"><div class="class-img"><img src="https://images.unsplash.com/photo-1549576490-b0b4831ef60a?w=300&h=200&fit=crop" alt="Fight Club"></div><div class="class-body"><h3>Fight Club</h3><p>Boxing-inspired cardio and conditioning workout.</p><div class="class-time">Tue / Thu — 7:00 PM</div></div></div>
+      <div class="class-card"><div class="class-img"><img src="https://images.unsplash.com/photo-1588286840104-8957b019727f?w=300&h=200&fit=crop" alt="Flow Yoga"></div><div class="class-body"><h3>Flow Yoga</h3><p>Dynamic vinyasa flow for flexibility and recovery.</p><div class="class-time">Daily — 8:00 AM</div></div></div>
+      <div class="class-card"><div class="class-img"><img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=300&h=200&fit=crop" alt="Spin Surge"></div><div class="class-body"><h3>Spin Surge</h3><p>45-minute rhythm cycling with peak intervals.</p><div class="class-time">Mon / Wed / Sat — 5:30 PM</div></div></div>
     </div>
   </div>
 </section>

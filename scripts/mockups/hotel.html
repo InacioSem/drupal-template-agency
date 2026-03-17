@@ -4,41 +4,43 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Beacon Hotel & Spa - Boutique Luxury</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: -apple-system, 'Segoe UI', sans-serif; color: #1a2744; background: #fff; }
+  body { font-family: 'Inter', -apple-system, sans-serif; color: #1a2744; background: #fff; }
   .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
   .header { background: #1a2744; }
   .header .container { display: flex; align-items: center; justify-content: space-between; height: 68px; }
-  .logo { font-size: 20px; font-weight: 700; color: #c9a96e; display: flex; align-items: center; gap: 8px; letter-spacing: 0.02em; font-family: Georgia, serif; }
+  .logo { font-size: 20px; font-weight: 700; color: #c9a96e; display: flex; align-items: center; gap: 8px; letter-spacing: 0.02em; font-family: 'Playfair Display', serif; }
   .logo-icon { font-size: 22px; }
   .nav ul { list-style: none; display: flex; gap: 28px; }
   .nav a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.7); text-decoration: none; }
   .nav a:hover { color: #c9a96e; }
-  .book-btn { background: #c9a96e; color: #1a2744; padding: 10px 24px; border-radius: 4px; font-weight: 700; font-size: 14px; text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; font-size: 12px; }
+  .book-btn { background: #c9a96e; color: #1a2744; padding: 10px 24px; border-radius: 4px; font-weight: 700; font-size: 12px; text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; }
 
-  .hero { background: linear-gradient(135deg, #1a2744 0%, #2a3d66 50%, #1a2744 100%); color: white; padding: 100px 0 88px; text-align: center; position: relative; overflow: hidden; }
-  .hero::before { content: ''; position: absolute; top: -100px; left: 50%; transform: translateX(-50%); width: 900px; height: 900px; background: radial-gradient(circle, rgba(201,169,110,0.08), transparent 55%); }
+  .hero { background: linear-gradient(rgba(26,39,68,0.6), rgba(26,39,68,0.65)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1400&h=600&fit=crop') center/cover no-repeat; color: white; padding: 100px 0 88px; text-align: center; position: relative; overflow: hidden; }
   .hero .container { position: relative; z-index: 1; }
   .hero-tag { font-size: 12px; text-transform: uppercase; letter-spacing: 0.25em; color: #c9a96e; margin-bottom: 24px; }
-  .hero h1 { font-size: 52px; font-weight: 700; line-height: 1.1; margin-bottom: 20px; font-family: Georgia, serif; }
+  .hero h1 { font-size: 52px; font-weight: 700; line-height: 1.1; margin-bottom: 20px; font-family: 'Playfair Display', serif; }
   .hero h1 .highlight { color: #c9a96e; }
-  .hero p { font-size: 18px; color: rgba(255,255,255,0.6); max-width: 540px; margin: 0 auto 36px; line-height: 1.7; }
+  .hero p { font-size: 18px; color: rgba(255,255,255,0.8); max-width: 540px; margin: 0 auto 36px; line-height: 1.7; }
   .hero-btns { display: flex; gap: 12px; justify-content: center; }
-  .btn { padding: 14px 32px; border-radius: 4px; font-weight: 700; font-size: 14px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; letter-spacing: 0.04em; text-transform: uppercase; font-size: 13px; }
+  .btn { padding: 14px 32px; border-radius: 4px; font-weight: 700; font-size: 13px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; letter-spacing: 0.04em; text-transform: uppercase; }
   .btn-gold { background: #c9a96e; color: #1a2744; }
   .btn-ghost { color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.25); }
 
   .rooms { padding: 64px 0; background: #faf8f4; }
-  .section-title { font-size: 32px; font-weight: 700; text-align: center; margin-bottom: 8px; font-family: Georgia, serif; }
+  .section-title { font-size: 32px; font-weight: 700; text-align: center; margin-bottom: 8px; font-family: 'Playfair Display', serif; }
   .section-sub { text-align: center; color: #6b7fa0; font-size: 16px; margin-bottom: 40px; }
   .rooms-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .room-card { background: white; border-radius: 12px; overflow: hidden; border: 1px solid #e8e2d6; transition: all 0.2s; }
   .room-card:hover { box-shadow: 0 8px 28px rgba(26,39,68,0.1); transform: translateY(-3px); }
-  .room-img { height: 200px; display: flex; align-items: center; justify-content: center; font-size: 48px; }
+  .room-img { height: 200px; overflow: hidden; }
+  .room-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+  .room-card:hover .room-img img { transform: scale(1.05); }
   .room-body { padding: 24px; }
-  .room-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; font-family: Georgia, serif; }
+  .room-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; font-family: 'Playfair Display', serif; }
   .room-card p { font-size: 14px; color: #6b7fa0; line-height: 1.6; margin-bottom: 16px; }
   .room-price { display: flex; justify-content: space-between; align-items: center; }
   .room-rate { font-size: 22px; font-weight: 800; color: #1a2744; }
@@ -52,9 +54,9 @@
   .amenity h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
   .amenity p { font-size: 13px; color: #6b7fa0; }
 
-  .booking-cta { padding: 64px 0; background: linear-gradient(135deg, #1a2744, #2a3d66); text-align: center; color: white; }
-  .booking-cta h2 { font-size: 36px; margin-bottom: 16px; font-family: Georgia, serif; }
-  .booking-cta p { font-size: 17px; color: rgba(255,255,255,0.6); margin-bottom: 32px; }
+  .booking-cta { padding: 64px 0; background: linear-gradient(rgba(26,39,68,0.85), rgba(42,61,102,0.85)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1400&h=400&fit=crop') center/cover no-repeat; text-align: center; color: white; }
+  .booking-cta h2 { font-size: 36px; margin-bottom: 16px; font-family: 'Playfair Display', serif; }
+  .booking-cta p { font-size: 17px; color: rgba(255,255,255,0.7); margin-bottom: 32px; }
 
   .footer { background: #0f1a2e; color: rgba(255,255,255,0.5); padding: 48px 0 24px; }
   .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
@@ -93,15 +95,15 @@
     <p class="section-sub">Thoughtfully designed for rest and rejuvenation</p>
     <div class="rooms-grid">
       <div class="room-card">
-        <div class="room-img" style="background:linear-gradient(135deg,#e8e2d6,#c9a96e);">🛏️</div>
+        <div class="room-img"><img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&h=250&fit=crop" alt="Deluxe King Room"></div>
         <div class="room-body"><h3>Deluxe King</h3><p>Spacious room with king bed, city views, marble bath, and complimentary minibar.</p><div class="room-price"><div class="room-rate">$289 <span>/night</span></div><a href="#" class="room-book">Book</a></div></div>
       </div>
       <div class="room-card">
-        <div class="room-img" style="background:linear-gradient(135deg,#c9a96e,#1a2744);">🌃</div>
+        <div class="room-img"><img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=400&h=250&fit=crop" alt="Premium Suite"></div>
         <div class="room-body"><h3>Premium Suite</h3><p>Separate living area, panoramic views, deep soaking tub, and butler service.</p><div class="room-price"><div class="room-rate">$489 <span>/night</span></div><a href="#" class="room-book">Book</a></div></div>
       </div>
       <div class="room-card">
-        <div class="room-img" style="background:linear-gradient(135deg,#1a2744,#c9a96e);">👑</div>
+        <div class="room-img"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=250&fit=crop" alt="Penthouse Suite"></div>
         <div class="room-body"><h3>Penthouse</h3><p>Two bedrooms, private terrace, grand piano, personal concierge, and rooftop access.</p><div class="room-price"><div class="room-rate">$1,200 <span>/night</span></div><a href="#" class="room-book">Book</a></div></div>
       </div>
     </div>

@@ -4,62 +4,72 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ember & Oak Kitchen - Modern American Cuisine</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Georgia', serif; color: #2d1b0e; background: #faf7f2; }
+  body { font-family: 'Inter', -apple-system, sans-serif; color: #2d1b0e; background: #faf7f2; }
   .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
   .header { background: #2d1b0e; }
   .header .container { display: flex; align-items: center; justify-content: space-between; height: 68px; }
-  .logo { font-size: 20px; font-weight: 700; color: #d97706; display: flex; align-items: center; gap: 8px; }
+  .logo { font-size: 20px; font-weight: 700; color: #d97706; display: flex; align-items: center; gap: 8px; font-family: 'Playfair Display', serif; }
   .logo-icon { font-size: 22px; }
   .nav ul { list-style: none; display: flex; gap: 28px; }
-  .nav a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.7); text-decoration: none; font-family: -apple-system, sans-serif; }
+  .nav a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.7); text-decoration: none; }
   .nav a:hover { color: #d97706; }
-  .reserve-btn { background: #d97706; color: white; padding: 10px 24px; border-radius: 4px; font-weight: 700; font-size: 14px; text-decoration: none; font-family: -apple-system, sans-serif; }
+  .reserve-btn { background: #d97706; color: white; padding: 10px 24px; border-radius: 4px; font-weight: 700; font-size: 14px; text-decoration: none; }
 
-  .hero { background: linear-gradient(135deg, #2d1b0e 0%, #4a2c17 40%, #2d1b0e 100%); color: white; padding: 100px 0 88px; text-align: center; position: relative; overflow: hidden; }
-  .hero::before { content: ''; position: absolute; bottom: -200px; left: 50%; transform: translateX(-50%); width: 700px; height: 700px; background: radial-gradient(circle, rgba(217,119,6,0.1), transparent 60%); }
+  .hero { background: linear-gradient(rgba(45,27,14,0.7), rgba(45,27,14,0.75)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400&h=600&fit=crop') center/cover no-repeat; color: white; padding: 100px 0 88px; text-align: center; position: relative; overflow: hidden; }
   .hero .container { position: relative; z-index: 1; }
-  .hero-tag { font-size: 12px; text-transform: uppercase; letter-spacing: 0.2em; color: #d97706; margin-bottom: 20px; font-family: -apple-system, sans-serif; }
-  .hero h1 { font-size: 52px; font-weight: 700; line-height: 1.1; margin-bottom: 20px; }
+  .hero-tag { font-size: 12px; text-transform: uppercase; letter-spacing: 0.2em; color: #d97706; margin-bottom: 20px; }
+  .hero h1 { font-size: 52px; font-weight: 700; line-height: 1.1; margin-bottom: 20px; font-family: 'Playfair Display', serif; }
   .hero h1 .highlight { color: #d97706; }
-  .hero p { font-size: 18px; color: rgba(255,255,255,0.6); max-width: 520px; margin: 0 auto 36px; line-height: 1.7; font-family: -apple-system, sans-serif; }
-  .btn { padding: 14px 32px; border-radius: 4px; font-weight: 700; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-family: -apple-system, sans-serif; }
+  .hero p { font-size: 18px; color: rgba(255,255,255,0.8); max-width: 520px; margin: 0 auto 36px; line-height: 1.7; }
+  .btn { padding: 14px 32px; border-radius: 4px; font-weight: 700; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
   .btn-amber { background: #d97706; color: white; }
   .btn-ghost { color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.25); }
   .hero-btns { display: flex; gap: 12px; justify-content: center; }
 
   .menu { padding: 64px 0; }
-  .section-title { font-size: 32px; font-weight: 700; text-align: center; margin-bottom: 8px; }
-  .section-sub { text-align: center; color: #8b6914; font-size: 16px; margin-bottom: 40px; font-family: -apple-system, sans-serif; }
+  .section-title { font-size: 32px; font-weight: 700; text-align: center; margin-bottom: 8px; font-family: 'Playfair Display', serif; }
+  .section-sub { text-align: center; color: #8b6914; font-size: 16px; margin-bottom: 40px; }
   .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
   .menu-card { background: white; border-radius: 12px; overflow: hidden; border: 1px solid #e8dfd2; transition: all 0.2s; }
   .menu-card:hover { box-shadow: 0 8px 28px rgba(45,27,14,0.12); transform: translateY(-3px); }
-  .menu-img { height: 200px; background: linear-gradient(135deg, #d97706, #f59e0b); display: flex; align-items: center; justify-content: center; font-size: 48px; }
+  .menu-img { height: 200px; overflow: hidden; }
+  .menu-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+  .menu-card:hover .menu-img img { transform: scale(1.05); }
   .menu-body { padding: 24px; }
-  .menu-card h3 { font-size: 20px; margin-bottom: 8px; }
-  .menu-card p { font-size: 14px; color: #7a6552; line-height: 1.6; margin-bottom: 12px; font-family: -apple-system, sans-serif; }
+  .menu-card h3 { font-size: 20px; margin-bottom: 8px; font-family: 'Playfair Display', serif; }
+  .menu-card p { font-size: 14px; color: #7a6552; line-height: 1.6; margin-bottom: 12px; }
   .menu-price { font-size: 18px; font-weight: 700; color: #d97706; }
 
-  .reservation { padding: 64px 0; background: linear-gradient(135deg, #2d1b0e, #4a2c17); text-align: center; color: white; }
-  .reservation h2 { font-size: 36px; margin-bottom: 16px; }
-  .reservation p { font-size: 17px; color: rgba(255,255,255,0.6); margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; font-family: -apple-system, sans-serif; }
+  .ambiance { padding: 64px 0; background: #f5f0e8; }
+  .ambiance-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .ambiance-item { border-radius: 12px; overflow: hidden; height: 240px; position: relative; }
+  .ambiance-item img { width: 100%; height: 100%; object-fit: cover; }
+  .ambiance-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 16px; background: linear-gradient(transparent, rgba(0,0,0,0.6)); color: white; }
+  .ambiance-overlay h3 { font-size: 16px; font-family: 'Playfair Display', serif; }
+  .ambiance-overlay p { font-size: 12px; color: rgba(255,255,255,0.7); }
+
+  .reservation { padding: 64px 0; background: linear-gradient(rgba(45,27,14,0.85), rgba(74,44,23,0.85)), url('https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1400&h=400&fit=crop') center/cover no-repeat; text-align: center; color: white; }
+  .reservation h2 { font-size: 36px; margin-bottom: 16px; font-family: 'Playfair Display', serif; }
+  .reservation p { font-size: 17px; color: rgba(255,255,255,0.7); margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
 
   .info { padding: 64px 0; }
   .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; text-align: center; }
   .info-card { padding: 32px; }
   .info-icon { font-size: 32px; margin-bottom: 16px; }
-  .info-card h3 { font-size: 18px; margin-bottom: 12px; }
-  .info-card p { font-size: 14px; color: #7a6552; line-height: 1.7; font-family: -apple-system, sans-serif; }
+  .info-card h3 { font-size: 18px; margin-bottom: 12px; font-family: 'Playfair Display', serif; }
+  .info-card p { font-size: 14px; color: #7a6552; line-height: 1.7; }
 
   .footer { background: #1a0f06; color: rgba(255,255,255,0.5); padding: 48px 0 24px; }
   .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
-  .footer h3 { color: #d97706; font-size: 13px; font-weight: 700; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.05em; font-family: -apple-system, sans-serif; }
+  .footer h3 { color: #d97706; font-size: 13px; font-weight: 700; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.05em; }
   .footer ul { list-style: none; }
-  .footer li { margin-bottom: 8px; font-size: 13px; font-family: -apple-system, sans-serif; }
+  .footer li { margin-bottom: 8px; font-size: 13px; }
   .footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
-  .footer-bottom { margin-top: 32px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 12px; font-family: -apple-system, sans-serif; }
+  .footer-bottom { margin-top: 32px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 12px; }
 </style>
 </head>
 <body>
@@ -90,16 +100,37 @@
     <p class="section-sub">Seasonal favorites from Chef Marcus</p>
     <div class="menu-grid">
       <div class="menu-card">
-        <div class="menu-img">🥩</div>
+        <div class="menu-img"><img src="https://images.unsplash.com/photo-1546833998-877b37c2e5c6?w=400&h=250&fit=crop" alt="Wood-Fired Ribeye"></div>
         <div class="menu-body"><h3>Wood-Fired Ribeye</h3><p>28-day dry-aged, bone-in ribeye with charred broccolini and truffle butter.</p><div class="menu-price">$52</div></div>
       </div>
       <div class="menu-card">
-        <div class="menu-img">🐟</div>
+        <div class="menu-img"><img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=400&h=250&fit=crop" alt="Pan-Seared Halibut"></div>
         <div class="menu-body"><h3>Pan-Seared Halibut</h3><p>Wild-caught halibut with saffron risotto, fennel, and citrus beurre blanc.</p><div class="menu-price">$44</div></div>
       </div>
       <div class="menu-card">
-        <div class="menu-img">🍝</div>
+        <div class="menu-img"><img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=400&h=250&fit=crop" alt="Handmade Pappardelle"></div>
         <div class="menu-body"><h3>Handmade Pappardelle</h3><p>Fresh pasta with braised short rib ragu, pecorino, and fresh herbs.</p><div class="menu-price">$32</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ambiance">
+  <div class="container">
+    <h2 class="section-title">The Experience</h2>
+    <p class="section-sub">Every detail crafted for an unforgettable evening</p>
+    <div class="ambiance-grid">
+      <div class="ambiance-item">
+        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&h=300&fit=crop" alt="Dining Room">
+        <div class="ambiance-overlay"><h3>The Dining Room</h3><p>Warm, intimate atmosphere</p></div>
+      </div>
+      <div class="ambiance-item">
+        <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=400&h=300&fit=crop" alt="Bar">
+        <div class="ambiance-overlay"><h3>The Bar</h3><p>Handcrafted cocktails</p></div>
+      </div>
+      <div class="ambiance-item">
+        <img src="https://images.unsplash.com/photo-1560053608-13721e0d69e8?w=400&h=300&fit=crop" alt="Chef">
+        <div class="ambiance-overlay"><h3>The Kitchen</h3><p>Open-flame craftsmanship</p></div>
       </div>
     </div>
   </div>
@@ -126,7 +157,7 @@
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
-      <div><div class="logo" style="margin-bottom:16px;"><span class="logo-icon">🔥</span> Ember & Oak Kitchen</div><p style="font-size:13px;font-family:-apple-system,sans-serif;">Crafted with care since 2018.</p></div>
+      <div><div class="logo" style="margin-bottom:16px;"><span class="logo-icon">🔥</span> Ember & Oak Kitchen</div><p style="font-size:13px;">Crafted with care since 2018.</p></div>
       <div><h3>Explore</h3><ul><li><a href="#">Full Menu</a></li><li><a href="#">Wine List</a></li><li><a href="#">Private Events</a></li><li><a href="#">Gift Cards</a></li></ul></div>
       <div><h3>Catering</h3><ul><li><a href="#">Corporate</a></li><li><a href="#">Weddings</a></li><li><a href="#">Private Chef</a></li><li><a href="#">Inquire</a></li></ul></div>
       <div><h3>Follow Us</h3><ul><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li><li><a href="#">Yelp</a></li><li><a href="#">OpenTable</a></li></ul></div>

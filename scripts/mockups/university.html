@@ -4,63 +4,67 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Westfield University - Excellence in Education</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Georgia', 'Times New Roman', serif; color: #1e3a5f; background: #fff; }
+  body { font-family: 'Inter', -apple-system, sans-serif; color: #1e3a5f; background: #fff; }
   .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
   .header { background: #1e3a5f; }
   .header .container { display: flex; align-items: center; justify-content: space-between; height: 68px; }
-  .logo { font-size: 20px; font-weight: 700; color: #d4a843; display: flex; align-items: center; gap: 8px; font-family: -apple-system, sans-serif; }
+  .logo { font-size: 20px; font-weight: 700; color: #d4a843; display: flex; align-items: center; gap: 8px; font-family: 'Playfair Display', serif; }
   .logo-icon { font-size: 22px; }
   .nav ul { list-style: none; display: flex; gap: 28px; }
-  .nav a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.8); text-decoration: none; font-family: -apple-system, sans-serif; }
+  .nav a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.8); text-decoration: none; }
   .nav a:hover { color: #d4a843; }
-  .apply-btn { background: #d4a843; color: #1e3a5f; padding: 10px 24px; border-radius: 6px; font-weight: 700; font-size: 14px; text-decoration: none; font-family: -apple-system, sans-serif; }
+  .apply-btn { background: #d4a843; color: #1e3a5f; padding: 10px 24px; border-radius: 6px; font-weight: 700; font-size: 14px; text-decoration: none; }
 
-  .hero { background: linear-gradient(135deg, #1e3a5f 0%, #2a5080 40%, #1e3a5f 100%); color: white; padding: 96px 0 80px; text-align: center; position: relative; overflow: hidden; }
-  .hero::before { content: ''; position: absolute; top: -150px; right: -100px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(212,168,67,0.12), transparent 60%); }
+  .hero { background: linear-gradient(rgba(30,58,95,0.7), rgba(30,58,95,0.75)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1400&h=600&fit=crop') center/cover no-repeat; color: white; padding: 96px 0 80px; text-align: center; position: relative; overflow: hidden; }
   .hero .container { position: relative; z-index: 1; }
-  .hero-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 16px; background: rgba(212,168,67,0.15); border: 1px solid rgba(212,168,67,0.3); border-radius: 999px; font-size: 13px; color: #d4a843; font-weight: 600; margin-bottom: 24px; font-family: -apple-system, sans-serif; }
-  .hero h1 { font-size: 50px; font-weight: 700; line-height: 1.15; margin-bottom: 20px; letter-spacing: -0.01em; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 16px; background: rgba(212,168,67,0.15); border: 1px solid rgba(212,168,67,0.3); border-radius: 999px; font-size: 13px; color: #d4a843; font-weight: 600; margin-bottom: 24px; }
+  .hero h1 { font-size: 50px; font-weight: 700; line-height: 1.15; margin-bottom: 20px; letter-spacing: -0.01em; font-family: 'Playfair Display', serif; }
   .hero h1 .highlight { color: #d4a843; }
-  .hero p { font-size: 18px; color: rgba(255,255,255,0.7); max-width: 580px; margin: 0 auto 36px; line-height: 1.7; font-family: -apple-system, sans-serif; }
+  .hero p { font-size: 18px; color: rgba(255,255,255,0.85); max-width: 580px; margin: 0 auto 36px; line-height: 1.7; }
   .hero-btns { display: flex; gap: 12px; justify-content: center; }
-  .btn { padding: 14px 32px; border-radius: 6px; font-weight: 700; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-family: -apple-system, sans-serif; }
+  .btn { padding: 14px 32px; border-radius: 6px; font-weight: 700; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
   .btn-gold { background: #d4a843; color: #1e3a5f; }
   .btn-ghost { color: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.3); }
 
   .programs { padding: 64px 0; background: #f8f6f1; }
-  .section-title { font-size: 32px; font-weight: 700; text-align: center; margin-bottom: 8px; }
-  .section-sub { text-align: center; color: #5a7a9b; font-size: 16px; margin-bottom: 40px; font-family: -apple-system, sans-serif; }
+  .section-title { font-size: 32px; font-weight: 700; text-align: center; margin-bottom: 8px; font-family: 'Playfair Display', serif; }
+  .section-sub { text-align: center; color: #5a7a9b; font-size: 16px; margin-bottom: 40px; }
   .programs-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-  .program-card { background: white; border-radius: 12px; padding: 32px 24px; text-align: center; border: 1px solid #e8e2d6; transition: all 0.2s; }
+  .program-card { background: white; border-radius: 12px; overflow: hidden; border: 1px solid #e8e2d6; transition: all 0.2s; }
   .program-card:hover { box-shadow: 0 8px 24px rgba(30,58,95,0.1); transform: translateY(-3px); }
-  .program-icon { font-size: 36px; margin-bottom: 16px; }
+  .program-img { height: 160px; overflow: hidden; }
+  .program-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+  .program-card:hover .program-img img { transform: scale(1.05); }
+  .program-body { padding: 20px; text-align: center; }
   .program-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
-  .program-card p { font-size: 14px; color: #5a7a9b; line-height: 1.6; font-family: -apple-system, sans-serif; }
+  .program-card p { font-size: 14px; color: #5a7a9b; line-height: 1.6; }
 
   .campus { padding: 64px 0; }
   .campus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
-  .campus-visual { background: linear-gradient(135deg, #e8e2d6, #d4a843); border-radius: 16px; height: 320px; display: flex; align-items: center; justify-content: center; color: #1e3a5f; font-size: 14px; }
-  .campus-text h2 { font-size: 32px; margin-bottom: 16px; }
-  .campus-text p { font-size: 16px; color: #5a7a9b; line-height: 1.8; margin-bottom: 16px; font-family: -apple-system, sans-serif; }
+  .campus-visual { border-radius: 16px; height: 320px; overflow: hidden; box-shadow: 0 12px 32px rgba(30,58,95,0.15); }
+  .campus-visual img { width: 100%; height: 100%; object-fit: cover; }
+  .campus-text h2 { font-size: 32px; margin-bottom: 16px; font-family: 'Playfair Display', serif; }
+  .campus-text p { font-size: 16px; color: #5a7a9b; line-height: 1.8; margin-bottom: 16px; }
   .campus-stats { display: flex; gap: 32px; margin-top: 24px; }
   .stat { text-align: center; }
   .stat-num { font-size: 28px; font-weight: 700; color: #d4a843; }
-  .stat-label { font-size: 12px; color: #5a7a9b; text-transform: uppercase; letter-spacing: 0.08em; font-family: -apple-system, sans-serif; }
+  .stat-label { font-size: 12px; color: #5a7a9b; text-transform: uppercase; letter-spacing: 0.08em; }
 
-  .cta { padding: 64px 0; background: linear-gradient(135deg, #1e3a5f, #2a5080); text-align: center; color: white; }
-  .cta h2 { font-size: 36px; margin-bottom: 16px; }
-  .cta p { font-size: 17px; color: rgba(255,255,255,0.7); margin-bottom: 32px; font-family: -apple-system, sans-serif; }
+  .cta { padding: 64px 0; background: linear-gradient(rgba(30,58,95,0.85), rgba(42,80,128,0.85)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1400&h=400&fit=crop') center/cover no-repeat; text-align: center; color: white; }
+  .cta h2 { font-size: 36px; margin-bottom: 16px; font-family: 'Playfair Display', serif; }
+  .cta p { font-size: 17px; color: rgba(255,255,255,0.8); margin-bottom: 32px; }
 
   .footer { background: #0f1f33; color: rgba(255,255,255,0.5); padding: 48px 0 24px; }
   .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
-  .footer h3 { color: #d4a843; font-size: 13px; font-weight: 700; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.05em; font-family: -apple-system, sans-serif; }
+  .footer h3 { color: #d4a843; font-size: 13px; font-weight: 700; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.05em; }
   .footer ul { list-style: none; }
-  .footer li { margin-bottom: 8px; font-size: 13px; font-family: -apple-system, sans-serif; }
+  .footer li { margin-bottom: 8px; font-size: 13px; }
   .footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
-  .footer-bottom { margin-top: 32px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 12px; font-family: -apple-system, sans-serif; }
+  .footer-bottom { margin-top: 32px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 12px; }
 </style>
 </head>
 <body>
@@ -90,10 +94,22 @@
     <h2 class="section-title">Academic Programs</h2>
     <p class="section-sub">Over 120 programs across eight distinguished colleges</p>
     <div class="programs-grid">
-      <div class="program-card"><div class="program-icon">🔬</div><h3>Sciences & Engineering</h3><p>Cutting-edge labs, research opportunities, and ABET-accredited engineering programs.</p></div>
-      <div class="program-card"><div class="program-icon">📚</div><h3>Liberal Arts</h3><p>Critical thinking and creative expression across humanities, social sciences, and the arts.</p></div>
-      <div class="program-card"><div class="program-icon">💼</div><h3>Business School</h3><p>AACSB-accredited programs preparing future leaders in finance, marketing, and entrepreneurship.</p></div>
-      <div class="program-card"><div class="program-icon">⚕️</div><h3>Health Sciences</h3><p>Comprehensive nursing, pre-med, public health, and clinical research pathways.</p></div>
+      <div class="program-card">
+        <div class="program-img"><img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=300&h=200&fit=crop" alt="Sciences & Engineering"></div>
+        <div class="program-body"><h3>Sciences & Engineering</h3><p>Cutting-edge labs, research opportunities, and ABET-accredited engineering programs.</p></div>
+      </div>
+      <div class="program-card">
+        <div class="program-img"><img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=300&h=200&fit=crop" alt="Liberal Arts"></div>
+        <div class="program-body"><h3>Liberal Arts</h3><p>Critical thinking and creative expression across humanities, social sciences, and the arts.</p></div>
+      </div>
+      <div class="program-card">
+        <div class="program-img"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=300&h=200&fit=crop" alt="Business School"></div>
+        <div class="program-body"><h3>Business School</h3><p>AACSB-accredited programs preparing future leaders in finance, marketing, and entrepreneurship.</p></div>
+      </div>
+      <div class="program-card">
+        <div class="program-img"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=300&h=200&fit=crop" alt="Health Sciences"></div>
+        <div class="program-body"><h3>Health Sciences</h3><p>Comprehensive nursing, pre-med, public health, and clinical research pathways.</p></div>
+      </div>
     </div>
   </div>
 </section>
@@ -101,7 +117,7 @@
 <section class="campus">
   <div class="container">
     <div class="campus-grid">
-      <div class="campus-visual">Campus Aerial View</div>
+      <div class="campus-visual"><img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&h=400&fit=crop" alt="Campus Aerial View"></div>
       <div class="campus-text">
         <h2>Life on Campus</h2>
         <p>Nestled on 320 acres of rolling green, Westfield offers a vibrant residential experience with 200+ student organizations, Division I athletics, and state-of-the-art facilities.</p>
@@ -127,7 +143,7 @@
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
-      <div><div class="logo" style="margin-bottom:16px;"><span class="logo-icon">🎓</span> Westfield University</div><p style="font-size:13px;font-family:-apple-system,sans-serif;">Excellence in education since 1892.</p></div>
+      <div><div class="logo" style="margin-bottom:16px;"><span class="logo-icon">🎓</span> Westfield University</div><p style="font-size:13px;">Excellence in education since 1892.</p></div>
       <div><h3>Academics</h3><ul><li><a href="#">Undergraduate</a></li><li><a href="#">Graduate</a></li><li><a href="#">Online Programs</a></li><li><a href="#">Research</a></li></ul></div>
       <div><h3>Admissions</h3><ul><li><a href="#">Apply</a></li><li><a href="#">Financial Aid</a></li><li><a href="#">Visit Campus</a></li><li><a href="#">Requirements</a></li></ul></div>
       <div><h3>Connect</h3><ul><li><a href="#">Alumni</a></li><li><a href="#">Giving</a></li><li><a href="#">Careers</a></li><li><a href="#">Contact</a></li></ul></div>

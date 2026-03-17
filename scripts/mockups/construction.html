@@ -4,9 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ironclad Builders - Building What Matters</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: -apple-system, 'Segoe UI', sans-serif; color: #1c1c1c; background: #fff; }
+  body { font-family: 'Inter', -apple-system, sans-serif; color: #1c1c1c; background: #fff; }
   .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
   .header { background: #1c1c1c; }
@@ -14,18 +15,17 @@
   .logo { font-size: 20px; font-weight: 800; color: #ea580c; display: flex; align-items: center; gap: 8px; text-transform: uppercase; letter-spacing: 0.04em; }
   .logo-icon { font-size: 22px; }
   .nav ul { list-style: none; display: flex; gap: 28px; }
-  .nav a { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.7); text-decoration: none; text-transform: uppercase; letter-spacing: 0.03em; font-size: 12px; }
+  .nav a { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.7); text-decoration: none; text-transform: uppercase; letter-spacing: 0.03em; }
   .nav a:hover { color: #ea580c; }
   .quote-btn { background: #ea580c; color: white; padding: 10px 24px; border-radius: 4px; font-weight: 700; font-size: 13px; text-decoration: none; text-transform: uppercase; letter-spacing: 0.04em; }
 
-  .hero { background: linear-gradient(135deg, #1c1c1c 0%, #333 40%, #1c1c1c 100%); color: white; padding: 96px 0 80px; text-align: center; position: relative; overflow: hidden; }
-  .hero::before { content: ''; position: absolute; top: -200px; right: -100px; width: 700px; height: 700px; background: radial-gradient(circle, rgba(234,88,12,0.1), transparent 55%); }
+  .hero { background: linear-gradient(rgba(28,28,28,0.65), rgba(28,28,28,0.7)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&h=600&fit=crop') center/cover no-repeat; color: white; padding: 96px 0 80px; text-align: center; position: relative; overflow: hidden; }
   .hero .container { position: relative; z-index: 1; }
   .hero h1 { font-size: 54px; font-weight: 900; line-height: 1.05; margin-bottom: 20px; text-transform: uppercase; letter-spacing: -0.02em; }
   .hero h1 .highlight { color: #ea580c; }
-  .hero p { font-size: 18px; color: rgba(255,255,255,0.6); max-width: 560px; margin: 0 auto 36px; line-height: 1.7; }
+  .hero p { font-size: 18px; color: rgba(255,255,255,0.8); max-width: 560px; margin: 0 auto 36px; line-height: 1.7; }
   .hero-btns { display: flex; gap: 12px; justify-content: center; }
-  .btn { padding: 14px 32px; border-radius: 4px; font-weight: 700; font-size: 14px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; text-transform: uppercase; letter-spacing: 0.04em; font-size: 13px; }
+  .btn { padding: 14px 32px; border-radius: 4px; font-weight: 700; font-size: 13px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; text-transform: uppercase; letter-spacing: 0.04em; }
   .btn-orange { background: #ea580c; color: white; }
   .btn-ghost { color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.25); }
 
@@ -43,7 +43,9 @@
   .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .project-card { border-radius: 12px; overflow: hidden; border: 1px solid #e5e5e5; transition: all 0.2s; }
   .project-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.1); transform: translateY(-3px); }
-  .project-img { height: 220px; display: flex; align-items: center; justify-content: center; font-size: 48px; }
+  .project-img { height: 220px; overflow: hidden; }
+  .project-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+  .project-card:hover .project-img img { transform: scale(1.05); }
   .project-body { padding: 20px; }
   .project-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #ea580c; margin-bottom: 6px; }
   .project-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
@@ -103,15 +105,15 @@
     <p class="section-sub">A legacy of excellence built one project at a time</p>
     <div class="projects-grid">
       <div class="project-card">
-        <div class="project-img" style="background:linear-gradient(135deg,#ea580c,#fb923c);">🏢</div>
+        <div class="project-img"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=280&fit=crop" alt="Pinnacle Tower"></div>
         <div class="project-body"><div class="project-tag">Commercial</div><h3>Pinnacle Tower</h3><p>42-story mixed-use tower in the financial district. $180M project.</p></div>
       </div>
       <div class="project-card">
-        <div class="project-img" style="background:linear-gradient(135deg,#333,#ea580c);">🏥</div>
+        <div class="project-img"><img src="https://images.unsplash.com/photo-1541971875076-8f970d573be6?w=400&h=280&fit=crop" alt="St. Mary's Medical Center"></div>
         <div class="project-body"><div class="project-tag">Healthcare</div><h3>St. Mary's Medical Center</h3><p>120,000 sqft expansion with state-of-the-art surgical suites.</p></div>
       </div>
       <div class="project-card">
-        <div class="project-img" style="background:linear-gradient(135deg,#1c1c1c,#555);">🏫</div>
+        <div class="project-img"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=400&h=280&fit=crop" alt="Westfield STEM Building"></div>
         <div class="project-body"><div class="project-tag">Education</div><h3>Westfield STEM Building</h3><p>Modern science and technology center for 2,000 students.</p></div>
       </div>
     </div>

@@ -4,38 +4,40 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Summit Realty Group - Find Your Dream Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: -apple-system, 'Segoe UI', sans-serif; color: #1a3c34; background: #fff; }
+  body { font-family: 'Inter', -apple-system, sans-serif; color: #1a3c34; background: #fff; }
   .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
   .header { background: #1a3c34; }
   .header .container { display: flex; align-items: center; justify-content: space-between; height: 68px; }
-  .logo { font-size: 20px; font-weight: 800; color: #c8a951; display: flex; align-items: center; gap: 8px; }
+  .logo { font-size: 20px; font-weight: 800; color: #c8a951; display: flex; align-items: center; gap: 8px; font-family: 'Playfair Display', serif; }
   .logo-icon { font-size: 22px; }
   .nav ul { list-style: none; display: flex; gap: 28px; }
   .nav a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.75); text-decoration: none; }
   .nav a:hover { color: #c8a951; }
   .cta-btn { background: #c8a951; color: #1a3c34; padding: 10px 24px; border-radius: 6px; font-weight: 700; font-size: 14px; text-decoration: none; }
 
-  .hero { background: linear-gradient(135deg, #1a3c34 0%, #2a5c4a 50%, #1a3c34 100%); color: white; padding: 80px 0 64px; text-align: center; position: relative; overflow: hidden; }
-  .hero::before { content: ''; position: absolute; top: -200px; left: 30%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(200,169,81,0.1), transparent 60%); }
+  .hero { background: linear-gradient(rgba(26,60,52,0.65), rgba(26,60,52,0.7)), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1400&h=600&fit=crop') center/cover no-repeat; color: white; padding: 80px 0 64px; text-align: center; position: relative; overflow: hidden; }
   .hero .container { position: relative; z-index: 1; }
-  .hero h1 { font-size: 48px; font-weight: 800; line-height: 1.1; margin-bottom: 16px; }
+  .hero h1 { font-size: 48px; font-weight: 800; line-height: 1.1; margin-bottom: 16px; font-family: 'Playfair Display', serif; }
   .hero h1 .highlight { color: #c8a951; }
-  .hero p { font-size: 18px; color: rgba(255,255,255,0.65); margin-bottom: 32px; }
+  .hero p { font-size: 18px; color: rgba(255,255,255,0.85); margin-bottom: 32px; }
   .search-bar { display: flex; max-width: 700px; margin: 0 auto; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
   .search-bar input { flex: 1; padding: 16px 20px; border: none; font-size: 15px; color: #1a3c34; outline: none; }
   .search-bar select { padding: 16px; border: none; border-left: 1px solid #e5e7eb; font-size: 14px; color: #1a3c34; background: white; outline: none; cursor: pointer; }
   .search-bar button { background: #c8a951; color: #1a3c34; border: none; padding: 16px 28px; font-weight: 700; font-size: 15px; cursor: pointer; }
 
   .listings { padding: 64px 0; background: #f7f5f0; }
-  .section-title { font-size: 32px; font-weight: 800; text-align: center; margin-bottom: 8px; }
+  .section-title { font-size: 32px; font-weight: 800; text-align: center; margin-bottom: 8px; font-family: 'Playfair Display', serif; }
   .section-sub { text-align: center; color: #5a7a6e; font-size: 16px; margin-bottom: 40px; }
   .listings-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .listing-card { background: white; border-radius: 12px; overflow: hidden; border: 1px solid #e0ddd4; transition: all 0.2s; }
   .listing-card:hover { box-shadow: 0 8px 28px rgba(26,60,52,0.12); transform: translateY(-3px); }
-  .listing-img { height: 200px; display: flex; align-items: center; justify-content: center; font-size: 48px; }
+  .listing-img { height: 200px; overflow: hidden; }
+  .listing-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+  .listing-card:hover .listing-img img { transform: scale(1.05); }
   .listing-body { padding: 20px; }
   .listing-price { font-size: 24px; font-weight: 800; color: #1a3c34; margin-bottom: 4px; }
   .listing-details { font-size: 13px; color: #5a7a6e; margin-bottom: 8px; display: flex; gap: 12px; }
@@ -44,7 +46,8 @@
   .agents { padding: 64px 0; }
   .agents-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .agent-card { text-align: center; padding: 32px; border: 1px solid #e0ddd4; border-radius: 12px; }
-  .agent-avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #1a3c34, #c8a951); margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-size: 32px; }
+  .agent-avatar { width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 16px; overflow: hidden; }
+  .agent-avatar img { width: 100%; height: 100%; object-fit: cover; }
   .agent-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
   .agent-card p { font-size: 14px; color: #5a7a6e; }
 
@@ -90,15 +93,15 @@
     <p class="section-sub">Handpicked properties by our top agents</p>
     <div class="listings-grid">
       <div class="listing-card">
-        <div class="listing-img" style="background:linear-gradient(135deg,#d4edda,#c8a951);">🏡</div>
+        <div class="listing-img"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=250&fit=crop" alt="142 Maplewood Drive"></div>
         <div class="listing-body"><div class="listing-price">$875,000</div><div class="listing-details"><span>4 Beds</span><span>3 Baths</span><span>2,840 sqft</span></div><div class="listing-address">142 Maplewood Drive, Westlake</div></div>
       </div>
       <div class="listing-card">
-        <div class="listing-img" style="background:linear-gradient(135deg,#e8dfd2,#1a3c34);">🏠</div>
+        <div class="listing-img"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&h=250&fit=crop" alt="88 Summit Ridge Road"></div>
         <div class="listing-body"><div class="listing-price">$1,250,000</div><div class="listing-details"><span>5 Beds</span><span>4 Baths</span><span>3,620 sqft</span></div><div class="listing-address">88 Summit Ridge Road, Hillcrest</div></div>
       </div>
       <div class="listing-card">
-        <div class="listing-img" style="background:linear-gradient(135deg,#c8a951,#1a3c34);">🏢</div>
+        <div class="listing-img"><img src="https://images.unsplash.com/photo-1600566753376-12c8ab7c17a?w=400&h=250&fit=crop" alt="401 Park Ave"></div>
         <div class="listing-body"><div class="listing-price">$625,000</div><div class="listing-details"><span>2 Beds</span><span>2 Baths</span><span>1,450 sqft</span></div><div class="listing-address">401 Park Ave, Unit 12B, Downtown</div></div>
       </div>
     </div>
@@ -110,9 +113,9 @@
     <h2 class="section-title">Our Top Agents</h2>
     <p class="section-sub">Experienced professionals ready to guide you</p>
     <div class="agents-grid">
-      <div class="agent-card"><div class="agent-avatar">👩</div><h3>Sarah Mitchell</h3><p>Luxury Homes Specialist<br>$48M in sales (2025)</p></div>
-      <div class="agent-card"><div class="agent-avatar">👨</div><h3>David Park</h3><p>First-Time Buyer Expert<br>$32M in sales (2025)</p></div>
-      <div class="agent-card"><div class="agent-avatar">👩</div><h3>Maria Gonzalez</h3><p>Commercial & Investment<br>$55M in sales (2025)</p></div>
+      <div class="agent-card"><div class="agent-avatar"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop" alt="Sarah Mitchell"></div><h3>Sarah Mitchell</h3><p>Luxury Homes Specialist<br>$48M in sales (2025)</p></div>
+      <div class="agent-card"><div class="agent-avatar"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop" alt="David Park"></div><h3>David Park</h3><p>First-Time Buyer Expert<br>$32M in sales (2025)</p></div>
+      <div class="agent-card"><div class="agent-avatar"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Maria Gonzalez"></div><h3>Maria Gonzalez</h3><p>Commercial & Investment<br>$55M in sales (2025)</p></div>
     </div>
   </div>
 </section>
