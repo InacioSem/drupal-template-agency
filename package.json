@@ -9,5 +9,8 @@
     "dev": "npm run dev --workspace=website",
     "build": "npm run build --workspace=website",
     "lint": "npm run lint --workspace=website"
+  },
+  "dependencies": {
+    "playwright": "^1.58.2"
   }
 }

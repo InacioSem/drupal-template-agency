@@ -30,6 +30,62 @@ const verticalColors: Record<string, { gradient: string; badge: string }> = {
     gradient: "from-amber-500/80 to-orange-500/80",
     badge: "bg-amber-500/10 text-amber-700 border-amber-200",
   },
+  "university": {
+    gradient: "from-blue-800/80 to-amber-600/80",
+    badge: "bg-blue-500/10 text-blue-800 border-blue-200",
+  },
+  "restaurant": {
+    gradient: "from-amber-700/80 to-orange-700/80",
+    badge: "bg-orange-500/10 text-orange-800 border-orange-200",
+  },
+  "realestate": {
+    gradient: "from-green-800/80 to-amber-600/80",
+    badge: "bg-green-500/10 text-green-800 border-green-200",
+  },
+  "church": {
+    gradient: "from-purple-700/80 to-amber-600/80",
+    badge: "bg-purple-500/10 text-purple-700 border-purple-200",
+  },
+  "hotel": {
+    gradient: "from-slate-700/80 to-amber-600/80",
+    badge: "bg-slate-500/10 text-slate-700 border-slate-200",
+  },
+  "construction": {
+    gradient: "from-gray-800/80 to-orange-600/80",
+    badge: "bg-orange-500/10 text-orange-700 border-orange-200",
+  },
+  "finance": {
+    gradient: "from-blue-900/80 to-teal-600/80",
+    badge: "bg-teal-500/10 text-teal-700 border-teal-200",
+  },
+  "media": {
+    gradient: "from-gray-900/80 to-red-600/80",
+    badge: "bg-red-500/10 text-red-700 border-red-200",
+  },
+  "portfolio": {
+    gradient: "from-gray-900/80 to-pink-600/80",
+    badge: "bg-pink-500/10 text-pink-700 border-pink-200",
+  },
+  "ecommerce": {
+    gradient: "from-green-600/80 to-emerald-600/80",
+    badge: "bg-green-500/10 text-green-700 border-green-200",
+  },
+  "school": {
+    gradient: "from-green-700/80 to-yellow-500/80",
+    badge: "bg-green-500/10 text-green-800 border-green-200",
+  },
+  "association": {
+    gradient: "from-slate-600/80 to-cyan-600/80",
+    badge: "bg-slate-500/10 text-slate-700 border-slate-200",
+  },
+  "fitness": {
+    gradient: "from-gray-900/80 to-lime-500/80",
+    badge: "bg-lime-500/10 text-lime-700 border-lime-200",
+  },
+  "consulting": {
+    gradient: "from-slate-800/80 to-blue-600/80",
+    badge: "bg-blue-500/10 text-blue-700 border-blue-200",
+  },
 };
 
 export function TemplateCard({ template }: { template: DrupalTemplate }) {

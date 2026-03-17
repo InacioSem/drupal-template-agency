@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forge Fitness - Stronger Every Day</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', -apple-system, sans-serif; color: #fff; background: #111; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  .header { background: #111; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .header .container { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .logo { font-size: 20px; font-weight: 900; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 8px; }
+  .logo span { color: #84cc16; }
+  .nav ul { list-style: none; display: flex; gap: 24px; }
+  .nav a { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.5); text-decoration: none; text-transform: uppercase; letter-spacing: 0.05em; }
+  .nav a:hover { color: #84cc16; }
+  .trial-btn { background: #84cc16; color: #111; padding: 10px 24px; border-radius: 8px; font-weight: 800; font-size: 13px; text-decoration: none; text-transform: uppercase; letter-spacing: 0.03em; }
+
+  .hero { background: linear-gradient(135deg, #111 0%, #1a1a1a 50%, #0a0a0a 100%); padding: 96px 0 80px; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -150px; left: 50%; transform: translateX(-50%); width: 700px; height: 700px; background: radial-gradient(circle, rgba(132,204,22,0.1), transparent 60%); }
+  .hero .container { position: relative; z-index: 1; }
+  .hero h1 { font-size: 60px; font-weight: 900; line-height: 1.0; margin-bottom: 20px; text-transform: uppercase; letter-spacing: -0.02em; }
+  .hero h1 span { color: #84cc16; }
+  .hero p { font-size: 18px; color: rgba(255,255,255,0.4); max-width: 520px; margin: 0 auto 32px; line-height: 1.6; }
+  .hero-btns { display: flex; gap: 12px; justify-content: center; }
+  .btn-lime { background: #84cc16; color: #111; padding: 14px 36px; border-radius: 8px; font-weight: 800; font-size: 15px; text-decoration: none; text-transform: uppercase; }
+  .btn-dark { color: rgba(255,255,255,0.6); padding: 14px 36px; border-radius: 8px; font-weight: 600; font-size: 15px; text-decoration: none; border: 1px solid rgba(255,255,255,0.15); }
+
+  .classes { padding: 64px 0; border-top: 1px solid rgba(255,255,255,0.06); }
+  .section-title { font-size: 28px; font-weight: 800; text-transform: uppercase; margin-bottom: 8px; }
+  .section-sub { color: rgba(255,255,255,0.4); margin-bottom: 32px; font-size: 15px; }
+  .class-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .class-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; overflow: hidden; }
+  .class-card:hover { border-color: #84cc16; }
+  .class-img { height: 160px; display: flex; align-items: center; justify-content: center; font-size: 40px; }
+  .class-card:nth-child(1) .class-img { background: linear-gradient(135deg, #1a1a0a, #2a2a0a); }
+  .class-card:nth-child(2) .class-img { background: linear-gradient(135deg, #0a1a0a, #0a2a1a); }
+  .class-card:nth-child(3) .class-img { background: linear-gradient(135deg, #1a0a0a, #2a1a0a); }
+  .class-card:nth-child(4) .class-img { background: linear-gradient(135deg, #0a0a1a, #1a0a2a); }
+  .class-body { padding: 16px; }
+  .class-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+  .class-card p { font-size: 12px; color: rgba(255,255,255,0.4); margin-bottom: 8px; }
+  .class-time { font-size: 11px; color: #84cc16; font-weight: 600; text-transform: uppercase; }
+
+  .trainers { padding: 56px 0; border-top: 1px solid rgba(255,255,255,0.06); }
+  .trainer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .trainer-card { text-align: center; }
+  .trainer-img { width: 120px; height: 120px; background: rgba(255,255,255,0.05); border-radius: 50%; margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; font-size: 36px; border: 2px solid rgba(132,204,22,0.3); }
+  .trainer-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 2px; }
+  .trainer-card p { font-size: 12px; color: #84cc16; font-weight: 600; }
+
+  .pricing { padding: 64px 0; border-top: 1px solid rgba(255,255,255,0.06); }
+  .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 900px; margin: 0 auto; }
+  .plan { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 32px; text-align: center; }
+  .plan.featured { border-color: #84cc16; box-shadow: 0 0 24px rgba(132,204,22,0.1); position: relative; }
+  .plan-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #84cc16; color: #111; padding: 4px 16px; border-radius: 999px; font-size: 11px; font-weight: 800; text-transform: uppercase; }
+  .plan-name { font-size: 18px; font-weight: 700; margin-bottom: 4px; text-transform: uppercase; }
+  .plan-price { font-size: 40px; font-weight: 900; margin-bottom: 4px; color: #84cc16; }
+  .plan-price span { font-size: 14px; font-weight: 400; color: rgba(255,255,255,0.4); }
+  .plan-desc { font-size: 13px; color: rgba(255,255,255,0.4); margin-bottom: 20px; }
+  .plan ul { list-style: none; text-align: left; margin-bottom: 24px; }
+  .plan li { padding: 7px 0; font-size: 13px; color: rgba(255,255,255,0.6); border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .plan li::before { content: '✓ '; color: #84cc16; font-weight: 700; }
+  .plan-btn { display: block; padding: 12px; border-radius: 8px; font-weight: 700; font-size: 14px; text-decoration: none; text-transform: uppercase; }
+  .plan-btn-lime { background: #84cc16; color: #111; }
+  .plan-btn-outline { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.15); }
+
+  .footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 40px 0 20px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer h3 { color: #84cc16; font-size: 12px; font-weight: 700; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.08em; }
+  .footer ul { list-style: none; }
+  .footer li { margin-bottom: 8px; font-size: 13px; }
+  .footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+  .footer-bottom { margin-top: 28px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 12px; color: rgba(255,255,255,0.3); }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="logo">🔥 Forge <span>Fitness</span></div>
+    <nav class="nav"><ul><li><a href="#">Classes</a></li><li><a href="#">Trainers</a></li><li><a href="#">Membership</a></li><li><a href="#">Schedule</a></li><li><a href="#">Contact</a></li></ul></nav>
+    <a href="#" class="trial-btn">Free Trial</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Your Strongest<br><span>Chapter Starts Now</span></h1>
+    <p>State-of-the-art equipment, world-class trainers, and a community that pushes you to be your best. Every single day.</p>
+    <div class="hero-btns">
+      <a href="#" class="btn-lime">Start Free Trial</a>
+      <a href="#" class="btn-dark">View Schedule</a>
+    </div>
+  </div>
+</section>
+
+<section class="classes">
+  <div class="container">
+    <div class="section-title">Popular Classes</div>
+    <p class="section-sub">Something for every fitness level</p>
+    <div class="class-grid">
+      <div class="class-card"><div class="class-img">🏋️</div><div class="class-body"><h3>Power Lift</h3><p>High-intensity strength training with compound movements.</p><div class="class-time">Mon / Wed / Fri — 6:00 AM</div></div></div>
+      <div class="class-card"><div class="class-img">🥊</div><div class="class-body"><h3>Fight Club</h3><p>Boxing-inspired cardio and conditioning workout.</p><div class="class-time">Tue / Thu — 7:00 PM</div></div></div>
+      <div class="class-card"><div class="class-img">🧘</div><div class="class-body"><h3>Flow Yoga</h3><p>Dynamic vinyasa flow for flexibility and recovery.</p><div class="class-time">Daily — 8:00 AM</div></div></div>
+      <div class="class-card"><div class="class-img">🚴</div><div class="class-body"><h3>Spin Surge</h3><p>45-minute rhythm cycling with peak intervals.</p><div class="class-time">Mon / Wed / Sat — 5:30 PM</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="trainers">
+  <div class="container">
+    <div class="section-title">Our Trainers</div>
+    <p class="section-sub">Certified experts dedicated to your goals</p>
+    <div class="trainer-grid">
+      <div class="trainer-card"><div class="trainer-img">💪</div><h3>Marcus Chen</h3><p>Strength & Conditioning</p></div>
+      <div class="trainer-card"><div class="trainer-img">🥊</div><h3>Aria Rodriguez</h3><p>Boxing & HIIT</p></div>
+      <div class="trainer-card"><div class="trainer-img">🧘</div><h3>Lena Okafor</h3><p>Yoga & Mobility</p></div>
+      <div class="trainer-card"><div class="trainer-img">🚴</div><h3>Jake Thompson</h3><p>Cycling & Endurance</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing">
+  <div class="container">
+    <div class="section-title" style="text-align:center;">Membership Plans</div>
+    <p class="section-sub" style="text-align:center;">No contracts. Cancel anytime.</p>
+    <div class="pricing-grid">
+      <div class="plan">
+        <div class="plan-name">Basic</div>
+        <div class="plan-price">$29<span>/mo</span></div>
+        <div class="plan-desc">Gym access only</div>
+        <ul><li>Full gym access</li><li>Locker room</li><li>Free parking</li><li>Mobile app</li></ul>
+        <a href="#" class="plan-btn plan-btn-outline">Get Started</a>
+      </div>
+      <div class="plan featured">
+        <div class="plan-badge">Best Value</div>
+        <div class="plan-name">Pro</div>
+        <div class="plan-price">$59<span>/mo</span></div>
+        <div class="plan-desc">Gym + all classes</div>
+        <ul><li>Everything in Basic</li><li>Unlimited classes</li><li>Guest passes (2/mo)</li><li>Sauna & recovery</li></ul>
+        <a href="#" class="plan-btn plan-btn-lime">Get Started</a>
+      </div>
+      <div class="plan">
+        <div class="plan-name">Elite</div>
+        <div class="plan-price">$99<span>/mo</span></div>
+        <div class="plan-desc">All-inclusive</div>
+        <ul><li>Everything in Pro</li><li>Personal training (4x)</li><li>Nutrition coaching</li><li>Premium recovery</li></ul>
+        <a href="#" class="plan-btn plan-btn-outline">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div style="font-size:20px;font-weight:900;color:#fff;margin-bottom:12px;text-transform:uppercase;">🔥 Forge Fitness</div><p style="font-size:13px;color:rgba(255,255,255,0.4);">Stronger every day since 2018.</p></div>
+      <div><h3>Gym</h3><ul><li><a href="#">Classes</a></li><li><a href="#">Schedule</a></li><li><a href="#">Trainers</a></li><li><a href="#">Facilities</a></li></ul></div>
+      <div><h3>Info</h3><ul><li><a href="#">Membership</a></li><li><a href="#">Pricing</a></li><li><a href="#">FAQ</a></li><li><a href="#">Careers</a></li></ul></div>
+      <div><h3>Contact</h3><ul><li><a href="#">Location</a></li><li><a href="#">Hours</a></li><li><a href="#">Phone</a></li><li><a href="#">Email</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 Forge Fitness. All rights reserved.</div>
+  </div>
+</footer>
+</body>
+</html>

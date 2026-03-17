@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maplewood Academy - Inspiring Lifelong Learners</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', -apple-system, sans-serif; color: #1a1a1a; background: #fff; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  .header { background: #166534; }
+  .header .container { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .logo { font-size: 18px; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 8px; }
+  .logo-icon { font-size: 24px; }
+  .nav ul { list-style: none; display: flex; gap: 24px; }
+  .nav a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.8); text-decoration: none; }
+  .nav a:hover { color: #eab308; }
+  .enroll-btn { background: #eab308; color: #166534; padding: 9px 22px; border-radius: 8px; font-weight: 700; font-size: 13px; text-decoration: none; }
+
+  .hero { background: linear-gradient(135deg, #166534 0%, #14532d 40%, #1a3a20 100%); color: white; padding: 72px 0; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(234,179,8,0.12), transparent 60%); }
+  .hero .container { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; position: relative; z-index: 1; }
+  .hero-sub { color: #eab308; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
+  .hero h1 { font-size: 44px; font-weight: 800; line-height: 1.1; margin-bottom: 16px; }
+  .hero p { font-size: 17px; color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 28px; }
+  .hero-btns { display: flex; gap: 12px; }
+  .btn-yellow { background: #eab308; color: #166534; padding: 13px 28px; border-radius: 8px; font-weight: 700; font-size: 14px; text-decoration: none; }
+  .btn-white { background: transparent; color: #fff; padding: 13px 28px; border-radius: 8px; font-weight: 600; font-size: 14px; text-decoration: none; border: 1px solid rgba(255,255,255,0.3); }
+  .hero-img { height: 340px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.2); font-size: 14px; }
+
+  .quick-links { padding: 56px 0; background: #fefce8; border-bottom: 1px solid #fef08a; }
+  .quick-links h2 { font-size: 28px; font-weight: 800; text-align: center; margin-bottom: 32px; color: #166534; }
+  .ql-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .ql-card { background: #fff; border-radius: 12px; padding: 28px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04); border: 1px solid #fef08a; text-decoration: none; color: #1a1a1a; }
+  .ql-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); transform: translateY(-2px); }
+  .ql-icon { font-size: 36px; margin-bottom: 12px; }
+  .ql-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; color: #166534; }
+  .ql-card p { font-size: 13px; color: #6b7280; line-height: 1.5; }
+
+  .news { padding: 56px 0; }
+  .news h2 { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
+  .news .subtitle { color: #9ca3af; margin-bottom: 32px; }
+  .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .news-card { border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; }
+  .news-img { height: 160px; background: linear-gradient(135deg, #dcfce7, #d1fae5); display: flex; align-items: center; justify-content: center; color: #86efac; font-size: 32px; }
+  .news-body { padding: 20px; }
+  .news-date { font-size: 12px; color: #eab308; font-weight: 600; margin-bottom: 6px; }
+  .news-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 6px; color: #166534; }
+  .news-card p { font-size: 13px; color: #6b7280; line-height: 1.5; }
+
+  .parents { padding: 56px 0; background: #166534; color: white; }
+  .parents .container { text-align: center; }
+  .parents h2 { font-size: 32px; font-weight: 800; margin-bottom: 12px; }
+  .parents > .container > p { color: rgba(255,255,255,0.6); margin-bottom: 32px; font-size: 16px; }
+  .parent-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: left; }
+  .parent-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 24px; }
+  .parent-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+  .parent-card p { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+  .footer { background: #14532d; color: rgba(255,255,255,0.5); padding: 40px 0 20px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer h3 { color: #eab308; font-size: 13px; font-weight: 700; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .footer ul { list-style: none; }
+  .footer li { margin-bottom: 8px; font-size: 13px; }
+  .footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+  .footer-bottom { margin-top: 28px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 12px; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="logo"><span class="logo-icon">🍁</span> Maplewood Academy</div>
+    <nav class="nav"><ul><li><a href="#">About</a></li><li><a href="#">Academics</a></li><li><a href="#">Athletics</a></li><li><a href="#">Parents</a></li><li><a href="#">Contact</a></li></ul></nav>
+    <a href="#" class="enroll-btn">Apply Now</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div>
+      <div class="hero-sub">Now Enrolling for 2026-2027</div>
+      <h1>Where Curiosity Meets Excellence</h1>
+      <p>Maplewood Academy provides a nurturing and challenging environment where students grow into confident, creative, and compassionate leaders.</p>
+      <div class="hero-btns">
+        <a href="#" class="btn-yellow">Schedule a Tour</a>
+        <a href="#" class="btn-white">Learn More</a>
+      </div>
+    </div>
+    <div class="hero-img">Campus Photo</div>
+  </div>
+</section>
+
+<section class="quick-links">
+  <div class="container">
+    <h2>Quick Links</h2>
+    <div class="ql-grid">
+      <a href="#" class="ql-card"><div class="ql-icon">📝</div><h3>Enrollment</h3><p>Apply online for the upcoming school year. Spaces are limited.</p></a>
+      <a href="#" class="ql-card"><div class="ql-icon">📅</div><h3>Calendar</h3><p>View important dates, holidays, and school events.</p></a>
+      <a href="#" class="ql-card"><div class="ql-icon">🍎</div><h3>Lunch Menu</h3><p>Weekly lunch menus with nutritious, locally-sourced meals.</p></a>
+      <a href="#" class="ql-card"><div class="ql-icon">⚽</div><h3>Athletics</h3><p>Schedules, rosters, and results for all sports teams.</p></a>
+    </div>
+  </div>
+</section>
+
+<section class="news">
+  <div class="container">
+    <h2>School News</h2>
+    <p class="subtitle">The latest from Maplewood Academy</p>
+    <div class="news-grid">
+      <div class="news-card">
+        <div class="news-img">🏫</div>
+        <div class="news-body"><div class="news-date">March 15, 2026</div><h3>Science Fair Winners Announced</h3><p>Congratulations to our students who earned top honors at the regional science fair competition.</p></div>
+      </div>
+      <div class="news-card">
+        <div class="news-img">🎭</div>
+        <div class="news-body"><div class="news-date">March 10, 2026</div><h3>Spring Musical: Into the Woods</h3><p>Tickets are now on sale for our spring production. Performances run March 28-30.</p></div>
+      </div>
+      <div class="news-card">
+        <div class="news-img">📚</div>
+        <div class="news-body"><div class="news-date">March 5, 2026</div><h3>New STEM Lab Grand Opening</h3><p>Our state-of-the-art STEM lab is now open, featuring robotics equipment and 3D printers.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="parents">
+  <div class="container">
+    <h2>Parent Resources</h2>
+    <p>Everything you need to stay connected with your child's education.</p>
+    <div class="parent-grid">
+      <div class="parent-card"><h4>📊 Student Portal</h4><p>Access grades, assignments, and attendance records through our online portal.</p></div>
+      <div class="parent-card"><h4>🚌 Transportation</h4><p>Bus routes, schedules, and real-time tracking for school transportation.</p></div>
+      <div class="parent-card"><h4>🤝 PTA</h4><p>Join our active Parent-Teacher Association and get involved in school activities.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div style="font-size:18px;font-weight:800;color:#fff;margin-bottom:12px;">🍁 Maplewood Academy</div><p style="font-size:13px;">Inspiring lifelong learners since 1968.</p></div>
+      <div><h3>Academics</h3><ul><li><a href="#">Curriculum</a></li><li><a href="#">Faculty</a></li><li><a href="#">Library</a></li><li><a href="#">STEM Program</a></li></ul></div>
+      <div><h3>Community</h3><ul><li><a href="#">Events</a></li><li><a href="#">Alumni</a></li><li><a href="#">Donate</a></li><li><a href="#">Volunteer</a></li></ul></div>
+      <div><h3>Contact</h3><ul><li><a href="#">Directory</a></li><li><a href="#">Location</a></li><li><a href="#">Employment</a></li><li><a href="#">Feedback</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 Maplewood Academy. All rights reserved.</div>
+  </div>
+</footer>
+</body>
+</html>

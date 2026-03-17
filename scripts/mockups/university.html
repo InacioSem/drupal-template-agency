@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Westfield University - Excellence in Education</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Georgia', 'Times New Roman', serif; color: #1e3a5f; background: #fff; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  .header { background: #1e3a5f; }
+  .header .container { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .logo { font-size: 20px; font-weight: 700; color: #d4a843; display: flex; align-items: center; gap: 8px; font-family: -apple-system, sans-serif; }
+  .logo-icon { font-size: 22px; }
+  .nav ul { list-style: none; display: flex; gap: 28px; }
+  .nav a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.8); text-decoration: none; font-family: -apple-system, sans-serif; }
+  .nav a:hover { color: #d4a843; }
+  .apply-btn { background: #d4a843; color: #1e3a5f; padding: 10px 24px; border-radius: 6px; font-weight: 700; font-size: 14px; text-decoration: none; font-family: -apple-system, sans-serif; }
+
+  .hero { background: linear-gradient(135deg, #1e3a5f 0%, #2a5080 40%, #1e3a5f 100%); color: white; padding: 96px 0 80px; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -150px; right: -100px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(212,168,67,0.12), transparent 60%); }
+  .hero .container { position: relative; z-index: 1; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 16px; background: rgba(212,168,67,0.15); border: 1px solid rgba(212,168,67,0.3); border-radius: 999px; font-size: 13px; color: #d4a843; font-weight: 600; margin-bottom: 24px; font-family: -apple-system, sans-serif; }
+  .hero h1 { font-size: 50px; font-weight: 700; line-height: 1.15; margin-bottom: 20px; letter-spacing: -0.01em; }
+  .hero h1 .highlight { color: #d4a843; }
+  .hero p { font-size: 18px; color: rgba(255,255,255,0.7); max-width: 580px; margin: 0 auto 36px; line-height: 1.7; font-family: -apple-system, sans-serif; }
+  .hero-btns { display: flex; gap: 12px; justify-content: center; }
+  .btn { padding: 14px 32px; border-radius: 6px; font-weight: 700; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-family: -apple-system, sans-serif; }
+  .btn-gold { background: #d4a843; color: #1e3a5f; }
+  .btn-ghost { color: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.3); }
+
+  .programs { padding: 64px 0; background: #f8f6f1; }
+  .section-title { font-size: 32px; font-weight: 700; text-align: center; margin-bottom: 8px; }
+  .section-sub { text-align: center; color: #5a7a9b; font-size: 16px; margin-bottom: 40px; font-family: -apple-system, sans-serif; }
+  .programs-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .program-card { background: white; border-radius: 12px; padding: 32px 24px; text-align: center; border: 1px solid #e8e2d6; transition: all 0.2s; }
+  .program-card:hover { box-shadow: 0 8px 24px rgba(30,58,95,0.1); transform: translateY(-3px); }
+  .program-icon { font-size: 36px; margin-bottom: 16px; }
+  .program-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+  .program-card p { font-size: 14px; color: #5a7a9b; line-height: 1.6; font-family: -apple-system, sans-serif; }
+
+  .campus { padding: 64px 0; }
+  .campus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .campus-visual { background: linear-gradient(135deg, #e8e2d6, #d4a843); border-radius: 16px; height: 320px; display: flex; align-items: center; justify-content: center; color: #1e3a5f; font-size: 14px; }
+  .campus-text h2 { font-size: 32px; margin-bottom: 16px; }
+  .campus-text p { font-size: 16px; color: #5a7a9b; line-height: 1.8; margin-bottom: 16px; font-family: -apple-system, sans-serif; }
+  .campus-stats { display: flex; gap: 32px; margin-top: 24px; }
+  .stat { text-align: center; }
+  .stat-num { font-size: 28px; font-weight: 700; color: #d4a843; }
+  .stat-label { font-size: 12px; color: #5a7a9b; text-transform: uppercase; letter-spacing: 0.08em; font-family: -apple-system, sans-serif; }
+
+  .cta { padding: 64px 0; background: linear-gradient(135deg, #1e3a5f, #2a5080); text-align: center; color: white; }
+  .cta h2 { font-size: 36px; margin-bottom: 16px; }
+  .cta p { font-size: 17px; color: rgba(255,255,255,0.7); margin-bottom: 32px; font-family: -apple-system, sans-serif; }
+
+  .footer { background: #0f1f33; color: rgba(255,255,255,0.5); padding: 48px 0 24px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer h3 { color: #d4a843; font-size: 13px; font-weight: 700; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.05em; font-family: -apple-system, sans-serif; }
+  .footer ul { list-style: none; }
+  .footer li { margin-bottom: 8px; font-size: 13px; font-family: -apple-system, sans-serif; }
+  .footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+  .footer-bottom { margin-top: 32px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 12px; font-family: -apple-system, sans-serif; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="logo"><span class="logo-icon">🎓</span> Westfield University</div>
+    <nav class="nav"><ul><li><a href="#">Programs</a></li><li><a href="#">Admissions</a></li><li><a href="#">Campus Life</a></li><li><a href="#">Research</a></li><li><a href="#">Athletics</a></li></ul></nav>
+    <a href="#" class="apply-btn">Apply Now</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">🏆 Ranked Top 25 National Universities</div>
+    <h1>Shape Your Future at<br><span class="highlight">Westfield University</span></h1>
+    <p>Where tradition meets innovation. Discover world-class programs, groundbreaking research, and a vibrant campus community.</p>
+    <div class="hero-btns">
+      <a href="#" class="btn btn-gold">Apply for Fall 2026 →</a>
+      <a href="#" class="btn btn-ghost">Schedule a Visit</a>
+    </div>
+  </div>
+</section>
+
+<section class="programs">
+  <div class="container">
+    <h2 class="section-title">Academic Programs</h2>
+    <p class="section-sub">Over 120 programs across eight distinguished colleges</p>
+    <div class="programs-grid">
+      <div class="program-card"><div class="program-icon">🔬</div><h3>Sciences & Engineering</h3><p>Cutting-edge labs, research opportunities, and ABET-accredited engineering programs.</p></div>
+      <div class="program-card"><div class="program-icon">📚</div><h3>Liberal Arts</h3><p>Critical thinking and creative expression across humanities, social sciences, and the arts.</p></div>
+      <div class="program-card"><div class="program-icon">💼</div><h3>Business School</h3><p>AACSB-accredited programs preparing future leaders in finance, marketing, and entrepreneurship.</p></div>
+      <div class="program-card"><div class="program-icon">⚕️</div><h3>Health Sciences</h3><p>Comprehensive nursing, pre-med, public health, and clinical research pathways.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="campus">
+  <div class="container">
+    <div class="campus-grid">
+      <div class="campus-visual">Campus Aerial View</div>
+      <div class="campus-text">
+        <h2>Life on Campus</h2>
+        <p>Nestled on 320 acres of rolling green, Westfield offers a vibrant residential experience with 200+ student organizations, Division I athletics, and state-of-the-art facilities.</p>
+        <p>From our award-winning dining halls to our new student wellness center, every detail is designed to help you thrive.</p>
+        <div class="campus-stats">
+          <div class="stat"><div class="stat-num">15,000+</div><div class="stat-label">Students</div></div>
+          <div class="stat"><div class="stat-num">12:1</div><div class="stat-label">Student-Faculty</div></div>
+          <div class="stat"><div class="stat-num">96%</div><div class="stat-label">Placement Rate</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>Your Journey Starts Here</h2>
+    <p>Applications for Fall 2026 are now open. Take the first step toward your future.</p>
+    <a href="#" class="btn btn-gold">Start Your Application →</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="logo" style="margin-bottom:16px;"><span class="logo-icon">🎓</span> Westfield University</div><p style="font-size:13px;font-family:-apple-system,sans-serif;">Excellence in education since 1892.</p></div>
+      <div><h3>Academics</h3><ul><li><a href="#">Undergraduate</a></li><li><a href="#">Graduate</a></li><li><a href="#">Online Programs</a></li><li><a href="#">Research</a></li></ul></div>
+      <div><h3>Admissions</h3><ul><li><a href="#">Apply</a></li><li><a href="#">Financial Aid</a></li><li><a href="#">Visit Campus</a></li><li><a href="#">Requirements</a></li></ul></div>
+      <div><h3>Connect</h3><ul><li><a href="#">Alumni</a></li><li><a href="#">Giving</a></li><li><a href="#">Careers</a></li><li><a href="#">Contact</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 Westfield University. All rights reserved.</div>
+  </div>
+</footer>
+</body>
+</html>

@@ -4,7 +4,21 @@ export type TemplateVertical =
   | "nonprofit-healthcare"
   | "healthcare"
   | "legal"
-  | "saas";
+  | "saas"
+  | "university"
+  | "restaurant"
+  | "realestate"
+  | "church"
+  | "hotel"
+  | "construction"
+  | "finance"
+  | "media"
+  | "portfolio"
+  | "ecommerce"
+  | "school"
+  | "association"
+  | "fitness"
+  | "consulting";
 
 export interface ComingSoonTemplate {
   slug: string;

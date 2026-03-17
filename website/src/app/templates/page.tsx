@@ -5,7 +5,7 @@ import { TemplateCard } from "@/components/templates/TemplateCard";
 export const metadata: Metadata = {
   title: "Templates",
   description:
-    "Browse production-ready Drupal 11 templates for agencies, governments, nonprofits, healthcare, legal, and SaaS.",
+    "Browse 20 production-ready Drupal 11 templates across every major industry vertical.",
 };
 
 export default function TemplatesPage() {
@@ -19,7 +19,7 @@ export default function TemplatesPage() {
             Template Catalog
           </h1>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Six production-ready Drupal 11 templates across six industries.
+            20 production-ready Drupal 11 templates across every major industry.
             Each includes content types, paragraphs, views, theme, and
             configuration — ready to install via Composer.
           </p>

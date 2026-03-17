@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ironclad Builders - Building What Matters</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, 'Segoe UI', sans-serif; color: #1c1c1c; background: #fff; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  .header { background: #1c1c1c; }
+  .header .container { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .logo { font-size: 20px; font-weight: 800; color: #ea580c; display: flex; align-items: center; gap: 8px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .logo-icon { font-size: 22px; }
+  .nav ul { list-style: none; display: flex; gap: 28px; }
+  .nav a { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.7); text-decoration: none; text-transform: uppercase; letter-spacing: 0.03em; font-size: 12px; }
+  .nav a:hover { color: #ea580c; }
+  .quote-btn { background: #ea580c; color: white; padding: 10px 24px; border-radius: 4px; font-weight: 700; font-size: 13px; text-decoration: none; text-transform: uppercase; letter-spacing: 0.04em; }
+
+  .hero { background: linear-gradient(135deg, #1c1c1c 0%, #333 40%, #1c1c1c 100%); color: white; padding: 96px 0 80px; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -200px; right: -100px; width: 700px; height: 700px; background: radial-gradient(circle, rgba(234,88,12,0.1), transparent 55%); }
+  .hero .container { position: relative; z-index: 1; }
+  .hero h1 { font-size: 54px; font-weight: 900; line-height: 1.05; margin-bottom: 20px; text-transform: uppercase; letter-spacing: -0.02em; }
+  .hero h1 .highlight { color: #ea580c; }
+  .hero p { font-size: 18px; color: rgba(255,255,255,0.6); max-width: 560px; margin: 0 auto 36px; line-height: 1.7; }
+  .hero-btns { display: flex; gap: 12px; justify-content: center; }
+  .btn { padding: 14px 32px; border-radius: 4px; font-weight: 700; font-size: 14px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; text-transform: uppercase; letter-spacing: 0.04em; font-size: 13px; }
+  .btn-orange { background: #ea580c; color: white; }
+  .btn-ghost { color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.25); }
+
+  .services { padding: 64px 0; background: #f5f5f5; }
+  .section-title { font-size: 32px; font-weight: 800; text-align: center; margin-bottom: 8px; }
+  .section-sub { text-align: center; color: #666; font-size: 16px; margin-bottom: 40px; }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .service-card { background: white; border-radius: 12px; padding: 28px; text-align: center; border: 1px solid #e5e5e5; transition: all 0.2s; }
+  .service-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); transform: translateY(-3px); }
+  .service-icon { font-size: 36px; margin-bottom: 16px; }
+  .service-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+  .service-card p { font-size: 14px; color: #666; line-height: 1.6; }
+
+  .projects { padding: 64px 0; }
+  .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .project-card { border-radius: 12px; overflow: hidden; border: 1px solid #e5e5e5; transition: all 0.2s; }
+  .project-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.1); transform: translateY(-3px); }
+  .project-img { height: 220px; display: flex; align-items: center; justify-content: center; font-size: 48px; }
+  .project-body { padding: 20px; }
+  .project-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #ea580c; margin-bottom: 6px; }
+  .project-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+  .project-card p { font-size: 14px; color: #666; }
+
+  .stats { padding: 48px 0; background: #1c1c1c; color: white; }
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
+  .stat-num { font-size: 40px; font-weight: 900; color: #ea580c; }
+  .stat-label { font-size: 13px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; }
+
+  .footer { background: #111; color: rgba(255,255,255,0.5); padding: 48px 0 24px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer h3 { color: #ea580c; font-size: 13px; font-weight: 700; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .footer ul { list-style: none; }
+  .footer li { margin-bottom: 8px; font-size: 13px; }
+  .footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+  .footer-bottom { margin-top: 32px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 12px; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="logo"><span class="logo-icon">🏗️</span> Ironclad Builders</div>
+    <nav class="nav"><ul><li><a href="#">Services</a></li><li><a href="#">Projects</a></li><li><a href="#">About</a></li><li><a href="#">Careers</a></li><li><a href="#">Contact</a></li></ul></nav>
+    <a href="#" class="quote-btn">Get a Quote</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>We Build<br><span class="highlight">What Matters</span></h1>
+    <p>From ground-breaking to ribbon-cutting. Commercial and residential construction with uncompromising quality and safety.</p>
+    <div class="hero-btns">
+      <a href="#" class="btn btn-orange">Start Your Project →</a>
+      <a href="#" class="btn btn-ghost">View Our Work</a>
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="container">
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-sub">Full-spectrum construction solutions</p>
+    <div class="services-grid">
+      <div class="service-card"><div class="service-icon">🏢</div><h3>Commercial</h3><p>Office buildings, retail spaces, and mixed-use developments from design to delivery.</p></div>
+      <div class="service-card"><div class="service-icon">🏠</div><h3>Residential</h3><p>Custom homes, multi-family housing, and luxury renovations built to last.</p></div>
+      <div class="service-card"><div class="service-icon">🔧</div><h3>Renovations</h3><p>Modernize and transform existing spaces with minimal disruption to operations.</p></div>
+      <div class="service-card"><div class="service-icon">📐</div><h3>Design-Build</h3><p>Streamlined single-source delivery combining architecture and construction.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="projects">
+  <div class="container">
+    <h2 class="section-title">Featured Projects</h2>
+    <p class="section-sub">A legacy of excellence built one project at a time</p>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-img" style="background:linear-gradient(135deg,#ea580c,#fb923c);">🏢</div>
+        <div class="project-body"><div class="project-tag">Commercial</div><h3>Pinnacle Tower</h3><p>42-story mixed-use tower in the financial district. $180M project.</p></div>
+      </div>
+      <div class="project-card">
+        <div class="project-img" style="background:linear-gradient(135deg,#333,#ea580c);">🏥</div>
+        <div class="project-body"><div class="project-tag">Healthcare</div><h3>St. Mary's Medical Center</h3><p>120,000 sqft expansion with state-of-the-art surgical suites.</p></div>
+      </div>
+      <div class="project-card">
+        <div class="project-img" style="background:linear-gradient(135deg,#1c1c1c,#555);">🏫</div>
+        <div class="project-body"><div class="project-tag">Education</div><h3>Westfield STEM Building</h3><p>Modern science and technology center for 2,000 students.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div><div class="stat-num">500+</div><div class="stat-label">Projects Completed</div></div>
+      <div><div class="stat-num">$2.1B</div><div class="stat-label">Total Project Value</div></div>
+      <div><div class="stat-num">35+</div><div class="stat-label">Years in Business</div></div>
+      <div><div class="stat-num">0</div><div class="stat-label">OSHA Violations</div></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="logo" style="margin-bottom:16px;"><span class="logo-icon">🏗️</span> Ironclad Builders</div><p style="font-size:13px;">Building excellence since 1991.</p></div>
+      <div><h3>Services</h3><ul><li><a href="#">Commercial</a></li><li><a href="#">Residential</a></li><li><a href="#">Renovation</a></li><li><a href="#">Design-Build</a></li></ul></div>
+      <div><h3>Company</h3><ul><li><a href="#">About Us</a></li><li><a href="#">Safety</a></li><li><a href="#">Sustainability</a></li><li><a href="#">Careers</a></li></ul></div>
+      <div><h3>Connect</h3><ul><li><a href="#">Contact</a></li><li><a href="#">Locations</a></li><li><a href="#">Press</a></li><li><a href="#">LinkedIn</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 Ironclad Builders Inc. All rights reserved.</div>
+  </div>
+</footer>
+</body>
+</html>

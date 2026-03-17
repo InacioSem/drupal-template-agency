@@ -522,5 +522,1195 @@
     "recipes": ["base", "features", "pricing", "changelog", "docs", "blog"],
     "updatedAt": "2026-03-17",
     "downloads": 0
+  },
+  {
+    "slug": "starter-university",
+    "name": "Starter University",
+    "tagline": "Academic sites for colleges and universities",
+    "description": "Template for universities, colleges, and academic departments with program catalogs, faculty profiles, admissions, campus life, and research showcases.",
+    "vertical": "university",
+    "verticalLabel": "University & Education",
+    "composerPackage": "drupalready/starter-university",
+    "composerCommand": "composer create-project drupalready/starter-university my-site",
+    "version": "1.0.0",
+    "drupalVersion": "11.x",
+    "phpVersion": ">=8.3",
+    "repoUrl": "https://github.com/InacioSem/drupal-template-agency/tree/main/templates/starter-university",
+    "demoUrl": null,
+    "screenshots": [
+      {
+        "src": "/screenshots/starter-university/homepage.png",
+        "alt": "University homepage with academic hero, program highlights, and campus navigation",
+        "caption": "Homepage with academic hero, program catalog, and campus life sections",
+        "isPrimary": true
+      },
+      {
+        "src": "/screenshots/starter-university/programs.png",
+        "alt": "Program catalog showing degree programs and departments",
+        "caption": "Program catalog with filterable degree listings and department info",
+        "isPrimary": false
+      },
+      {
+        "src": "/screenshots/starter-university/campus.png",
+        "alt": "Campus life section with events, resources, and student activities",
+        "caption": "Campus life page with events calendar and student resources",
+        "isPrimary": false
+      }
+    ],
+    "features": [
+      {
+        "title": "Program Catalog",
+        "description": "Comprehensive program and degree listings with department filtering and detailed pages.",
+        "icon": "GraduationCap"
+      },
+      {
+        "title": "Faculty Profiles",
+        "description": "Faculty and staff profiles with research interests, publications, and contact info.",
+        "icon": "Users"
+      },
+      {
+        "title": "Admissions Portal",
+        "description": "Admissions information pages with requirements, deadlines, and application links.",
+        "icon": "ClipboardCheck"
+      },
+      {
+        "title": "Campus Life",
+        "description": "Campus resources, student activities, and campus news sections.",
+        "icon": "Building2"
+      },
+      {
+        "title": "Research Showcase",
+        "description": "Research project pages with faculty links, publications, and funding info.",
+        "icon": "Microscope"
+      },
+      {
+        "title": "Event Calendar",
+        "description": "Academic calendar with lectures, seminars, campus events, and registration.",
+        "icon": "Calendar"
+      }
+    ],
+    "modules": [
+      { "name": "paragraphs", "humanName": "Paragraphs", "description": "Flexible content components", "drupalOrgUrl": "https://www.drupal.org/project/paragraphs", "isCore": false },
+      { "name": "webform", "humanName": "Webform", "description": "Application and inquiry forms", "drupalOrgUrl": "https://www.drupal.org/project/webform", "isCore": false },
+      { "name": "search_api", "humanName": "Search API", "description": "Program and faculty search", "drupalOrgUrl": "https://www.drupal.org/project/search_api", "isCore": false },
+      { "name": "smart_date", "humanName": "Smart Date", "description": "Academic calendar scheduling", "drupalOrgUrl": "https://www.drupal.org/project/smart_date", "isCore": false },
+      { "name": "facets", "humanName": "Facets", "description": "Faceted program filtering", "drupalOrgUrl": "https://www.drupal.org/project/facets", "isCore": false },
+      { "name": "gin", "humanName": "Gin Admin Theme", "description": "Modern admin experience", "drupalOrgUrl": "https://www.drupal.org/project/gin", "isCore": false }
+    ],
+    "contentTypes": ["Page", "Program", "Department", "Faculty Member", "News", "Event", "Research Project", "Campus Resource"],
+    "paragraphTypes": ["hero_academic", "program_grid", "faculty_spotlight", "campus_stats", "research_highlights", "event_calendar", "admissions_cta", "testimonial_student", "department_cards", "resource_links"],
+    "theme": {
+      "name": "drupalready_university",
+      "baseTheme": "stable9",
+      "description": "Academic and prestigious — deep blue/gold palette, serif headings, campus photography"
+    },
+    "recipes": ["base", "programs", "faculty", "admissions", "research"],
+    "updatedAt": "2026-03-17",
+    "downloads": 0
+  },
+  {
+    "slug": "starter-restaurant",
+    "name": "Starter Restaurant",
+    "tagline": "Delicious sites for restaurants and food service",
+    "description": "Appetizing Drupal 11 template for restaurants, cafes, and food service. Features menu showcase, online reservations, catering info, chef profiles, and location/hours.",
+    "vertical": "restaurant",
+    "verticalLabel": "Restaurant & Food",
+    "composerPackage": "drupalready/starter-restaurant",
+    "composerCommand": "composer create-project drupalready/starter-restaurant my-site",
+    "version": "1.0.0",
+    "drupalVersion": "11.x",
+    "phpVersion": ">=8.3",
+    "repoUrl": "https://github.com/InacioSem/drupal-template-agency/tree/main/templates/starter-restaurant",
+    "demoUrl": null,
+    "screenshots": [
+      {
+        "src": "/screenshots/starter-restaurant/homepage.png",
+        "alt": "Restaurant homepage with fullscreen food photography and reservation CTA",
+        "caption": "Appetizing homepage with hero imagery, menu highlights, and reservation button",
+        "isPrimary": true
+      },
+      {
+        "src": "/screenshots/starter-restaurant/menu.png",
+        "alt": "Restaurant menu page with categorized dishes and prices",
+        "caption": "Menu showcase with categories, descriptions, and food photography",
+        "isPrimary": false
+      },
+      {
+        "src": "/screenshots/starter-restaurant/reservations.png",
+        "alt": "Online reservation form with date, time, and party size",
+        "caption": "Online reservation system with date/time selection and confirmation",
+        "isPrimary": false
+      }
+    ],
+    "features": [
+      {
+        "title": "Menu Showcase",
+        "description": "Beautiful menu pages with categories, descriptions, pricing, and food photography.",
+        "icon": "UtensilsCrossed"
+      },
+      {
+        "title": "Online Reservations",
+        "description": "Reservation forms with date, time, party size, and special request handling.",
+        "icon": "CalendarCheck"
+      },
+      {
+        "title": "Chef Profiles",
+        "description": "Chef and staff profiles with bios, specialties, and signature dishes.",
+        "icon": "ChefHat"
+      },
+      {
+        "title": "Catering Pages",
+        "description": "Catering packages with menus, pricing tiers, and inquiry forms.",
+        "icon": "Package"
+      },
+      {
+        "title": "Multi-Location",
+        "description": "Multiple restaurant locations with individual hours, menus, and contact info.",
+        "icon": "MapPin"
+      },
+      {
+        "title": "Photo Gallery",
+        "description": "Masonry-style galleries for food, ambiance, and event photography.",
+        "icon": "Image"
+      }
+    ],
+    "modules": [
+      { "name": "paragraphs", "humanName": "Paragraphs", "description": "Flexible content components", "drupalOrgUrl": "https://www.drupal.org/project/paragraphs", "isCore": false },
+      { "name": "webform", "humanName": "Webform", "description": "Reservation and catering forms", "drupalOrgUrl": "https://www.drupal.org/project/webform", "isCore": false },
+      { "name": "smart_date", "humanName": "Smart Date", "description": "Hours and reservation scheduling", "drupalOrgUrl": "https://www.drupal.org/project/smart_date", "isCore": false },
+      { "name": "media_library", "humanName": "Media Library", "description": "Food photography management", "drupalOrgUrl": "https://www.drupal.org/docs/core-modules-and-themes/core-modules/media-library-module", "isCore": true },
+      { "name": "geocoder", "humanName": "Geocoder", "description": "Restaurant location mapping", "drupalOrgUrl": "https://www.drupal.org/project/geocoder", "isCore": false },
+      { "name": "gin", "humanName": "Gin Admin Theme", "description": "Modern admin experience", "drupalOrgUrl": "https://www.drupal.org/project/gin", "isCore": false }
+    ],
+    "contentTypes": ["Page", "Menu Item", "Menu Category", "Reservation", "Event", "Chef Profile", "Location", "Blog Post"],
+    "paragraphTypes": ["hero_fullscreen", "menu_showcase", "reservation_form", "chef_spotlight", "hours_location", "gallery_masonry", "catering_packages", "testimonial_diner", "specials_banner", "instagram_feed"],
+    "theme": {
+      "name": "drupalready_restaurant",
+      "baseTheme": "stable9",
+      "description": "Warm and appetizing — dark wood tones with amber accents, food photography focus"
+    },
+    "recipes": ["base", "menus", "reservations", "catering", "blog"],
+    "updatedAt": "2026-03-17",
+    "downloads": 0
+  },
+  {
+    "slug": "starter-realestate",
+    "name": "Starter Real Estate",
+    "tagline": "Professional sites for real estate agencies",
+    "description": "Property-focused Drupal 11 template for real estate agencies, brokers, and property managers. Features property listings with search/filter, agent profiles, market reports, and virtual tour integration.",
+    "vertical": "realestate",
+    "verticalLabel": "Real Estate",
+    "composerPackage": "drupalready/starter-realestate",
+    "composerCommand": "composer create-project drupalready/starter-realestate my-site",
+    "version": "1.0.0",
+    "drupalVersion": "11.x",
+    "phpVersion": ">=8.3",
+    "repoUrl": "https://github.com/InacioSem/drupal-template-agency/tree/main/templates/starter-realestate",
+    "demoUrl": null,
+    "screenshots": [
+      {
+        "src": "/screenshots/starter-realestate/homepage.png",
+        "alt": "Real estate homepage with property search hero and featured listings",
+        "caption": "Homepage with property search, featured listings, and agent highlights",
+        "isPrimary": true
+      },
+      {
+        "src": "/screenshots/starter-realestate/listings.png",
+        "alt": "Property listings grid with filters for price, bedrooms, and location",
+        "caption": "Filterable property listings with photos, prices, and details",
+        "isPrimary": false
+      },
+      {
+        "src": "/screenshots/starter-realestate/agents.png",
+        "alt": "Agent directory with profiles, specialties, and contact information",
+        "caption": "Agent profiles with photo, listings count, and contact info",
+        "isPrimary": false
+      }
+    ],
+    "features": [
+      {
+        "title": "Property Listings",
+        "description": "Property listings with photos, details, pricing, and virtual tour links.",
+        "icon": "Home"
+      },
+      {
+        "title": "Agent Profiles",
+        "description": "Agent and broker profiles with listings, specialties, and contact forms.",
+        "icon": "UserCircle"
+      },
+      {
+        "title": "Property Search",
+        "description": "Advanced search with filters for price, location, bedrooms, and property type.",
+        "icon": "Search"
+      },
+      {
+        "title": "Market Reports",
+        "description": "Market analysis pages with stats, trends, and neighborhood data.",
+        "icon": "BarChart"
+      },
+      {
+        "title": "Virtual Tours",
+        "description": "Virtual tour integration for immersive property viewing experiences.",
+        "icon": "Video"
+      },
+      {
+        "title": "Neighborhood Guides",
+        "description": "Area guides with amenities, schools, demographics, and local info.",
+        "icon": "Map"
+      }
+    ],
+    "modules": [
+      { "name": "paragraphs", "humanName": "Paragraphs", "description": "Flexible content components", "drupalOrgUrl": "https://www.drupal.org/project/paragraphs", "isCore": false },
+      { "name": "webform", "humanName": "Webform", "description": "Inquiry and contact forms", "drupalOrgUrl": "https://www.drupal.org/project/webform", "isCore": false },
+      { "name": "geocoder", "humanName": "Geocoder", "description": "Property address geocoding", "drupalOrgUrl": "https://www.drupal.org/project/geocoder", "isCore": false },
+      { "name": "geofield", "humanName": "Geofield", "description": "Geographic data for properties", "drupalOrgUrl": "https://www.drupal.org/project/geofield", "isCore": false },
+      { "name": "search_api", "humanName": "Search API", "description": "Property search and filtering", "drupalOrgUrl": "https://www.drupal.org/project/search_api", "isCore": false },
+      { "name": "gin", "humanName": "Gin Admin Theme", "description": "Modern admin experience", "drupalOrgUrl": "https://www.drupal.org/project/gin", "isCore": false }
+    ],
+    "contentTypes": ["Page", "Property Listing", "Agent Profile", "Neighborhood", "Blog Post", "Testimonial", "Open House", "Market Report"],
+    "paragraphTypes": ["hero_search", "property_grid", "agent_cards", "neighborhood_guide", "market_stats", "virtual_tour", "mortgage_calculator", "testimonial_client", "open_house_banner", "featured_properties"],
+    "theme": {
+      "name": "drupalready_realestate",
+      "baseTheme": "stable9",
+      "description": "Sophisticated and trustworthy — dark green/gold palette, property card layouts, map integration"
+    },
+    "recipes": ["base", "properties", "agents", "neighborhoods", "blog"],
+    "updatedAt": "2026-03-17",
+    "downloads": 0
+  },
+  {
+    "slug": "starter-church",
+    "name": "Starter Church",
+    "tagline": "Welcoming sites for churches and ministries",
+    "description": "Welcoming Drupal 11 template for churches, ministries, and religious organizations. Features service times, sermon archives, ministry pages, event calendar, and online giving integration.",
+    "vertical": "church",
+    "verticalLabel": "Church & Ministry",
+    "composerPackage": "drupalready/starter-church",
+    "composerCommand": "composer create-project drupalready/starter-church my-site",
+    "version": "1.0.0",
+    "drupalVersion": "11.x",
+    "phpVersion": ">=8.3",
+    "repoUrl": "https://github.com/InacioSem/drupal-template-agency/tree/main/templates/starter-church",
+    "demoUrl": null,
+    "screenshots": [
+      {
+        "src": "/screenshots/starter-church/homepage.png",
+        "alt": "Church homepage with welcoming hero, service times, and ministry highlights",
+        "caption": "Welcoming homepage with service times, upcoming events, and ministry links",
+        "isPrimary": true
+      },
+      {
+        "src": "/screenshots/starter-church/services.png",
+        "alt": "Service times and sermon archive with audio and video players",
+        "caption": "Service schedule and sermon archive with media players",
+        "isPrimary": false
+      },
+      {
+        "src": "/screenshots/starter-church/ministries.png",
+        "alt": "Ministry pages showing youth, worship, outreach, and small groups",
+        "caption": "Ministry grid with descriptions, leaders, and signup links",
+        "isPrimary": false
+      }
+    ],
+    "features": [
+      {
+        "title": "Service Times",
+        "description": "Service schedule display with times, locations, and livestream links.",
+        "icon": "Clock"
+      },
+      {
+        "title": "Sermon Archive",
+        "description": "Searchable sermon library with audio, video, notes, and series grouping.",
+        "icon": "BookOpen"
+      },
+      {
+        "title": "Ministry Pages",
+        "description": "Ministry and group pages with descriptions, leaders, and signup forms.",
+        "icon": "Users"
+      },
+      {
+        "title": "Online Giving",
+        "description": "Donation pages with giving integration, campaigns, and fund designation.",
+        "icon": "Heart"
+      },
+      {
+        "title": "Event Calendar",
+        "description": "Church event calendar with registration, recurring events, and reminders.",
+        "icon": "Calendar"
+      },
+      {
+        "title": "Small Groups",
+        "description": "Small group directory with meeting times, locations, and signup forms.",
+        "icon": "UsersRound"
+      }
+    ],
+    "modules": [
+      { "name": "paragraphs", "humanName": "Paragraphs", "description": "Flexible content components", "drupalOrgUrl": "https://www.drupal.org/project/paragraphs", "isCore": false },
+      { "name": "webform", "humanName": "Webform", "description": "Prayer requests and signups", "drupalOrgUrl": "https://www.drupal.org/project/webform", "isCore": false },
+      { "name": "smart_date", "humanName": "Smart Date", "description": "Service and event scheduling", "drupalOrgUrl": "https://www.drupal.org/project/smart_date", "isCore": false },
+      { "name": "media_library", "humanName": "Media Library", "description": "Sermon audio and video management", "drupalOrgUrl": "https://www.drupal.org/docs/core-modules-and-themes/core-modules/media-library-module", "isCore": true },
+      { "name": "views_infinite_scroll", "humanName": "Views Infinite Scroll", "description": "Sermon archive browsing", "drupalOrgUrl": "https://www.drupal.org/project/views_infinite_scroll", "isCore": false },
+      { "name": "gin", "humanName": "Gin Admin Theme", "description": "Modern admin experience", "drupalOrgUrl": "https://www.drupal.org/project/gin", "isCore": false }
+    ],
+    "contentTypes": ["Page", "Sermon", "Ministry", "Event", "Staff Member", "Blog Post", "Small Group", "Prayer Request"],
+    "paragraphTypes": ["hero_welcome", "service_times", "sermon_player", "ministry_grid", "event_list", "giving_cta", "staff_cards", "small_groups", "prayer_wall", "newsletter_signup"],
+    "theme": {
+      "name": "drupalready_church",
+      "baseTheme": "stable9",
+      "description": "Warm and welcoming — deep purple/gold palette, inviting photography, community focus"
+    },
+    "recipes": ["base", "sermons", "ministries", "events", "giving"],
+    "updatedAt": "2026-03-17",
+    "downloads": 0
+  },
+  {
+    "slug": "starter-hotel",
+    "name": "Starter Hotel",
+    "tagline": "Luxury sites for hotels and hospitality",
+    "description": "Elegant Drupal 11 template for hotels, resorts, and B&Bs. Features room showcases with pricing, amenity listings, booking integration, dining info, spa services, and event venues.",
+    "vertical": "hotel",
+    "verticalLabel": "Hotel & Hospitality",
+    "composerPackage": "drupalready/starter-hotel",
+    "composerCommand": "composer create-project drupalready/starter-hotel my-site",
+    "version": "1.0.0",
+    "drupalVersion": "11.x",
+    "phpVersion": ">=8.3",
+    "repoUrl": "https://github.com/InacioSem/drupal-template-agency/tree/main/templates/starter-hotel",
+    "demoUrl": null,
+    "screenshots": [
+      {
+        "src": "/screenshots/starter-hotel/homepage.png",
+        "alt": "Hotel homepage with luxury hero imagery, booking widget, and room highlights",
+        "caption": "Elegant homepage with full-width hero, booking dates, and room showcase",
+        "isPrimary": true
+      },
+      {
+        "src": "/screenshots/starter-hotel/rooms.png",
+        "alt": "Room types page with suite photos, amenities, and pricing",
+        "caption": "Room showcase with photos, amenity lists, and nightly rates",
+        "isPrimary": false
+      },
+      {
+        "src": "/screenshots/starter-hotel/amenities.png",
+        "alt": "Hotel amenities page showing spa, pool, dining, and fitness facilities",
+        "caption": "Amenity grid with descriptions and full-width photography",
+        "isPrimary": false
+      }
+    ],
+    "features": [
+      {
+        "title": "Room Showcase",
+        "description": "Room types with photo galleries, amenity lists, pricing, and booking links.",
+        "icon": "Bed"
+      },
+      {
+        "title": "Booking Integration",
+        "description": "Booking widget integration with date selection and availability display.",
+        "icon": "CalendarCheck"
+      },
+      {
+        "title": "Dining & Menus",
+        "description": "Restaurant and bar pages with menus, hours, and reservation options.",
+        "icon": "UtensilsCrossed"
+      },
+      {
+        "title": "Spa Services",
+        "description": "Spa and wellness pages with treatment menus, pricing, and booking.",
+        "icon": "Sparkles"
+      },
+      {
+        "title": "Special Offers",
+        "description": "Promotional packages and seasonal offers with booking integration.",
+        "icon": "Tag"
+      },
+      {
+        "title": "Guest Reviews",
+        "description": "Guest testimonials and review displays with rating highlights.",
+        "icon": "Star"
+      }
+    ],
+    "modules": [
+      { "name": "paragraphs", "humanName": "Paragraphs", "description": "Flexible content components", "drupalOrgUrl": "https://www.drupal.org/project/paragraphs", "isCore": false },
+      { "name": "webform", "humanName": "Webform", "description": "Booking and inquiry forms", "drupalOrgUrl": "https://www.drupal.org/project/webform", "isCore": false },
+      { "name": "smart_date", "humanName": "Smart Date", "description": "Check-in/out date handling", "drupalOrgUrl": "https://www.drupal.org/project/smart_date", "isCore": false },
+      { "name": "media_library", "humanName": "Media Library", "description": "Room and amenity photography", "drupalOrgUrl": "https://www.drupal.org/docs/core-modules-and-themes/core-modules/media-library-module", "isCore": true },
+      { "name": "slick", "humanName": "Slick Carousel", "description": "Room photo galleries and sliders", "drupalOrgUrl": "https://www.drupal.org/project/slick", "isCore": false },
+      { "name": "gin", "humanName": "Gin Admin Theme", "description": "Modern admin experience", "drupalOrgUrl": "https://www.drupal.org/project/gin", "isCore": false }
+    ],
+    "contentTypes": ["Page", "Room Type", "Amenity", "Dining Option", "Spa Service", "Event Venue", "Special Offer", "Review"],
+    "paragraphTypes": ["hero_luxury", "room_showcase", "amenity_grid", "dining_menu", "spa_services", "booking_widget", "gallery_fullwidth", "offer_banner", "guest_reviews", "location_map"],
+    "theme": {
+      "name": "drupalready_hotel",
+      "baseTheme": "stable9",
+      "description": "Elegant and luxurious — navy/gold palette, full-width imagery, serif accents"
+    },
+    "recipes": ["base", "rooms", "dining", "spa", "offers"],
+    "updatedAt": "2026-03-17",
+    "downloads": 0
+  },
+  {
+    "slug": "starter-construction",
+    "name": "Starter Construction",
+    "tagline": "Bold sites for builders and contractors",
+    "description": "Bold Drupal 11 template for construction companies, contractors, and trade businesses. Features project portfolios, service descriptions, safety credentials, team profiles, and quote request forms.",
+    "vertical": "construction",
+    "verticalLabel": "Construction & Trades",
+    "composerPackage": "drupalready/starter-construction",
+    "composerCommand": "composer create-project drupalready/starter-construction my-site",
+    "version": "1.0.0",
+    "drupalVersion": "11.x",
+    "phpVersion": ">=8.3",
+    "repoUrl": "https://github.com/InacioSem/drupal-template-agency/tree/main/templates/starter-construction",
+    "demoUrl": null,
+    "screenshots": [
+      {
+        "src": "/screenshots/starter-construction/homepage.png",
+        "alt": "Construction company homepage with bold hero, project showcase, and safety stats",
+        "caption": "Bold homepage with project hero, service highlights, and safety credentials",
+        "isPrimary": true
+      },
+      {
+        "src": "/screenshots/starter-construction/services.png",
+        "alt": "Services page with commercial, residential, and renovation categories",
+        "caption": "Service grid with project types, descriptions, and quote CTA",
+        "isPrimary": false
+      },
+      {
+        "src": "/screenshots/starter-construction/projects.png",
+        "alt": "Project portfolio with before/after photos and project details",
+        "caption": "Project showcase with photos, specs, timelines, and client testimonials",
+        "isPrimary": false
+      }
+    ],
+    "features": [
+      {
+        "title": "Project Portfolio",
+        "description": "Project showcases with photos, specs, timelines, and client testimonials.",
+        "icon": "HardHat"
+      },
+      {
+        "title": "Service Pages",
+        "description": "Detailed service pages for each trade with scope and pricing info.",
+        "icon": "Wrench"
+      },
+      {
+        "title": "Safety Credentials",
+        "description": "Safety certifications, stats, and compliance information display.",
+        "icon": "ShieldCheck"
+      },
+      {
+        "title": "Team Profiles",
+        "description": "Team member profiles with certifications, roles, and experience.",
+        "icon": "Users"
+      },
+      {
+        "title": "Quote Requests",
+        "description": "Quote request forms with project type, scope, and file upload.",
+        "icon": "FileText"
+      },
+      {
+        "title": "Career Listings",
+        "description": "Job openings with descriptions, requirements, and application forms.",
+        "icon": "Briefcase"
+      }
+    ],
+    "modules": [
+      { "name": "paragraphs", "humanName": "Paragraphs", "description": "Flexible content components", "drupalOrgUrl": "https://www.drupal.org/project/paragraphs", "isCore": false },
+      { "name": "webform", "humanName": "Webform", "description": "Quote request and application forms", "drupalOrgUrl": "https://www.drupal.org/project/webform", "isCore": false },
+      { "name": "media_library", "humanName": "Media Library", "description": "Project photo management", "drupalOrgUrl": "https://www.drupal.org/docs/core-modules-and-themes/core-modules/media-library-module", "isCore": true },
+      { "name": "metatag", "humanName": "Metatag", "description": "SEO meta tags", "drupalOrgUrl": "https://www.drupal.org/project/metatag", "isCore": false },
+      { "name": "views_infinite_scroll", "humanName": "Views Infinite Scroll", "description": "Project portfolio browsing", "drupalOrgUrl": "https://www.drupal.org/project/views_infinite_scroll", "isCore": false },
+      { "name": "gin", "humanName": "Gin Admin Theme", "description": "Modern admin experience", "drupalOrgUrl": "https://www.drupal.org/project/gin", "isCore": false }
+    ],
+    "contentTypes": ["Page", "Project", "Service", "Team Member", "Testimonial", "Blog Post", "Career Opening", "Safety Certification"],
+    "paragraphTypes": ["hero_bold", "project_showcase", "service_grid", "safety_stats", "team_grid", "quote_form", "equipment_gallery", "certification_badges", "timeline_project", "client_logos"],
+    "theme": {
+      "name": "drupalready_construction",
+      "baseTheme": "stable9",
+      "description": "Bold and industrial — charcoal/orange palette, strong typography, project photography"
+    },
+    "recipes": ["base", "projects", "services", "careers", "blog"],
+    "updatedAt": "2026-03-17",
+    "downloads": 0
+  },
+  {
+    "slug": "starter-finance",
+    "name": "Starter Finance",
+    "tagline": "Trusted sites for financial advisors",
+    "description": "Trust-building Drupal 11 template for financial advisors, accounting firms, and wealth management. Features advisor profiles, service pages, client resources, market insights blog, and consultation booking.",
+    "vertical": "finance",
+    "verticalLabel": "Finance & Advisory",
+    "composerPackage": "drupalready/starter-finance",
+    "composerCommand": "composer create-project drupalready/starter-finance my-site",
+    "version": "1.0.0",
+    "drupalVersion": "11.x",
+    "phpVersion": ">=8.3",
+    "repoUrl": "https://github.com/InacioSem/drupal-template-agency/tree/main/templates/starter-finance",
+    "demoUrl": null,
+    "screenshots": [
+      {
+        "src": "/screenshots/starter-finance/homepage.png",
+        "alt": "Financial advisor homepage with trust-building hero and service highlights",
+        "caption": "Professional homepage with credentials, service overview, and consultation CTA",
+        "isPrimary": true
+      },
+      {
+        "src": "/screenshots/starter-finance/services.png",
+        "alt": "Financial services page with wealth management, tax planning, and retirement cards",
+        "caption": "Service cards with descriptions and consultation booking links",
+        "isPrimary": false
+      },
+      {
+        "src": "/screenshots/starter-finance/team.png",
+        "alt": "Advisor team page with professional photos and credentials",
+        "caption": "Advisor profiles with certifications, specialties, and contact info",
+        "isPrimary": false
+      }
+    ],
+    "features": [
+      {
+        "title": "Advisor Profiles",
+        "description": "Professional advisor pages with certifications, specialties, and booking links.",
+        "icon": "UserCircle"
+      },
+      {
+        "title": "Service Pages",
+        "description": "Detailed financial service pages with scope, process, and client benefits.",
+        "icon": "Briefcase"
+      },
+      {
+        "title": "Market Insights",
+        "description": "Blog and insights section for market commentary and financial education.",
+        "icon": "TrendingUp"
+      },
+      {
+        "title": "Client Resources",
+        "description": "Downloadable resources, calculators, and educational content library.",
+        "icon": "FolderOpen"
+      },
+      {
+        "title": "Consultation Booking",
+        "description": "Free consultation forms with advisor selection and scheduling.",
+        "icon": "CalendarCheck"
+      },
+      {
+        "title": "Credentials Display",
+        "description": "Certifications, awards, memberships, and regulatory compliance display.",
+        "icon": "Award"
+      }
+    ],
+    "modules": [
+      { "name": "paragraphs", "humanName": "Paragraphs", "description": "Flexible content components", "drupalOrgUrl": "https://www.drupal.org/project/paragraphs", "isCore": false },
+      { "name": "webform", "humanName": "Webform", "description": "Consultation and inquiry forms", "drupalOrgUrl": "https://www.drupal.org/project/webform", "isCore": false },
+      { "name": "metatag", "humanName": "Metatag", "description": "SEO and compliance meta tags", "drupalOrgUrl": "https://www.drupal.org/project/metatag", "isCore": false },
+      { "name": "schema_metatag", "humanName": "Schema Metatag", "description": "Financial service structured data", "drupalOrgUrl": "https://www.drupal.org/project/schema_metatag", "isCore": false },
+      { "name": "pathauto", "humanName": "Pathauto", "description": "Automatic URL aliases", "drupalOrgUrl": "https://www.drupal.org/project/pathauto", "isCore": false },
+      { "name": "gin", "humanName": "Gin Admin Theme", "description": "Modern admin experience", "drupalOrgUrl": "https://www.drupal.org/project/gin", "isCore": false }
+    ],
+    "contentTypes": ["Page", "Advisor Profile", "Service", "Blog Post", "Resource", "Testimonial", "Event", "FAQ"],
+    "paragraphTypes": ["hero_trust", "service_cards", "advisor_spotlight", "market_insights", "resource_library", "consultation_cta", "credentials_bar", "testimonial_client", "faq_section", "newsletter_signup"],
+    "theme": {
+      "name": "drupalready_finance",
+      "baseTheme": "stable9",
+      "description": "Professional and trustworthy — navy/teal palette, clean data presentation, credential focus"
+    },
+    "recipes": ["base", "advisors", "services", "insights", "resources"],
+    "updatedAt": "2026-03-17",
+    "downloads": 0
+  },
+  {
+    "slug": "starter-media",
+    "name": "Starter Media",
+    "tagline": "Dynamic sites for news and publications",
+    "description": "Content-rich Drupal 11 template for news sites, magazines, and digital publications. Features article management, category sections, breaking news, author profiles, newsletter integration, and advertising zones.",
+    "vertical": "media",
+    "verticalLabel": "Media & Publishing",
+    "composerPackage": "drupalready/starter-media",
+    "composerCommand": "composer create-project drupalready/starter-media my-site",
+    "version": "1.0.0",
+    "drupalVersion": "11.x",
+    "phpVersion": ">=8.3",
+    "repoUrl": "https://github.com/InacioSem/drupal-template-agency/tree/main/templates/starter-media",
+    "demoUrl": null,
+    "screenshots": [
+      {
+        "src": "/screenshots/starter-media/homepage.png",
+        "alt": "News publication homepage with breaking news banner and article grid",
+        "caption": "Editorial homepage with breaking news, featured articles, and category strips",
+        "isPrimary": true
+      },
+      {
+        "src": "/screenshots/starter-media/articles.png",
+        "alt": "Article listing with category filtering and trending sidebar",
+        "caption": "Article grid with category filters, thumbnails, and trending sidebar",
+        "isPrimary": false
+      },
+      {
+        "src": "/screenshots/starter-media/newsletter.png",
+        "alt": "Newsletter signup section with latest issue preview",
+        "caption": "Newsletter integration with signup form and recent issue highlights",
+        "isPrimary": false
+      }
+    ],
+    "features": [
+      {
+        "title": "Article Management",
+        "description": "Full article workflow with drafts, scheduling, categories, and featured images.",
+        "icon": "FileText"
+      },
+      {
+        "title": "Breaking News",
+        "description": "Breaking news banner system with priority levels and auto-expiration.",
+        "icon": "Zap"
+      },
+      {
+        "title": "Author Profiles",
+        "description": "Author pages with bio, photo, social links, and article archive.",
+        "icon": "PenLine"
+      },
+      {
+        "title": "Newsletter Integration",
+        "description": "Email newsletter signup with subscriber management and issue archive.",
+        "icon": "Mail"
+      },
+      {
+        "title": "Category Sections",
+        "description": "Category landing pages with dedicated layouts and featured content.",
+        "icon": "Layers"
+      },
+      {
+        "title": "Photo Galleries",
+        "description": "Photo essay and gallery pages with lightbox and caption support.",
+        "icon": "Image"
+      }
+    ],
+    "modules": [
+      { "name": "paragraphs", "humanName": "Paragraphs", "description": "Flexible content components", "drupalOrgUrl": "https://www.drupal.org/project/paragraphs", "isCore": false },
+      { "name": "webform", "humanName": "Webform", "description": "Newsletter and tip submission forms", "drupalOrgUrl": "https://www.drupal.org/project/webform", "isCore": false },
+      { "name": "search_api", "humanName": "Search API", "description": "Full-text article search", "drupalOrgUrl": "https://www.drupal.org/project/search_api", "isCore": false },
+      { "name": "mailchimp", "humanName": "Mailchimp", "description": "Newsletter subscriber management", "drupalOrgUrl": "https://www.drupal.org/project/mailchimp", "isCore": false },
+      { "name": "scheduler", "humanName": "Scheduler", "description": "Article publish scheduling", "drupalOrgUrl": "https://www.drupal.org/project/scheduler", "isCore": false },
+      { "name": "gin", "humanName": "Gin Admin Theme", "description": "Modern admin experience", "drupalOrgUrl": "https://www.drupal.org/project/gin", "isCore": false }
+    ],
+    "contentTypes": ["Page", "Article", "Category", "Author Profile", "Opinion Piece", "Photo Gallery", "Video", "Newsletter Issue"],
+    "paragraphTypes": ["hero_breaking", "article_grid", "category_strip", "author_bio", "trending_sidebar", "newsletter_cta", "ad_zone", "photo_gallery", "video_embed", "related_articles"],
+    "theme": {
+      "name": "drupalready_media",
+      "baseTheme": "stable9",
+      "description": "Bold editorial — black/red palette, newspaper-inspired typography, content-dense layouts"
+    },
+    "recipes": ["base", "articles", "authors", "newsletter", "galleries"],
+    "updatedAt": "2026-03-17",
+    "downloads": 0
+  },
+  {
+    "slug": "starter-portfolio",
+    "name": "Starter Portfolio",
+    "tagline": "Stunning sites for creatives and designers",
+    "description": "Visually striking Drupal 11 template for designers, photographers, and creative agencies. Features project showcases, filterable work grid, about section, client list, and minimal contact forms.",
+    "vertical": "portfolio",
+    "verticalLabel": "Creative & Portfolio",
+    "composerPackage": "drupalready/starter-portfolio",
+    "composerCommand": "composer create-project drupalready/starter-portfolio my-site",
+    "version": "1.0.0",
+    "drupalVersion": "11.x",
+    "phpVersion": ">=8.3",
+    "repoUrl": "https://github.com/InacioSem/drupal-template-agency/tree/main/templates/starter-portfolio",
+    "demoUrl": null,
+    "screenshots": [
+      {
+        "src": "/screenshots/starter-portfolio/homepage.png",
+        "alt": "Portfolio homepage with minimal dark design and featured project",
+        "caption": "Minimal homepage with typography-forward hero and featured work",
+        "isPrimary": true
+      },
+      {
+        "src": "/screenshots/starter-portfolio/work.png",
+        "alt": "Work grid with filterable project thumbnails and categories",
+        "caption": "Filterable work grid with hover effects and category tags",
+        "isPrimary": false
+      },
+      {
+        "src": "/screenshots/starter-portfolio/about.png",
+        "alt": "About page with split layout, photo, and skills section",
+        "caption": "About section with bio, skills bar, and process overview",
+        "isPrimary": false
+      }
+    ],
+    "features": [
+      {
+        "title": "Project Showcase",
+        "description": "Detailed project pages with image galleries, descriptions, and client info.",
+        "icon": "Image"
+      },
+      {
+        "title": "Filterable Work Grid",
+        "description": "Isotope-style filterable grid for browsing work by category or type.",
+        "icon": "LayoutGrid"
+      },
+      {
+        "title": "Client List",
+        "description": "Client logo display with optional links to related case studies.",
+        "icon": "Users"
+      },
+      {
+        "title": "Process Section",
+        "description": "Step-by-step design process pages to set client expectations.",
+        "icon": "ListOrdered"
+      },
+      {
+        "title": "Minimal Contact",
+        "description": "Clean, distraction-free contact forms for project inquiries.",
+        "icon": "MessageSquare"
+      },
+      {
+        "title": "Full-Bleed Images",
+        "description": "Edge-to-edge image sections for maximum visual impact.",
+        "icon": "Maximize"
+      }
+    ],
+    "modules": [
+      { "name": "paragraphs", "humanName": "Paragraphs", "description": "Flexible content components", "drupalOrgUrl": "https://www.drupal.org/project/paragraphs", "isCore": false },
+      { "name": "webform", "humanName": "Webform", "description": "Contact and inquiry forms", "drupalOrgUrl": "https://www.drupal.org/project/webform", "isCore": false },
+      { "name": "media_library", "humanName": "Media Library", "description": "Portfolio image management", "drupalOrgUrl": "https://www.drupal.org/docs/core-modules-and-themes/core-modules/media-library-module", "isCore": true },
+      { "name": "views_infinite_scroll", "humanName": "Views Infinite Scroll", "description": "Infinite scroll portfolio grid", "drupalOrgUrl": "https://www.drupal.org/project/views_infinite_scroll", "isCore": false },
+      { "name": "focal_point", "humanName": "Focal Point", "description": "Smart image cropping", "drupalOrgUrl": "https://www.drupal.org/project/focal_point", "isCore": false },
+      { "name": "gin", "humanName": "Gin Admin Theme", "description": "Modern admin experience", "drupalOrgUrl": "https://www.drupal.org/project/gin", "isCore": false }
+    ],
+    "contentTypes": ["Page", "Project", "Service", "Client", "Blog Post", "Testimonial"],
+    "paragraphTypes": ["hero_minimal", "work_grid", "project_detail", "client_logos", "about_split", "skills_bar", "testimonial_quote", "contact_minimal", "process_steps", "image_fullbleed"],
+    "theme": {
+      "name": "drupalready_portfolio",
+      "baseTheme": "stable9",
+      "description": "Minimal and striking — dark background, magenta/pink accents, typography-forward, image-centric"
+    },
+    "recipes": ["base", "projects", "clients", "blog"],
+    "updatedAt": "2026-03-17",
+    "downloads": 0
+  },
+  {
+    "slug": "starter-ecommerce",
+    "name": "Starter Ecommerce",
+    "tagline": "Conversion-ready online stores",
+    "description": "Conversion-optimized Drupal 11 template for online stores and product catalogs. Features product listings with cart, collection pages, category filtering, shipping/returns info, and customer reviews.",
+    "vertical": "ecommerce",
+    "verticalLabel": "E-Commerce",
+    "composerPackage": "drupalready/starter-ecommerce",
+    "composerCommand": "composer create-project drupalready/starter-ecommerce my-site",
+    "version": "1.0.0",
+    "drupalVersion": "11.x",
+    "phpVersion": ">=8.3",
+    "repoUrl": "https://github.com/InacioSem/drupal-template-agency/tree/main/templates/starter-ecommerce",
+    "demoUrl": null,
+    "screenshots": [
+      {
+        "src": "/screenshots/starter-ecommerce/homepage.png",
+        "alt": "E-commerce homepage with product hero, collection banners, and featured items",
+        "caption": "Conversion-focused homepage with hero, collections, and product highlights",
+        "isPrimary": true
+      },
+      {
+        "src": "/screenshots/starter-ecommerce/products.png",
+        "alt": "Product listing grid with filters, prices, and add to cart buttons",
+        "caption": "Product grid with category filters, pricing, and quick-add buttons",
+        "isPrimary": false
+      },
+      {
+        "src": "/screenshots/starter-ecommerce/shipping.png",
+        "alt": "Shipping and returns information page with policy details",
+        "caption": "Shipping info page with rates, delivery times, and return policy",
+        "isPrimary": false
+      }
+    ],
+    "features": [
+      {
+        "title": "Product Listings",
+        "description": "Product pages with photos, variants, pricing, and add-to-cart functionality.",
+        "icon": "ShoppingBag"
+      },
+      {
+        "title": "Collection Pages",
+        "description": "Curated collection landing pages with featured products and banners.",
+        "icon": "Layers"
+      },
+      {
+        "title": "Category Filtering",
+        "description": "Faceted product filtering by category, price, size, and attributes.",
+        "icon": "Filter"
+      },
+      {
+        "title": "Customer Reviews",
+        "description": "Product review system with ratings, photos, and verified purchase badges.",
+        "icon": "Star"
+      },
+      {
+        "title": "Promotions",
+        "description": "Promotional banners, discount codes, and sale collection pages.",
+        "icon": "Tag"
+      },
+      {
+        "title": "Shipping Info",
+        "description": "Shipping rates, delivery estimates, and return policy pages.",
+        "icon": "Truck"
+      }
+    ],
+    "modules": [
+      { "name": "paragraphs", "humanName": "Paragraphs", "description": "Flexible content components", "drupalOrgUrl": "https://www.drupal.org/project/paragraphs", "isCore": false },
+      { "name": "webform", "humanName": "Webform", "description": "Contact and return request forms", "drupalOrgUrl": "https://www.drupal.org/project/webform", "isCore": false },
+      { "name": "commerce", "humanName": "Drupal Commerce", "description": "E-commerce framework", "drupalOrgUrl": "https://www.drupal.org/project/commerce", "isCore": false },
+      { "name": "facets", "humanName": "Facets", "description": "Faceted product filtering", "drupalOrgUrl": "https://www.drupal.org/project/facets", "isCore": false },
+      { "name": "search_api", "humanName": "Search API", "description": "Product search and indexing", "drupalOrgUrl": "https://www.drupal.org/project/search_api", "isCore": false },
+      { "name": "gin", "humanName": "Gin Admin Theme", "description": "Modern admin experience", "drupalOrgUrl": "https://www.drupal.org/project/gin", "isCore": false }
+    ],
+    "contentTypes": ["Page", "Product", "Collection", "Category", "Blog Post", "FAQ", "Customer Review", "Promotion"],
+    "paragraphTypes": ["hero_product", "product_grid", "collection_banner", "category_nav", "cart_widget", "review_carousel", "shipping_info", "promo_banner", "size_guide", "comparison_table"],
+    "theme": {
+      "name": "drupalready_ecommerce",
+      "baseTheme": "stable9",
+      "description": "Clean and conversion-focused — white background, green accents, product card layouts"
+    },
+    "recipes": ["base", "products", "collections", "reviews", "promotions"],
+    "updatedAt": "2026-03-17",
+    "downloads": 0
+  },
+  {
+    "slug": "starter-school",
+    "name": "Starter School",
+    "tagline": "Engaging sites for K-12 schools",
+    "description": "Parent-friendly Drupal 11 template for K-12 schools and school districts. Features enrollment info, academic calendar, lunch menus, athletics, parent resources, and staff directory.",
+    "vertical": "school",
+    "verticalLabel": "K-12 School",
+    "composerPackage": "drupalready/starter-school",
+    "composerCommand": "composer create-project drupalready/starter-school my-site",
+    "version": "1.0.0",
+    "drupalVersion": "11.x",
+    "phpVersion": ">=8.3",
+    "repoUrl": "https://github.com/InacioSem/drupal-template-agency/tree/main/templates/starter-school",
+    "demoUrl": null,
+    "screenshots": [
+      {
+        "src": "/screenshots/starter-school/homepage.png",
+        "alt": "School homepage with friendly hero, quick links, and upcoming events",
+        "caption": "Parent-friendly homepage with quick links, news, and event calendar",
+        "isPrimary": true
+      },
+      {
+        "src": "/screenshots/starter-school/quicklinks.png",
+        "alt": "Quick links section with enrollment, calendar, lunch menu, and athletics",
+        "caption": "Quick-access links for parents, students, and staff",
+        "isPrimary": false
+      },
+      {
+        "src": "/screenshots/starter-school/news.png",
+        "alt": "School news and announcements with photo cards and dates",
+        "caption": "News section with announcements, photos, and important dates",
+        "isPrimary": false
+      }
+    ],
+    "features": [
+      {
+        "title": "Enrollment Info",
+        "description": "Enrollment pages with requirements, forms, deadlines, and school choice info.",
+        "icon": "ClipboardCheck"
+      },
+      {
+        "title": "Academic Calendar",
+        "description": "School year calendar with holidays, early dismissals, and important dates.",
+        "icon": "Calendar"
+      },
+      {
+        "title": "Staff Directory",
+        "description": "Searchable staff directory with departments, roles, and contact info.",
+        "icon": "Users"
+      },
+      {
+        "title": "Athletics",
+        "description": "Athletic team pages with schedules, rosters, and score updates.",
+        "icon": "Trophy"
+      },
+      {
+        "title": "Lunch Menus",
+        "description": "Weekly lunch menu pages with nutritional info and allergen notices.",
+        "icon": "UtensilsCrossed"
+      },
+      {
+        "title": "Parent Resources",
+        "description": "Parent portal with forms, handbooks, PTA info, and volunteer signups.",
+        "icon": "FolderOpen"
+      }
+    ],
+    "modules": [
+      { "name": "paragraphs", "humanName": "Paragraphs", "description": "Flexible content components", "drupalOrgUrl": "https://www.drupal.org/project/paragraphs", "isCore": false },
+      { "name": "webform", "humanName": "Webform", "description": "Enrollment and contact forms", "drupalOrgUrl": "https://www.drupal.org/project/webform", "isCore": false },
+      { "name": "smart_date", "humanName": "Smart Date", "description": "Calendar and schedule management", "drupalOrgUrl": "https://www.drupal.org/project/smart_date", "isCore": false },
+      { "name": "editoria11y", "humanName": "Editoria11y", "description": "Accessibility compliance checker", "drupalOrgUrl": "https://www.drupal.org/project/editoria11y", "isCore": false },
+      { "name": "content_moderation", "humanName": "Content Moderation", "description": "Approval workflows for content", "drupalOrgUrl": "https://www.drupal.org/docs/core-modules-and-themes/core-modules/content-moderation-module", "isCore": true },
+      { "name": "gin", "humanName": "Gin Admin Theme", "description": "Modern admin experience", "drupalOrgUrl": "https://www.drupal.org/project/gin", "isCore": false }
+    ],
+    "contentTypes": ["Page", "News", "Event", "Staff Member", "Department", "Athletic Team", "Lunch Menu", "Parent Resource"],
+    "paragraphTypes": ["hero_school", "quick_links", "calendar_widget", "staff_directory", "athletics_grid", "lunch_menu", "parent_resources", "newsletter_signup", "photo_gallery", "alert_banner"],
+    "theme": {
+      "name": "drupalready_school",
+      "baseTheme": "stable9",
+      "description": "Friendly and organized — forest green/yellow palette, clear navigation, parent-focused"
+    },
+    "recipes": ["base", "staff", "athletics", "calendar", "resources"],
+    "updatedAt": "2026-03-17",
+    "downloads": 0
+  },
+  {
+    "slug": "starter-association",
+    "name": "Starter Association",
+    "tagline": "Member-focused sites for professional organizations",
+    "description": "Member-centric Drupal 11 template for professional associations, trade groups, and member organizations. Features membership benefits, member directory, event management, resource library, and advocacy tools.",
+    "vertical": "association",
+    "verticalLabel": "Association & Membership",
+    "composerPackage": "drupalready/starter-association",
+    "composerCommand": "composer create-project drupalready/starter-association my-site",
+    "version": "1.0.0",
+    "drupalVersion": "11.x",
+    "phpVersion": ">=8.3",
+    "repoUrl": "https://github.com/InacioSem/drupal-template-agency/tree/main/templates/starter-association",
+    "demoUrl": null,
+    "screenshots": [
+      {
+        "src": "/screenshots/starter-association/homepage.png",
+        "alt": "Association homepage with membership hero, benefits grid, and upcoming events",
+        "caption": "Member-focused homepage with benefits, events, and join CTA",
+        "isPrimary": true
+      },
+      {
+        "src": "/screenshots/starter-association/benefits.png",
+        "alt": "Membership benefits page with tiers and comparison table",
+        "caption": "Membership benefits with tier comparison and signup links",
+        "isPrimary": false
+      },
+      {
+        "src": "/screenshots/starter-association/events.png",
+        "alt": "Events page with conference, webinar, and networking event cards",
+        "caption": "Event listings with registration, dates, and speaker info",
+        "isPrimary": false
+      }
+    ],
+    "features": [
+      {
+        "title": "Member Directory",
+        "description": "Searchable member directory with profiles, companies, and expertise areas.",
+        "icon": "Users"
+      },
+      {
+        "title": "Event Management",
+        "description": "Conference, webinar, and networking event pages with registration.",
+        "icon": "Calendar"
+      },
+      {
+        "title": "Resource Library",
+        "description": "Member resource library with documents, guides, and gated content.",
+        "icon": "FolderOpen"
+      },
+      {
+        "title": "Committee Pages",
+        "description": "Committee and working group pages with members, meetings, and documents.",
+        "icon": "Briefcase"
+      },
+      {
+        "title": "Job Board",
+        "description": "Industry job board with postings, applications, and employer profiles.",
+        "icon": "FileText"
+      },
+      {
+        "title": "Advocacy Tools",
+        "description": "Advocacy pages with policy positions, action alerts, and legislator lookup.",
+        "icon": "Megaphone"
+      }
+    ],
+    "modules": [
+      { "name": "paragraphs", "humanName": "Paragraphs", "description": "Flexible content components", "drupalOrgUrl": "https://www.drupal.org/project/paragraphs", "isCore": false },
+      { "name": "webform", "humanName": "Webform", "description": "Membership and registration forms", "drupalOrgUrl": "https://www.drupal.org/project/webform", "isCore": false },
+      { "name": "group", "humanName": "Group", "description": "Member areas and permissions", "drupalOrgUrl": "https://www.drupal.org/project/group", "isCore": false },
+      { "name": "search_api", "humanName": "Search API", "description": "Member and resource search", "drupalOrgUrl": "https://www.drupal.org/project/search_api", "isCore": false },
+      { "name": "smart_date", "humanName": "Smart Date", "description": "Event date and scheduling", "drupalOrgUrl": "https://www.drupal.org/project/smart_date", "isCore": false },
+      { "name": "gin", "humanName": "Gin Admin Theme", "description": "Modern admin experience", "drupalOrgUrl": "https://www.drupal.org/project/gin", "isCore": false }
+    ],
+    "contentTypes": ["Page", "Member Profile", "Event", "Resource", "News", "Committee", "Award", "Job Posting"],
+    "paragraphTypes": ["hero_membership", "benefits_grid", "member_directory", "event_cards", "resource_library", "advocacy_cta", "committee_list", "award_showcase", "job_board", "stats_counter"],
+    "theme": {
+      "name": "drupalready_association",
+      "baseTheme": "stable9",
+      "description": "Professional and inclusive — slate blue/teal palette, member-focused layouts, data-rich"
+    },
+    "recipes": ["base", "members", "events", "resources", "jobs"],
+    "updatedAt": "2026-03-17",
+    "downloads": 0
+  },
+  {
+    "slug": "starter-fitness",
+    "name": "Starter Fitness",
+    "tagline": "High-energy sites for gyms and trainers",
+    "description": "High-energy Drupal 11 template for gyms, fitness studios, and personal trainers. Features class schedules, trainer profiles, membership pricing, workout programs, and trial signup forms.",
+    "vertical": "fitness",
+    "verticalLabel": "Fitness & Wellness",
+    "composerPackage": "drupalready/starter-fitness",
+    "composerCommand": "composer create-project drupalready/starter-fitness my-site",
+    "version": "1.0.0",
+    "drupalVersion": "11.x",
+    "phpVersion": ">=8.3",
+    "repoUrl": "https://github.com/InacioSem/drupal-template-agency/tree/main/templates/starter-fitness",
+    "demoUrl": null,
+    "screenshots": [
+      {
+        "src": "/screenshots/starter-fitness/homepage.png",
+        "alt": "Fitness studio homepage with bold dark hero and class schedule preview",
+        "caption": "High-energy homepage with bold imagery, class highlights, and trial CTA",
+        "isPrimary": true
+      },
+      {
+        "src": "/screenshots/starter-fitness/classes.png",
+        "alt": "Class schedule grid with HIIT, yoga, cycling, and strength categories",
+        "caption": "Class schedule with categories, times, trainers, and booking links",
+        "isPrimary": false
+      },
+      {
+        "src": "/screenshots/starter-fitness/pricing.png",
+        "alt": "Membership pricing table with basic, premium, and unlimited tiers",
+        "caption": "Membership pricing with tier comparison and trial signup",
+        "isPrimary": false
+      }
+    ],
+    "features": [
+      {
+        "title": "Class Schedule",
+        "description": "Weekly class schedule with categories, times, trainers, and booking.",
+        "icon": "Calendar"
+      },
+      {
+        "title": "Trainer Profiles",
+        "description": "Trainer pages with certifications, specialties, and class assignments.",
+        "icon": "Users"
+      },
+      {
+        "title": "Membership Pricing",
+        "description": "Pricing tables with tier comparison, features, and signup integration.",
+        "icon": "CreditCard"
+      },
+      {
+        "title": "Trial Signups",
+        "description": "Free trial and guest pass signup forms with automated follow-up.",
+        "icon": "UserPlus"
+      },
+      {
+        "title": "Workout Programs",
+        "description": "Program pages with workout details, duration, difficulty, and results.",
+        "icon": "Dumbbell"
+      },
+      {
+        "title": "Transformation Gallery",
+        "description": "Before/after transformation stories with photos and testimonials.",
+        "icon": "TrendingUp"
+      }
+    ],
+    "modules": [
+      { "name": "paragraphs", "humanName": "Paragraphs", "description": "Flexible content components", "drupalOrgUrl": "https://www.drupal.org/project/paragraphs", "isCore": false },
+      { "name": "webform", "humanName": "Webform", "description": "Trial signup and contact forms", "drupalOrgUrl": "https://www.drupal.org/project/webform", "isCore": false },
+      { "name": "smart_date", "humanName": "Smart Date", "description": "Class schedule management", "drupalOrgUrl": "https://www.drupal.org/project/smart_date", "isCore": false },
+      { "name": "media_library", "humanName": "Media Library", "description": "Workout and transformation photos", "drupalOrgUrl": "https://www.drupal.org/docs/core-modules-and-themes/core-modules/media-library-module", "isCore": true },
+      { "name": "metatag", "humanName": "Metatag", "description": "SEO meta tags", "drupalOrgUrl": "https://www.drupal.org/project/metatag", "isCore": false },
+      { "name": "gin", "humanName": "Gin Admin Theme", "description": "Modern admin experience", "drupalOrgUrl": "https://www.drupal.org/project/gin", "isCore": false }
+    ],
+    "contentTypes": ["Page", "Class", "Trainer Profile", "Membership Plan", "Blog Post", "Testimonial", "Program", "Schedule"],
+    "paragraphTypes": ["hero_bold_dark", "class_grid", "trainer_cards", "pricing_table", "schedule_widget", "trial_signup", "transformation_gallery", "workout_programs", "testimonial_fitness", "social_feed"],
+    "theme": {
+      "name": "drupalready_fitness",
+      "baseTheme": "stable9",
+      "description": "Bold and energetic — black/lime green palette, uppercase typography, high-contrast imagery"
+    },
+    "recipes": ["base", "classes", "trainers", "memberships", "programs"],
+    "updatedAt": "2026-03-17",
+    "downloads": 0
+  },
+  {
+    "slug": "starter-consulting",
+    "name": "Starter Consulting",
+    "tagline": "Strategic sites for consulting firms",
+    "description": "Results-driven Drupal 11 template for management consulting, strategy firms, and professional services. Features service offerings, industry expertise, case studies with metrics, team profiles, and thought leadership blog.",
+    "vertical": "consulting",
+    "verticalLabel": "Consulting & Strategy",
+    "composerPackage": "drupalready/starter-consulting",
+    "composerCommand": "composer create-project drupalready/starter-consulting my-site",
+    "version": "1.0.0",
+    "drupalVersion": "11.x",
+    "phpVersion": ">=8.3",
+    "repoUrl": "https://github.com/InacioSem/drupal-template-agency/tree/main/templates/starter-consulting",
+    "demoUrl": null,
+    "screenshots": [
+      {
+        "src": "/screenshots/starter-consulting/homepage.png",
+        "alt": "Consulting firm homepage with professional hero and service highlights",
+        "caption": "Strategic homepage with data-driven hero, service grid, and case study highlights",
+        "isPrimary": true
+      },
+      {
+        "src": "/screenshots/starter-consulting/services.png",
+        "alt": "Services page with strategy, operations, digital transformation cards",
+        "caption": "Service offerings with industry focus, methodology, and results metrics",
+        "isPrimary": false
+      },
+      {
+        "src": "/screenshots/starter-consulting/casestudies.png",
+        "alt": "Case studies page with metrics, client logos, and results summaries",
+        "caption": "Case studies with measurable results, client info, and industry tags",
+        "isPrimary": false
+      }
+    ],
+    "features": [
+      {
+        "title": "Service Offerings",
+        "description": "Service pages with methodology, deliverables, and industry applications.",
+        "icon": "Briefcase"
+      },
+      {
+        "title": "Industry Expertise",
+        "description": "Industry vertical pages with relevant services, case studies, and insights.",
+        "icon": "Building2"
+      },
+      {
+        "title": "Case Studies",
+        "description": "Results-driven case studies with metrics, challenges, and outcomes.",
+        "icon": "BarChart"
+      },
+      {
+        "title": "Team Profiles",
+        "description": "Leadership and consultant profiles with expertise and thought leadership.",
+        "icon": "Users"
+      },
+      {
+        "title": "Thought Leadership",
+        "description": "Blog and insights hub with articles, whitepapers, and research reports.",
+        "icon": "Lightbulb"
+      },
+      {
+        "title": "White Papers",
+        "description": "Gated white paper downloads with lead capture and topic categorization.",
+        "icon": "FileText"
+      }
+    ],
+    "modules": [
+      { "name": "paragraphs", "humanName": "Paragraphs", "description": "Flexible content components", "drupalOrgUrl": "https://www.drupal.org/project/paragraphs", "isCore": false },
+      { "name": "webform", "humanName": "Webform", "description": "Consultation and lead capture forms", "drupalOrgUrl": "https://www.drupal.org/project/webform", "isCore": false },
+      { "name": "metatag", "humanName": "Metatag", "description": "SEO meta tags", "drupalOrgUrl": "https://www.drupal.org/project/metatag", "isCore": false },
+      { "name": "search_api", "humanName": "Search API", "description": "Case study and insight search", "drupalOrgUrl": "https://www.drupal.org/project/search_api", "isCore": false },
+      { "name": "google_analytics", "humanName": "Google Analytics", "description": "Conversion and engagement tracking", "drupalOrgUrl": "https://www.drupal.org/project/google_analytics", "isCore": false },
+      { "name": "gin", "humanName": "Gin Admin Theme", "description": "Modern admin experience", "drupalOrgUrl": "https://www.drupal.org/project/gin", "isCore": false }
+    ],
+    "contentTypes": ["Page", "Service", "Industry", "Case Study", "Team Member", "Blog Post", "White Paper", "Event"],
+    "paragraphTypes": ["hero_professional", "service_grid", "industry_cards", "case_study_results", "team_leadership", "thought_leadership", "client_logos", "metrics_counter", "white_paper_cta", "event_highlights"],
+    "theme": {
+      "name": "drupalready_consulting",
+      "baseTheme": "stable9",
+      "description": "Sharp and strategic — dark navy/electric blue palette, data visualization, results-focused"
+    },
+    "recipes": ["base", "services", "industries", "case-studies", "blog"],
+    "updatedAt": "2026-03-17",
+    "downloads": 0
   }
 ]

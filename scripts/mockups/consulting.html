@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apex Strategy Group - Management Consulting</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', -apple-system, sans-serif; color: #e2e8f0; background: #0f172a; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  .header { background: #0f172a; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .header .container { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .logo { font-size: 18px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 10px; }
+  .logo-tri { width: 0; height: 0; border-left: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 18px solid #3b82f6; }
+  .nav ul { list-style: none; display: flex; gap: 28px; }
+  .nav a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.5); text-decoration: none; }
+  .nav a:hover { color: #3b82f6; }
+  .contact-btn { background: #3b82f6; color: #fff; padding: 9px 22px; border-radius: 8px; font-weight: 700; font-size: 13px; text-decoration: none; }
+
+  .hero { background: linear-gradient(160deg, #0f172a 0%, #1e293b 40%, #0f172a 100%); padding: 88px 0 72px; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(59,130,246,0.1), transparent 60%); }
+  .hero::after { content: ''; position: absolute; bottom: -200px; left: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(59,130,246,0.06), transparent 60%); }
+  .hero .container { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; position: relative; z-index: 1; }
+  .hero-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.15em; color: #3b82f6; font-weight: 600; margin-bottom: 14px; }
+  .hero h1 { font-size: 46px; font-weight: 800; line-height: 1.1; margin-bottom: 18px; letter-spacing: -0.02em; color: #fff; }
+  .hero h1 span { color: #3b82f6; }
+  .hero p { font-size: 17px; color: rgba(255,255,255,0.5); line-height: 1.7; margin-bottom: 28px; }
+  .hero-btns { display: flex; gap: 12px; }
+  .btn-blue { background: #3b82f6; color: #fff; padding: 14px 32px; border-radius: 10px; font-weight: 700; font-size: 15px; text-decoration: none; }
+  .btn-outline { color: rgba(255,255,255,0.6); padding: 14px 32px; border-radius: 10px; font-weight: 600; font-size: 15px; text-decoration: none; border: 1px solid rgba(255,255,255,0.15); }
+  .hero-visual { height: 360px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.15); font-size: 14px; }
+
+  .services { padding: 64px 0; border-top: 1px solid rgba(255,255,255,0.06); }
+  .services h2 { font-size: 30px; font-weight: 800; text-align: center; margin-bottom: 8px; color: #fff; }
+  .services .subtitle { text-align: center; color: rgba(255,255,255,0.4); margin-bottom: 36px; font-size: 16px; }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .service-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 32px; }
+  .service-card:hover { border-color: #3b82f6; background: rgba(59,130,246,0.04); }
+  .service-icon { font-size: 32px; margin-bottom: 16px; }
+  .service-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; color: #fff; }
+  .service-card p { font-size: 14px; color: rgba(255,255,255,0.4); line-height: 1.6; }
+
+  .cases { padding: 56px 0; border-top: 1px solid rgba(255,255,255,0.06); }
+  .cases h2 { font-size: 28px; font-weight: 800; margin-bottom: 8px; color: #fff; }
+  .cases .subtitle { color: rgba(255,255,255,0.4); margin-bottom: 32px; }
+  .cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .case-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; overflow: hidden; }
+  .case-img { height: 160px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.15); font-size: 13px; }
+  .case-card:nth-child(1) .case-img { background: linear-gradient(135deg, #1e293b, #0f172a); }
+  .case-card:nth-child(2) .case-img { background: linear-gradient(135deg, #172554, #1e293b); }
+  .case-card:nth-child(3) .case-img { background: linear-gradient(135deg, #1e293b, #172554); }
+  .case-body { padding: 20px; }
+  .case-tag { font-size: 11px; color: #3b82f6; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
+  .case-card h3 { font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+  .case-card p { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.5; }
+  .case-result { margin-top: 12px; font-size: 13px; color: #3b82f6; font-weight: 600; }
+
+  .clients { padding: 48px 0; border-top: 1px solid rgba(255,255,255,0.06); }
+  .clients p { text-align: center; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.25); font-weight: 600; margin-bottom: 24px; }
+  .client-row { display: flex; justify-content: center; gap: 40px; align-items: center; }
+  .client-logo { width: 110px; height: 36px; background: rgba(255,255,255,0.04); border-radius: 6px; border: 1px solid rgba(255,255,255,0.06); }
+
+  .footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 40px 0 20px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer h3 { color: #3b82f6; font-size: 12px; font-weight: 700; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.08em; }
+  .footer ul { list-style: none; }
+  .footer li { margin-bottom: 8px; font-size: 13px; }
+  .footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+  .footer-bottom { margin-top: 28px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 12px; color: rgba(255,255,255,0.3); }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="logo"><div class="logo-tri"></div> Apex Strategy Group</div>
+    <nav class="nav"><ul><li><a href="#">Services</a></li><li><a href="#">Industries</a></li><li><a href="#">Case Studies</a></li><li><a href="#">Team</a></li><li><a href="#">Contact</a></li></ul></nav>
+    <a href="#" class="contact-btn">Get in Touch</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div>
+      <div class="hero-label">Management Consulting</div>
+      <h1>Transform Complexity Into <span>Competitive Advantage</span></h1>
+      <p>We partner with the world's leading organizations to solve their most critical challenges and unlock sustainable, measurable growth.</p>
+      <div class="hero-btns">
+        <a href="#" class="btn-blue">Schedule a Consultation</a>
+        <a href="#" class="btn-outline">Our Approach</a>
+      </div>
+    </div>
+    <div class="hero-visual">Data Visualization</div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="container">
+    <h2>Our Services</h2>
+    <p class="subtitle">Expertise across the full spectrum of business transformation</p>
+    <div class="services-grid">
+      <div class="service-card"><div class="service-icon">📈</div><h3>Growth Strategy</h3><p>Market entry analysis, competitive positioning, and revenue acceleration strategies that drive top-line growth and market share expansion.</p></div>
+      <div class="service-card"><div class="service-icon">⚙️</div><h3>Operational Excellence</h3><p>End-to-end process optimization, supply chain redesign, and lean transformation to reduce costs and improve efficiency.</p></div>
+      <div class="service-card"><div class="service-icon">🔄</div><h3>Digital Transformation</h3><p>Technology roadmaps, data strategy, and change management to modernize operations and build digital capabilities.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cases">
+  <div class="container">
+    <h2>Case Studies</h2>
+    <p class="subtitle">Proven results across industries and geographies</p>
+    <div class="cases-grid">
+      <div class="case-card">
+        <div class="case-img">Case Study Image</div>
+        <div class="case-body"><div class="case-tag">Healthcare</div><h3>Regional Hospital Network Turnaround</h3><p>Redesigned operations across 12 facilities, improving patient throughput and reducing overhead.</p><div class="case-result">+34% operational efficiency</div></div>
+      </div>
+      <div class="case-card">
+        <div class="case-img">Case Study Image</div>
+        <div class="case-body"><div class="case-tag">Financial Services</div><h3>Global Bank Digital Migration</h3><p>Led end-to-end migration of core banking platform serving 8M customers across 6 markets.</p><div class="case-result">$120M in annual savings</div></div>
+      </div>
+      <div class="case-card">
+        <div class="case-img">Case Study Image</div>
+        <div class="case-body"><div class="case-tag">Manufacturing</div><h3>Supply Chain Resilience Program</h3><p>Built diversified supplier network and predictive demand model for Fortune 500 manufacturer.</p><div class="case-result">40% reduction in disruptions</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="clients">
+  <div class="container">
+    <p>Trusted by industry leaders</p>
+    <div class="client-row">
+      <div class="client-logo"></div>
+      <div class="client-logo"></div>
+      <div class="client-logo"></div>
+      <div class="client-logo"></div>
+      <div class="client-logo"></div>
+      <div class="client-logo"></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div style="font-size:18px;font-weight:700;color:#fff;margin-bottom:12px;">Apex Strategy Group</div><p style="font-size:13px;color:rgba(255,255,255,0.4);">Trusted advisors to the world's leading organizations.</p></div>
+      <div><h3>Services</h3><ul><li><a href="#">Growth Strategy</a></li><li><a href="#">Operations</a></li><li><a href="#">Digital</a></li><li><a href="#">M&A Advisory</a></li></ul></div>
+      <div><h3>Company</h3><ul><li><a href="#">About</a></li><li><a href="#">Team</a></li><li><a href="#">Careers</a></li><li><a href="#">Press</a></li></ul></div>
+      <div><h3>Connect</h3><ul><li><a href="#">Contact</a></li><li><a href="#">LinkedIn</a></li><li><a href="#">Newsletter</a></li><li><a href="#">Privacy</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 Apex Strategy Group. All rights reserved.</div>
+  </div>
+</footer>
+</body>
+</html>

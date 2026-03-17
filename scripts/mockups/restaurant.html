@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ember & Oak Kitchen - Modern American Cuisine</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Georgia', serif; color: #2d1b0e; background: #faf7f2; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  .header { background: #2d1b0e; }
+  .header .container { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .logo { font-size: 20px; font-weight: 700; color: #d97706; display: flex; align-items: center; gap: 8px; }
+  .logo-icon { font-size: 22px; }
+  .nav ul { list-style: none; display: flex; gap: 28px; }
+  .nav a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.7); text-decoration: none; font-family: -apple-system, sans-serif; }
+  .nav a:hover { color: #d97706; }
+  .reserve-btn { background: #d97706; color: white; padding: 10px 24px; border-radius: 4px; font-weight: 700; font-size: 14px; text-decoration: none; font-family: -apple-system, sans-serif; }
+
+  .hero { background: linear-gradient(135deg, #2d1b0e 0%, #4a2c17 40%, #2d1b0e 100%); color: white; padding: 100px 0 88px; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; bottom: -200px; left: 50%; transform: translateX(-50%); width: 700px; height: 700px; background: radial-gradient(circle, rgba(217,119,6,0.1), transparent 60%); }
+  .hero .container { position: relative; z-index: 1; }
+  .hero-tag { font-size: 12px; text-transform: uppercase; letter-spacing: 0.2em; color: #d97706; margin-bottom: 20px; font-family: -apple-system, sans-serif; }
+  .hero h1 { font-size: 52px; font-weight: 700; line-height: 1.1; margin-bottom: 20px; }
+  .hero h1 .highlight { color: #d97706; }
+  .hero p { font-size: 18px; color: rgba(255,255,255,0.6); max-width: 520px; margin: 0 auto 36px; line-height: 1.7; font-family: -apple-system, sans-serif; }
+  .btn { padding: 14px 32px; border-radius: 4px; font-weight: 700; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-family: -apple-system, sans-serif; }
+  .btn-amber { background: #d97706; color: white; }
+  .btn-ghost { color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.25); }
+  .hero-btns { display: flex; gap: 12px; justify-content: center; }
+
+  .menu { padding: 64px 0; }
+  .section-title { font-size: 32px; font-weight: 700; text-align: center; margin-bottom: 8px; }
+  .section-sub { text-align: center; color: #8b6914; font-size: 16px; margin-bottom: 40px; font-family: -apple-system, sans-serif; }
+  .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .menu-card { background: white; border-radius: 12px; overflow: hidden; border: 1px solid #e8dfd2; transition: all 0.2s; }
+  .menu-card:hover { box-shadow: 0 8px 28px rgba(45,27,14,0.12); transform: translateY(-3px); }
+  .menu-img { height: 200px; background: linear-gradient(135deg, #d97706, #f59e0b); display: flex; align-items: center; justify-content: center; font-size: 48px; }
+  .menu-body { padding: 24px; }
+  .menu-card h3 { font-size: 20px; margin-bottom: 8px; }
+  .menu-card p { font-size: 14px; color: #7a6552; line-height: 1.6; margin-bottom: 12px; font-family: -apple-system, sans-serif; }
+  .menu-price { font-size: 18px; font-weight: 700; color: #d97706; }
+
+  .reservation { padding: 64px 0; background: linear-gradient(135deg, #2d1b0e, #4a2c17); text-align: center; color: white; }
+  .reservation h2 { font-size: 36px; margin-bottom: 16px; }
+  .reservation p { font-size: 17px; color: rgba(255,255,255,0.6); margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; font-family: -apple-system, sans-serif; }
+
+  .info { padding: 64px 0; }
+  .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; text-align: center; }
+  .info-card { padding: 32px; }
+  .info-icon { font-size: 32px; margin-bottom: 16px; }
+  .info-card h3 { font-size: 18px; margin-bottom: 12px; }
+  .info-card p { font-size: 14px; color: #7a6552; line-height: 1.7; font-family: -apple-system, sans-serif; }
+
+  .footer { background: #1a0f06; color: rgba(255,255,255,0.5); padding: 48px 0 24px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer h3 { color: #d97706; font-size: 13px; font-weight: 700; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.05em; font-family: -apple-system, sans-serif; }
+  .footer ul { list-style: none; }
+  .footer li { margin-bottom: 8px; font-size: 13px; font-family: -apple-system, sans-serif; }
+  .footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+  .footer-bottom { margin-top: 32px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 12px; font-family: -apple-system, sans-serif; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="logo"><span class="logo-icon">🔥</span> Ember & Oak Kitchen</div>
+    <nav class="nav"><ul><li><a href="#">Menu</a></li><li><a href="#">Reservations</a></li><li><a href="#">About</a></li><li><a href="#">Catering</a></li><li><a href="#">Contact</a></li></ul></nav>
+    <a href="#" class="reserve-btn">Reserve a Table</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-tag">Farm to Table &bull; Wood-Fired &bull; Crafted with Care</div>
+    <h1>Where Fire Meets<br><span class="highlight">Flavor</span></h1>
+    <p>Modern American cuisine crafted from locally sourced ingredients, cooked over open flame, and served with passion.</p>
+    <div class="hero-btns">
+      <a href="#" class="btn btn-amber">Make a Reservation →</a>
+      <a href="#" class="btn btn-ghost">View Menu</a>
+    </div>
+  </div>
+</section>
+
+<section class="menu">
+  <div class="container">
+    <h2 class="section-title">Menu Highlights</h2>
+    <p class="section-sub">Seasonal favorites from Chef Marcus</p>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <div class="menu-img">🥩</div>
+        <div class="menu-body"><h3>Wood-Fired Ribeye</h3><p>28-day dry-aged, bone-in ribeye with charred broccolini and truffle butter.</p><div class="menu-price">$52</div></div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-img">🐟</div>
+        <div class="menu-body"><h3>Pan-Seared Halibut</h3><p>Wild-caught halibut with saffron risotto, fennel, and citrus beurre blanc.</p><div class="menu-price">$44</div></div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-img">🍝</div>
+        <div class="menu-body"><h3>Handmade Pappardelle</h3><p>Fresh pasta with braised short rib ragu, pecorino, and fresh herbs.</p><div class="menu-price">$32</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reservation">
+  <div class="container">
+    <h2>Reserve Your Table</h2>
+    <p>Join us for an unforgettable dining experience. Walk-ins welcome, reservations recommended.</p>
+    <a href="#" class="btn btn-amber">Book Online →</a>
+  </div>
+</section>
+
+<section class="info">
+  <div class="container">
+    <div class="info-grid">
+      <div class="info-card"><div class="info-icon">📍</div><h3>Location</h3><p>742 Oakwood Avenue<br>Downtown Arts District<br>Portland, OR 97205</p></div>
+      <div class="info-card"><div class="info-icon">🕐</div><h3>Hours</h3><p>Tue-Thu: 5pm - 10pm<br>Fri-Sat: 5pm - 11pm<br>Sun Brunch: 10am - 2pm</p></div>
+      <div class="info-card"><div class="info-icon">📞</div><h3>Contact</h3><p>Phone: (503) 555-0142<br>Email: hello@emberandoak.com<br>Catering inquiries welcome</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="logo" style="margin-bottom:16px;"><span class="logo-icon">🔥</span> Ember & Oak Kitchen</div><p style="font-size:13px;font-family:-apple-system,sans-serif;">Crafted with care since 2018.</p></div>
+      <div><h3>Explore</h3><ul><li><a href="#">Full Menu</a></li><li><a href="#">Wine List</a></li><li><a href="#">Private Events</a></li><li><a href="#">Gift Cards</a></li></ul></div>
+      <div><h3>Catering</h3><ul><li><a href="#">Corporate</a></li><li><a href="#">Weddings</a></li><li><a href="#">Private Chef</a></li><li><a href="#">Inquire</a></li></ul></div>
+      <div><h3>Follow Us</h3><ul><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li><li><a href="#">Yelp</a></li><li><a href="#">OpenTable</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 Ember & Oak Kitchen. All rights reserved.</div>
+  </div>
+</footer>
+</body>
+</html>
