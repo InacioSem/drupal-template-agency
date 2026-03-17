@@ -11,7 +11,7 @@
     "version": "1.0.0",
     "drupalVersion": "11.x",
     "phpVersion": ">=8.3",
-    "repoUrl": "https://github.com/drupalready/starter-business",
+    "repoUrl": "https://github.com/InacioSem/drupal-template-agency/tree/main/templates/starter-business",
     "demoUrl": null,
     "screenshots": [
       {
@@ -106,7 +106,7 @@
     "version": "1.0.0",
     "drupalVersion": "11.x",
     "phpVersion": ">=8.3",
-    "repoUrl": "https://github.com/drupalready/starter-government",
+    "repoUrl": "https://github.com/InacioSem/drupal-template-agency/tree/main/templates/starter-government",
     "demoUrl": null,
     "screenshots": [
       {
@@ -193,7 +193,7 @@
     "version": "1.0.0",
     "drupalVersion": "11.x",
     "phpVersion": ">=8.3",
-    "repoUrl": "https://github.com/drupalready/starter-nonprofit",
+    "repoUrl": "https://github.com/InacioSem/drupal-template-agency/tree/main/templates/starter-nonprofit",
     "demoUrl": null,
     "screenshots": [
       {
@@ -280,7 +280,7 @@
     "version": "1.0.0",
     "drupalVersion": "11.x",
     "phpVersion": ">=8.3",
-    "repoUrl": "https://github.com/drupalready/starter-healthcare",
+    "repoUrl": "https://github.com/InacioSem/drupal-template-agency/tree/main/templates/starter-healthcare",
     "demoUrl": null,
     "screenshots": [
       {
@@ -365,7 +365,7 @@
     "version": "1.0.0",
     "drupalVersion": "11.x",
     "phpVersion": ">=8.3",
-    "repoUrl": "https://github.com/drupalready/starter-legal",
+    "repoUrl": "https://github.com/InacioSem/drupal-template-agency/tree/main/templates/starter-legal",
     "demoUrl": null,
     "screenshots": [
       {
@@ -450,7 +450,7 @@
     "version": "1.0.0",
     "drupalVersion": "11.x",
     "phpVersion": ">=8.3",
-    "repoUrl": "https://github.com/drupalready/starter-saas",
+    "repoUrl": "https://github.com/InacioSem/drupal-template-agency/tree/main/templates/starter-saas",
     "demoUrl": null,
     "screenshots": [
       {
