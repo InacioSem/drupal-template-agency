@@ -5,11 +5,12 @@ export function TemplateShowcase() {
   const templates = getAllTemplates();
 
   return (
-    <section className="py-20">
+    <section className="py-24 relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Choose Your Starting Point
+        <div className="text-center max-w-2xl mx-auto">
+          <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
+            Choose your{" "}
+            <span className="text-gradient">starting point</span>
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Three production-ready templates, each tailored to a specific
@@ -17,7 +18,7 @@ export function TemplateShowcase() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {templates.map((template) => (
             <TemplateCard key={template.slug} template={template} />
           ))}
