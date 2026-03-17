@@ -1,0 +1,47 @@
+{
+  "name": "drupalready/starter-construction",
+  "description": "Production-ready Drupal 11 template for construction companies and contractors",
+  "type": "project",
+  "license": "GPL-2.0-or-later",
+  "homepage": "https://drupalready.dev",
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "require": {
+    "php": ">=8.3",
+    "composer/installers": "^2.0",
+    "drupal/core-recommended": "^11.0",
+    "drupal/core-composer-scaffold": "^11.0",
+    "drupal/core-project-message": "^11.0",
+    "drupal/admin_toolbar": "^3.5",
+    "drupal/gin": "^3.0",
+    "drupal/paragraphs": "^1.18",
+    "drupal/webform": "^6.2",
+    "drupal/pathauto": "^1.13",
+    "drupal/metatag": "^2.1",
+    "drupal/simple_sitemap": "^4.2",
+    "drupal/redirect": "^1.10",
+    "drupal/seckit": "^2.0",
+    "drupal/honeypot": "^2.1",
+    "drupal/focal_point": "^2.1",
+    "drupal/linkit": "^6.1",
+    "drush/drush": "^13.0"
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true,
+      "drupal/core-composer-scaffold": true,
+      "drupal/core-project-message": true
+    },
+    "sort-packages": true
+  },
+  "extra": {
+    "drupal-scaffold": {
+      "locations": { "web-root": "web/" }
+    },
+    "installer-paths": {
+      "web/core": ["type:drupal-core"],
+      "web/modules/contrib/{$name}": ["type:drupal-module"],
+      "web/themes/contrib/{$name}": ["type:drupal-theme"]
+    }
+  }
+}
