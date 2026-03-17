@@ -8,8 +8,9 @@ export const CONTACT_EMAIL = "hello@drupalready.dev";
 export const NAV_LINKS = [
   { label: "Templates", href: "/templates" },
   { label: "Docs", href: "/docs" },
+  { label: "Knowledge Base", href: "/kb" },
+  { label: "Support", href: "/support" },
   { label: "Pricing", href: "/pricing" },
-  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ] as const;
 

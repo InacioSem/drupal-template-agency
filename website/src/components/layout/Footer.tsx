@@ -10,9 +10,9 @@ const footerLinks = {
   ],
   Resources: [
     { label: "Documentation", href: "/docs" },
-    { label: "Getting Started", href: "/docs/getting-started" },
-    { label: "Customization", href: "/docs/customization" },
-    { label: "Deployment", href: "/docs/deployment" },
+    { label: "Knowledge Base", href: "/kb" },
+    { label: "FAQ", href: "/faq" },
+    { label: "Support", href: "/support" },
   ],
   Company: [
     { label: "About", href: "/about" },

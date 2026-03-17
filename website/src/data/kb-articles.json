@@ -1,0 +1,119 @@
+[
+  {
+    "slug": "installing-your-first-template",
+    "title": "Installing Your First DrupalReady Template",
+    "category": "Getting Started",
+    "icon": "Rocket",
+    "readTime": "5 min",
+    "excerpt": "Step-by-step guide to installing any DrupalReady template using Composer, setting up local development, and applying recipes.",
+    "content": [
+      { "heading": "Prerequisites", "body": "Before you begin, ensure you have:\n\n- PHP 8.3+ with extensions: gd, xml, mbstring, curl, zip\n- Composer 2.x installed globally\n- Lando or DDEV for local development\n- Git for version control" },
+      { "heading": "Step 1: Create Your Project", "body": "Choose a template and run the Composer create-project command:\n\n```\ncomposer create-project drupalready/starter-business my-site\n```\n\nReplace `starter-business` with any template slug (e.g., `starter-healthcare`, `starter-legal`)." },
+      { "heading": "Step 2: Start Local Development", "body": "Navigate to your project and start the local environment:\n\n```\ncd my-site\nlando start\n```\n\nThis spins up PHP, MariaDB, and all required services." },
+      { "heading": "Step 3: Install Drupal", "body": "Install Drupal with the exported configuration:\n\n```\nlando drush site:install --existing-config -y\n```" },
+      { "heading": "Step 4: Apply the Base Recipe", "body": "Apply the template's base recipe to configure content types, views, and modules:\n\n```\nlando drush recipe recipes/base\n```\n\nYou can also apply optional recipes like `recipes/blog` or `recipes/performance`." },
+      { "heading": "Next Steps", "body": "Your site is running! Log in at `/user/login` and explore the custom dashboard. From here you can create content, customize the theme, and configure your site." }
+    ]
+  },
+  {
+    "slug": "customizing-your-theme",
+    "title": "Customizing Your Template's Theme",
+    "category": "Customization",
+    "icon": "Palette",
+    "readTime": "8 min",
+    "excerpt": "Learn how to change colors, fonts, logos, and layout in your DrupalReady template theme.",
+    "content": [
+      { "heading": "Theme File Structure", "body": "Each template theme is located at `web/themes/custom/drupalready_{template}/`. The structure includes:\n\n- `css/base/variables.css` — Colors, fonts, spacing\n- `css/components/` — Individual component styles\n- `css/layout/` — Page layout rules\n- `templates/` — Twig template overrides\n- `js/` — JavaScript behaviors" },
+      { "heading": "Changing Colors", "body": "Open `css/base/variables.css` and modify the CSS custom properties:\n\n```css\n:root {\n  --color-primary: #your-brand-color;\n  --color-primary-dark: #darker-shade;\n  --color-primary-light: #lighter-shade;\n}\n```\n\nAll components use these variables, so one change updates everything." },
+      { "heading": "Changing Fonts", "body": "Update the `--font-sans` and `--font-serif` variables in `variables.css`. If using Google Fonts, add the font import to your theme's `.libraries.yml` file." },
+      { "heading": "Updating the Logo", "body": "Go to Appearance > Settings in the Drupal admin. Upload your logo file. For code-level changes, replace the `logo.svg` file in your theme's root directory." },
+      { "heading": "Overriding Templates", "body": "To customize markup, copy any Twig template from Drupal core or a module into your theme's `templates/` directory with the same filename. Enable Twig debug in development to see which templates are in use." }
+    ]
+  },
+  {
+    "slug": "understanding-drupal-recipes",
+    "title": "Understanding Drupal Recipes",
+    "category": "Technical",
+    "icon": "ChefHat",
+    "readTime": "6 min",
+    "excerpt": "What Drupal Recipes are, how they work in DrupalReady templates, and how to create your own.",
+    "content": [
+      { "heading": "What Are Recipes?", "body": "Drupal Recipes are a modern way to package and apply configuration. Unlike install profiles, recipes are composable — you can apply multiple recipes to build up your site's functionality incrementally." },
+      { "heading": "How DrupalReady Uses Recipes", "body": "Each template includes a `recipes/` directory with modular recipes:\n\n- `base/` — Core setup: content types, views, roles, permissions\n- Optional recipes like `blog/`, `events/`, `portfolio/` add specific features\n- `performance/` — Caching, aggregation, and optimization settings\n\nYou apply recipes with: `drush recipe recipes/base`" },
+      { "heading": "Creating Custom Recipes", "body": "To create your own recipe:\n\n1. Create a new directory under `recipes/`\n2. Add a `recipe.yml` file defining modules to install and config to apply\n3. Apply with `drush recipe recipes/your-recipe`" },
+      { "heading": "Recipe vs. Module", "body": "Use a recipe when you need to configure existing modules. Use a custom module when you need new PHP functionality (hooks, plugins, services)." }
+    ]
+  },
+  {
+    "slug": "content-editor-guide",
+    "title": "Content Editor's Guide",
+    "category": "Content Management",
+    "icon": "PenLine",
+    "readTime": "10 min",
+    "excerpt": "How to create, edit, and manage content using the DrupalReady admin dashboard and content forms.",
+    "content": [
+      { "heading": "The Dashboard", "body": "After logging in, you'll see the DrupalReady Dashboard at `/admin/dashboard`. It shows:\n\n- Content statistics (published, drafts, this week)\n- Quick action buttons to create content\n- Recent content list\n- Getting started checklist\n\nUse the quick actions to create new content instantly." },
+      { "heading": "Creating Content", "body": "Click any 'Create' button on the dashboard or go to Content > Add Content. Each content type has a simplified form with:\n\n- Clear field labels and descriptions\n- Help text explaining what each field does\n- Required fields marked with red asterisks\n- Collapsed advanced options (SEO, URL, scheduling)" },
+      { "heading": "Working with Paragraphs", "body": "Paragraphs are flexible content blocks you add to pages. Click 'Add paragraph' and choose from pre-built components like Hero Banner, Card Grid, CTA Section, etc. Each paragraph has its own fields — fill them in and reorder by dragging." },
+      { "heading": "Managing Media", "body": "Upload images and files directly in content forms. All media is stored in the Media Library (Content > Media) for easy reuse. Always add alt text to images — the system requires it for accessibility." },
+      { "heading": "Publishing", "body": "Click 'Save & Publish' to make content live immediately. Use 'Save as Draft' to save without publishing. If content moderation is enabled, content goes through Draft → Review → Published workflow." }
+    ]
+  },
+  {
+    "slug": "performance-optimization",
+    "title": "Performance Optimization Guide",
+    "category": "Technical",
+    "icon": "Zap",
+    "readTime": "7 min",
+    "excerpt": "How to optimize your DrupalReady site for speed using the performance recipe, caching, and CDN configuration.",
+    "content": [
+      { "heading": "Apply the Performance Recipe", "body": "Every template includes a performance recipe:\n\n```\nlando drush recipe recipes/performance\n```\n\nThis enables page caching, CSS/JS aggregation, lazy loading, and optimized Twig settings." },
+      { "heading": "Production Settings", "body": "Include the performance settings file in your `settings.php`:\n\n```php\nif (file_exists($app_root . '/' . $site_path . '/settings.performance.php')) {\n  include $app_root . '/' . $site_path . '/settings.performance.php';\n}\n```\n\nThis configures 1-hour page cache, gzip compression, and disables Twig debug." },
+      { "heading": "Redis Caching", "body": "For high-traffic sites, enable Redis by uncommenting the Redis configuration in `settings.performance.php`. Install the Redis module with `composer require drupal/redis`." },
+      { "heading": "CDN Configuration", "body": "Place Cloudflare or your preferred CDN in front of your site. The performance settings include reverse proxy configuration you can uncomment." },
+      { "heading": "Image Optimization", "body": "Templates include the Focal Point module for smart image cropping and the Lazy module for deferred image loading. Use responsive image styles configured in the theme for optimal delivery." }
+    ]
+  },
+  {
+    "slug": "accessibility-best-practices",
+    "title": "Accessibility Best Practices",
+    "category": "Content Management",
+    "icon": "Accessibility",
+    "readTime": "6 min",
+    "excerpt": "How DrupalReady enforces accessibility and what content editors need to know about WCAG compliance.",
+    "content": [
+      { "heading": "Built-In Accessibility", "body": "Every DrupalReady template includes:\n\n- Required alt text on all images with guidance\n- Heading order validation (no skipping H2 → H4)\n- editoria11y module for real-time accessibility checking\n- ARIA landmarks in all theme templates\n- Skip navigation links\n- Keyboard-navigable admin interface" },
+      { "heading": "Writing Accessible Content", "body": "When creating content:\n\n- Always add descriptive alt text to images\n- Use headings in order (H2, then H3, then H4)\n- Never use H1 in the body — the page title is H1\n- Write descriptive link text (avoid 'click here')\n- Provide transcripts for audio/video content" },
+      { "heading": "Using editoria11y", "body": "The editoria11y module shows a small checker icon on every page. Click it to see accessibility issues in your content. Fix any flagged issues before publishing." },
+      { "heading": "Color Contrast", "body": "Template themes are designed with WCAG 2.2 AA contrast ratios. If you customize colors, verify contrast using WebAIM's contrast checker at webaim.org/resources/contrastchecker." }
+    ]
+  },
+  {
+    "slug": "deploying-to-production",
+    "title": "Deploying Your Site to Production",
+    "category": "Deployment",
+    "icon": "Cloud",
+    "readTime": "8 min",
+    "excerpt": "Step-by-step deployment guides for Platform.sh, Pantheon, and traditional hosting providers.",
+    "content": [
+      { "heading": "Pre-Deployment Checklist", "body": "Before deploying:\n\n1. Export all configuration: `drush config:export`\n2. Apply the performance recipe: `drush recipe recipes/performance`\n3. Verify security modules are configured\n4. Test all content types and views\n5. Run accessibility checks with editoria11y" },
+      { "heading": "Platform.sh", "body": "Platform.sh has first-class Drupal support. Add the `.platform.app.yaml` configuration, connect your Git repository, and push to deploy. Platform.sh handles PHP, database, Redis, and file storage automatically." },
+      { "heading": "Pantheon", "body": "Create a Drupal site on Pantheon, clone the repo, merge your DrupalReady project, and push to the `master` branch. Use Pantheon's dashboard to promote through Dev → Test → Live environments." },
+      { "heading": "Traditional Hosting", "body": "For LAMP/LEMP hosting:\n\n1. Run `composer install --no-dev`\n2. Upload to your server\n3. Point web root to `web/`\n4. Configure database in `settings.php`\n5. Run `drush site:install --existing-config`\n6. Set up cron for `drush cron`" }
+    ]
+  },
+  {
+    "slug": "security-hardening",
+    "title": "Security Hardening Your Site",
+    "category": "Technical",
+    "icon": "Shield",
+    "readTime": "5 min",
+    "excerpt": "Security modules and practices included in every DrupalReady template, and how to strengthen them further.",
+    "content": [
+      { "heading": "Built-In Security", "body": "Every template includes:\n\n- SecKit — Content Security Policy headers, XSS protection, clickjacking prevention\n- Honeypot — Anti-spam protection on all forms\n- Config Split — Environment-specific configuration (dev vs. production)\n- HSTS headers — Enforces HTTPS connections" },
+      { "heading": "User Permissions", "body": "Templates include a curated Content Editor role with minimal permissions. Editors can create and edit content but cannot access site configuration, install modules, or manage users. Only administrators have full access." },
+      { "heading": "Keeping Updated", "body": "Run `composer outdated drupal/*` regularly to check for updates. Apply security patches immediately:\n\n```\ncomposer update drupal/core-recommended --with-dependencies\n```" },
+      { "heading": "Additional Hardening", "body": "For production sites, also consider:\n\n- Two-factor authentication for admin accounts\n- Regular automated backups\n- Web Application Firewall (Cloudflare, AWS WAF)\n- Regular vulnerability scanning" }
+    ]
+  }
+]
