@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hope Foundation - Making a Difference Together</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', 'Nunito', -apple-system, sans-serif; color: #1c1917; background: #fff; }
+
+  .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+  /* Header */
+  .header { position: sticky; top: 0; background: white; border-bottom: 1px solid #e7e5e4; padding: 0 0; z-index: 100; }
+  .header .container { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+  .logo { font-size: 22px; font-weight: 800; color: #0d9488; display: flex; align-items: center; gap: 8px; }
+  .logo-heart { color: #f97066; font-size: 24px; }
+  .nav ul { list-style: none; display: flex; gap: 32px; }
+  .nav a { font-size: 15px; font-weight: 500; color: #78716c; text-decoration: none; }
+  .nav a:hover { color: #0d9488; }
+  .donate-btn { background: #f97066; color: white; padding: 10px 28px; border-radius: 999px; font-weight: 700; font-size: 15px; text-decoration: none; }
+  .donate-btn:hover { background: #ef4444; }
+
+  /* Hero */
+  .hero { background: linear-gradient(135deg, #0d9488 0%, #0f766e 60%, #115e59 100%); color: white; padding: 80px 0; position: relative; overflow: hidden; }
+  .hero::after { content: ''; position: absolute; right: -100px; top: -50px; width: 500px; height: 500px; background: rgba(255,255,255,0.05); border-radius: 50%; }
+  .hero h1 { font-size: 48px; font-weight: 800; margin-bottom: 16px; max-width: 600px; line-height: 1.15; }
+  .hero p { font-size: 18px; color: rgba(255,255,255,0.9); max-width: 500px; margin-bottom: 32px; line-height: 1.7; }
+  .hero-btns { display: flex; gap: 12px; }
+  .btn { display: inline-flex; align-items: center; padding: 14px 28px; border-radius: 999px; font-weight: 700; font-size: 16px; text-decoration: none; border: none; cursor: pointer; transition: all 0.2s; }
+  .btn-donate { background: #f97066; color: white; }
+  .btn-white { background: white; color: #0d9488; }
+
+  /* Impact Stats */
+  .stats { padding: 56px 0; background: #fafaf9; }
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
+  .stat-number { font-size: 44px; font-weight: 800; color: #0d9488; line-height: 1; margin-bottom: 8px; }
+  .stat-label { font-size: 15px; color: #78716c; font-weight: 500; }
+
+  /* Stories */
+  .stories { padding: 56px 0; }
+  .stories h2 { font-size: 32px; font-weight: 800; margin-bottom: 8px; text-align: center; }
+  .stories .subtitle { text-align: center; color: #78716c; font-size: 17px; margin-bottom: 40px; }
+  .stories-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .story-card { border: 1px solid #e7e5e4; border-radius: 16px; overflow: hidden; transition: all 0.3s; }
+  .story-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.1); transform: translateY(-4px); }
+  .story-img { height: 220px; }
+  .story-img-1 { background: linear-gradient(135deg, #99f6e4, #5eead4); }
+  .story-img-2 { background: linear-gradient(135deg, #fecaca, #fda4af); }
+  .story-img-3 { background: linear-gradient(135deg, #fef3c7, #fde68a); }
+  .story-content { padding: 24px; }
+  .story-tag { display: inline-block; padding: 4px 14px; background: rgba(13,148,136,0.1); color: #0d9488; border-radius: 999px; font-size: 13px; font-weight: 600; margin-bottom: 12px; }
+  .story-title { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+  .story-desc { font-size: 15px; color: #78716c; margin-bottom: 16px; line-height: 1.6; }
+  .story-link { color: #0d9488; font-weight: 600; font-size: 15px; }
+
+  /* Campaign */
+  .campaign { padding: 56px 0; }
+  .campaign-card { background: linear-gradient(135deg, #f97066, #fb923c); border-radius: 20px; padding: 56px; color: white; text-align: center; }
+  .campaign-card h2 { color: white; font-size: 32px; margin-bottom: 12px; }
+  .campaign-card p { color: rgba(255,255,255,0.9); font-size: 17px; max-width: 500px; margin: 0 auto 32px; }
+  .progress-bar { height: 12px; background: rgba(255,255,255,0.2); border-radius: 999px; max-width: 500px; margin: 0 auto 16px; overflow: hidden; }
+  .progress-fill { height: 100%; width: 72%; background: white; border-radius: 999px; }
+  .progress-text { font-size: 14px; color: rgba(255,255,255,0.85); margin-bottom: 32px; }
+  .progress-text strong { font-size: 24px; color: white; }
+  .donation-amounts { display: flex; justify-content: center; gap: 12px; margin-bottom: 24px; }
+  .amount { padding: 12px 28px; background: rgba(255,255,255,0.2); border: 2px solid rgba(255,255,255,0.4); border-radius: 999px; color: white; font-weight: 700; font-size: 17px; cursor: pointer; }
+  .amount.selected { background: white; color: #f97066; border-color: white; }
+
+  /* Newsletter */
+  .newsletter { padding: 56px 0; }
+  .newsletter-card { background: #0d9488; border-radius: 20px; padding: 48px; color: white; text-align: center; }
+  .newsletter-card h2 { color: white; font-size: 28px; margin-bottom: 8px; }
+  .newsletter-card p { color: rgba(255,255,255,0.85); font-size: 16px; margin-bottom: 24px; }
+  .newsletter-form { display: flex; max-width: 480px; margin: 0 auto; gap: 8px; }
+  .newsletter-form input { flex: 1; padding: 14px 20px; border: none; border-radius: 999px; font-size: 15px; }
+  .newsletter-form button { padding: 14px 28px; background: #f97066; color: white; border: none; border-radius: 999px; font-weight: 700; font-size: 15px; cursor: pointer; }
+
+  /* Footer */
+  .footer { background: #1c1917; color: rgba(255,255,255,0.7); padding: 48px 0 24px; margin-top: 48px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer h3 { color: white; font-size: 15px; font-weight: 700; margin-bottom: 16px; }
+  .footer ul { list-style: none; }
+  .footer li { margin-bottom: 8px; font-size: 14px; }
+  .footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+  .social-icons { display: flex; gap: 12px; margin-top: 16px; }
+  .social-icon { width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+  .footer-bottom { margin-top: 32px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 13px; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="logo"><span class="logo-heart">♥</span> Hope Foundation</div>
+    <nav class="nav">
+      <ul>
+        <li><a href="#">Our Story</a></li>
+        <li><a href="#">Programs</a></li>
+        <li><a href="#">Get Involved</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#" class="donate-btn">Donate Now</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Together, We Can Change Lives</h1>
+    <p>Hope Foundation empowers communities through education, healthcare, and sustainable development. Every donation makes a difference.</p>
+    <div class="hero-btns">
+      <a href="#" class="btn btn-donate">Donate Today ♥</a>
+      <a href="#" class="btn btn-white">Our Programs</a>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div>
+        <div class="stat-number">12,500+</div>
+        <div class="stat-label">Lives Impacted</div>
+      </div>
+      <div>
+        <div class="stat-number">48</div>
+        <div class="stat-label">Active Programs</div>
+      </div>
+      <div>
+        <div class="stat-number">15</div>
+        <div class="stat-label">Communities Served</div>
+      </div>
+      <div>
+        <div class="stat-number">$2.4M</div>
+        <div class="stat-label">Raised in 2025</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stories">
+  <div class="container">
+    <h2>Stories of Impact</h2>
+    <p class="subtitle">Real stories from the people and communities we serve</p>
+    <div class="stories-grid">
+      <div class="story-card">
+        <div class="story-img story-img-1"></div>
+        <div class="story-content">
+          <span class="story-tag">Education</span>
+          <div class="story-title">Maria's Journey to College</div>
+          <div class="story-desc">Through our scholarship program, Maria became the first in her family to attend university.</div>
+          <a href="#" class="story-link">Read More →</a>
+        </div>
+      </div>
+      <div class="story-card">
+        <div class="story-img story-img-2"></div>
+        <div class="story-content">
+          <span class="story-tag">Healthcare</span>
+          <div class="story-title">Bringing Healthcare to Rural Areas</div>
+          <div class="story-desc">Our mobile clinic program has provided free checkups to over 3,000 families this year.</div>
+          <a href="#" class="story-link">Read More →</a>
+        </div>
+      </div>
+      <div class="story-card">
+        <div class="story-img story-img-3"></div>
+        <div class="story-content">
+          <span class="story-tag">Community</span>
+          <div class="story-title">Building a Community Garden</div>
+          <div class="story-desc">Neighbors came together to transform a vacant lot into a thriving community garden.</div>
+          <a href="#" class="story-link">Read More →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="campaign">
+  <div class="container">
+    <div class="campaign-card">
+      <h2>Spring Fundraising Campaign</h2>
+      <p>Help us reach our goal to fund 50 new scholarships for students in need.</p>
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <div class="progress-text"><strong>$72,000</strong> raised of $100,000 goal</div>
+      <div class="donation-amounts">
+        <div class="amount">$25</div>
+        <div class="amount">$50</div>
+        <div class="amount selected">$100</div>
+        <div class="amount">$250</div>
+      </div>
+      <a href="#" class="btn btn-white">Donate Now</a>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter">
+  <div class="container">
+    <div class="newsletter-card">
+      <h2>Stay Connected</h2>
+      <p>Get monthly updates on our impact, events, and ways to help.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="Your email address">
+        <button>Subscribe</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom:16px;"><span class="logo-heart">♥</span> Hope Foundation</div>
+        <p style="font-size:14px;">Making a difference in communities worldwide since 2010.</p>
+        <div class="social-icons">
+          <div class="social-icon">f</div>
+          <div class="social-icon">t</div>
+          <div class="social-icon">in</div>
+          <div class="social-icon">ig</div>
+        </div>
+      </div>
+      <div>
+        <h3>Programs</h3>
+        <ul>
+          <li><a href="#">Education</a></li>
+          <li><a href="#">Healthcare</a></li>
+          <li><a href="#">Community</a></li>
+          <li><a href="#">Emergency Relief</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Get Involved</h3>
+        <ul>
+          <li><a href="#">Donate</a></li>
+          <li><a href="#">Volunteer</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Partners</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>About</h3>
+        <ul>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Financials</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Hope Foundation. All rights reserved. EIN: 12-3456789</div>
+  </div>
+</footer>
+
+</body>
+</html>

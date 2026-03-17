@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>City of Springfield - Official Website</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Source Sans 3', 'Segoe UI', Roboto, sans-serif; color: #1b1b1b; background: #fff; }
+
+  /* Alert Banner */
+  .alert { background: #ffbe2e; padding: 8px 0; font-size: 14px; font-weight: 600; text-align: center; }
+
+  /* Top Bar */
+  .topbar { background: #112a4e; color: rgba(255,255,255,0.7); font-size: 12px; padding: 6px 0; }
+  .topbar .container { display: flex; justify-content: flex-end; gap: 20px; }
+  .topbar a { color: rgba(255,255,255,0.7); text-decoration: none; }
+
+  /* Header */
+  .header { background: #1b3a6b; padding: 16px 0; }
+  .header .container { display: flex; align-items: center; justify-content: space-between; }
+  .logo { color: white; font-size: 22px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+  .logo-icon { width: 36px; height: 36px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #1b3a6b; font-weight: 800; font-size: 14px; }
+  .search-box { display: flex; }
+  .search-box input { padding: 8px 16px; border: none; border-radius: 4px 0 0 4px; font-size: 14px; width: 200px; }
+  .search-box button { padding: 8px 16px; background: #0076d6; color: white; border: none; border-radius: 0 4px 4px 0; font-weight: 600; font-size: 14px; cursor: pointer; }
+
+  /* Nav */
+  .nav { background: #2e5ea3; }
+  .nav ul { list-style: none; display: flex; }
+  .nav a { display: block; padding: 14px 24px; color: white; text-decoration: none; font-weight: 600; font-size: 15px; border-bottom: 3px solid transparent; }
+  .nav a:hover, .nav a.active { background: rgba(0,0,0,0.15); border-bottom-color: white; }
+
+  /* Container */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  /* Hero */
+  .hero { background: linear-gradient(135deg, #1b3a6b 0%, #2e5ea3 100%); color: white; padding: 64px 0; }
+  .hero h1 { font-family: 'Merriweather', Georgia, serif; font-size: 42px; margin-bottom: 16px; max-width: 700px; }
+  .hero p { font-size: 18px; color: rgba(255,255,255,0.9); max-width: 550px; margin-bottom: 24px; }
+  .hero-btns { display: flex; gap: 12px; }
+  .btn { display: inline-flex; align-items: center; padding: 12px 24px; border-radius: 4px; font-weight: 700; font-size: 16px; text-decoration: none; border: none; cursor: pointer; }
+  .btn-primary { background: #0076d6; color: white; }
+  .btn-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.5); }
+
+  /* Quick Links */
+  .quick-links { padding: 48px 0; background: #f0f0f0; }
+  .quick-links h2 { font-family: 'Merriweather', Georgia, serif; font-size: 28px; margin-bottom: 24px; text-align: center; }
+  .links-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .link-card { background: white; border: 1px solid #dfe1e2; border-radius: 4px; padding: 24px; text-align: center; transition: box-shadow 0.2s; }
+  .link-card:hover { box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+  .link-icon { width: 48px; height: 48px; background: #1b3a6b; border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; }
+  .link-card h3 { font-size: 16px; color: #0076d6; margin-bottom: 8px; }
+  .link-card p { font-size: 14px; color: #565c65; }
+
+  /* News Section */
+  .news { padding: 48px 0; }
+  .news h2 { font-family: 'Merriweather', Georgia, serif; font-size: 28px; margin-bottom: 24px; }
+  .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .news-card { border: 1px solid #dfe1e2; border-radius: 4px; overflow: hidden; }
+  .news-img { height: 180px; background: linear-gradient(135deg, #e8edf3, #c8d6e5); }
+  .news-content { padding: 20px; }
+  .news-date { font-size: 13px; color: #565c65; margin-bottom: 8px; }
+  .news-title { font-size: 18px; font-weight: 700; color: #0076d6; margin-bottom: 8px; text-decoration: underline; }
+  .news-desc { font-size: 14px; color: #565c65; }
+
+  /* Footer */
+  .footer { background: #112a4e; color: rgba(255,255,255,0.7); padding: 48px 0 24px; margin-top: 48px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer h3 { color: white; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+  .footer ul { list-style: none; }
+  .footer li { margin-bottom: 8px; font-size: 14px; }
+  .footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+  .footer-bottom { margin-top: 32px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.15); font-size: 13px; }
+</style>
+</head>
+<body>
+
+<div class="alert">
+  <div class="container">⚠ Public Notice: City Council Meeting — March 20, 2026 at 6:00 PM. <a href="#" style="color:#1b1b1b;text-decoration:underline;">View Agenda</a></div>
+</div>
+
+<div class="topbar">
+  <div class="container">
+    <a href="#">Accessibility</a>
+    <a href="#">Translate</a>
+    <a href="#">Employee Portal</a>
+  </div>
+</div>
+
+<header class="header">
+  <div class="container">
+    <div class="logo">
+      <div class="logo-icon">CS</div>
+      City of Springfield
+    </div>
+    <div class="search-box">
+      <input type="text" placeholder="Search this site...">
+      <button>Search</button>
+    </div>
+  </div>
+</header>
+
+<nav class="nav">
+  <div class="container">
+    <ul>
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">Departments</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">News & Events</a></li>
+      <li><a href="#">Documents</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <h1>Welcome to the City of Springfield</h1>
+    <p>Your gateway to city services, news, public meetings, and government resources. We're committed to transparency and service.</p>
+    <div class="hero-btns">
+      <a href="#" class="btn btn-primary">Find a Service</a>
+      <a href="#" class="btn btn-outline">Report an Issue</a>
+    </div>
+  </div>
+</section>
+
+<section class="quick-links">
+  <div class="container">
+    <h2>Popular Services</h2>
+    <div class="links-grid">
+      <div class="link-card">
+        <div class="link-icon">📋</div>
+        <h3>Permits & Licenses</h3>
+        <p>Apply for building permits, business licenses, and more</p>
+      </div>
+      <div class="link-card">
+        <div class="link-icon">💧</div>
+        <h3>Water & Utilities</h3>
+        <p>Pay your utility bill, report outages, water quality</p>
+      </div>
+      <div class="link-card">
+        <div class="link-icon">🏛</div>
+        <h3>Public Meetings</h3>
+        <p>View agendas, minutes, and upcoming sessions</p>
+      </div>
+      <div class="link-card">
+        <div class="link-icon">📄</div>
+        <h3>Public Records</h3>
+        <p>Access documents, reports, and public records</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="news">
+  <div class="container">
+    <h2>Latest News & Announcements</h2>
+    <div class="news-grid">
+      <div class="news-card">
+        <div class="news-img"></div>
+        <div class="news-content">
+          <div class="news-date">March 15, 2026</div>
+          <div class="news-title">Spring Road Improvement Project Begins</div>
+          <div class="news-desc">The city will begin resurfacing Main Street and Oak Avenue starting March 22.</div>
+        </div>
+      </div>
+      <div class="news-card">
+        <div class="news-img" style="background:linear-gradient(135deg,#dce6f0,#b8cce0);"></div>
+        <div class="news-content">
+          <div class="news-date">March 12, 2026</div>
+          <div class="news-title">New Community Center Opens Downtown</div>
+          <div class="news-desc">Join us for the grand opening celebration on March 25 at 10:00 AM.</div>
+        </div>
+      </div>
+      <div class="news-card">
+        <div class="news-img" style="background:linear-gradient(135deg,#e0e8f0,#c4d4e4);"></div>
+        <div class="news-content">
+          <div class="news-date">March 10, 2026</div>
+          <div class="news-title">Budget Hearing: FY 2027 Proposed Budget</div>
+          <div class="news-desc">Review the proposed budget and share your feedback at the public hearing.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom:16px;">
+          <div class="logo-icon">CS</div>
+          City of Springfield
+        </div>
+        <p style="font-size:14px;">123 Main Street, Springfield, ST 12345<br>Phone: (555) 123-4567</p>
+      </div>
+      <div>
+        <h3>Government</h3>
+        <ul>
+          <li><a href="#">Mayor's Office</a></li>
+          <li><a href="#">City Council</a></li>
+          <li><a href="#">Departments</a></li>
+          <li><a href="#">Elections</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Services</h3>
+        <ul>
+          <li><a href="#">Pay a Bill</a></li>
+          <li><a href="#">Report a Problem</a></li>
+          <li><a href="#">Apply for Permits</a></li>
+          <li><a href="#">Public Records</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Connect</h3>
+        <ul>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Accessibility</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Site Map</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 City of Springfield. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>

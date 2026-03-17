@@ -110,21 +110,21 @@
     "demoUrl": null,
     "screenshots": [
       {
-        "src": "/screenshots/starter-government/homepage.webp",
-        "alt": "Government portal homepage with service links and news",
-        "caption": "Accessible homepage with quick links and latest news",
+        "src": "/screenshots/starter-government/homepage.png",
+        "alt": "Government portal homepage with alert banner, navigation, hero section, and popular services",
+        "caption": "Homepage with alert banner, department navigation, and service quick links",
         "isPrimary": true
       },
       {
-        "src": "/screenshots/starter-government/documents.webp",
-        "alt": "Document library with filtering and search",
-        "caption": "Document library with type and topic filtering",
+        "src": "/screenshots/starter-government/services.png",
+        "alt": "Popular services section with permits, utilities, meetings, and records cards",
+        "caption": "Quick-access service cards for common citizen needs",
         "isPrimary": false
       },
       {
-        "src": "/screenshots/starter-government/events.webp",
-        "alt": "Public events calendar view",
-        "caption": "Event calendar with date and department filters",
+        "src": "/screenshots/starter-government/news.png",
+        "alt": "Latest news and announcements section with article cards",
+        "caption": "News section with date-stamped article cards and summaries",
         "isPrimary": false
       }
     ],
@@ -197,21 +197,21 @@
     "demoUrl": null,
     "screenshots": [
       {
-        "src": "/screenshots/starter-nonprofit/homepage.webp",
-        "alt": "Nonprofit homepage with impact stats and story highlights",
-        "caption": "Warm homepage with impact statistics and featured stories",
+        "src": "/screenshots/starter-nonprofit/homepage.png",
+        "alt": "Nonprofit homepage with teal hero, impact stats, and stories of impact",
+        "caption": "Warm homepage with hero, impact statistics, and featured stories",
         "isPrimary": true
       },
       {
-        "src": "/screenshots/starter-nonprofit/programs.webp",
-        "alt": "Programs listing page with area filtering",
-        "caption": "Programs showcase with area-based filtering",
+        "src": "/screenshots/starter-nonprofit/stories.png",
+        "alt": "Stories of impact section with education, healthcare, and community cards",
+        "caption": "Impact stories with category tags and photography-forward cards",
         "isPrimary": false
       },
       {
-        "src": "/screenshots/starter-nonprofit/campaign.webp",
-        "alt": "Fundraising campaign page with progress bar",
-        "caption": "Campaign pages with donation progress tracking",
+        "src": "/screenshots/starter-nonprofit/campaign.png",
+        "alt": "Fundraising campaign with progress bar and donation amount selector",
+        "caption": "Campaign section with progress tracking and donation amounts",
         "isPrimary": false
       }
     ],
