@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, Clock } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import articles from "@/data/kb-articles.json";
+import { SITE_URL } from "@/lib/constants";
 
 export function generateStaticParams() {
   return articles.map((a) => ({ slug: a.slug }));
@@ -17,7 +18,13 @@ export async function generateMetadata({
   const { slug } = await params;
   const article = articles.find((a) => a.slug === slug);
   if (!article) return {};
-  return { title: article.title, description: article.excerpt };
+  return {
+    title: article.title,
+    description: article.excerpt,
+    alternates: {
+      canonical: `${SITE_URL}/kb/${slug}`,
+    },
+  };
 }
 
 export default async function KBArticlePage({

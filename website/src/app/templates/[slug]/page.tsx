@@ -10,7 +10,8 @@ import { Separator } from "@/components/ui/separator";
 import { InstallInstructions } from "@/components/templates/InstallInstructions";
 import { CopyButton } from "@/components/shared/CopyButton";
 import { getTemplateBySlug, getAllSlugs } from "@/lib/templates";
-import { SITE_NAME } from "@/lib/constants";
+import { SITE_NAME, SITE_URL } from "@/lib/constants";
+import { softwareApplicationJsonLd, breadcrumbJsonLd } from "@/lib/jsonld";
 import { cn } from "@/lib/utils";
 
 export function generateStaticParams() {
@@ -29,6 +30,20 @@ export async function generateMetadata({
   return {
     title: `${template.name} — ${SITE_NAME}`,
     description: template.description,
+    openGraph: {
+      title: `${template.name} — Free Drupal 11 Template`,
+      description: template.description,
+      url: `${SITE_URL}/templates/${template.slug}`,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${template.name} — Free Drupal 11 Template`,
+      description: template.description,
+    },
+    alternates: {
+      canonical: `${SITE_URL}/templates/${template.slug}`,
+    },
   };
 }
 
@@ -46,6 +61,24 @@ export default async function TemplateDetailPage({
 
   return (
     <div className="py-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(softwareApplicationJsonLd(template)),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Home", href: "/" },
+              { name: "Templates", href: "/templates" },
+              { name: template.name, href: `/templates/${template.slug}` },
+            ])
+          ),
+        }}
+      />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Link
           href="/templates"

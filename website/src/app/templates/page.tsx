@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
 import { getAllTemplates } from "@/lib/templates";
 import { TemplateCard } from "@/components/templates/TemplateCard";
+import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Templates",
   description:
     "Browse 20 production-ready Drupal 11 templates across every major industry vertical.",
+  alternates: {
+    canonical: `${SITE_URL}/templates`,
+  },
 };
 
 export default function TemplatesPage() {

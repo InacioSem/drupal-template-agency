@@ -12,12 +12,15 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
-import { CONTACT_EMAIL } from "@/lib/constants";
+import { CONTACT_EMAIL, SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Pricing",
   description:
     "DrupalReady templates are free and open source. Premium support and custom development available.",
+  alternates: {
+    canonical: `${SITE_URL}/pricing`,
+  },
 };
 
 const tiers = [

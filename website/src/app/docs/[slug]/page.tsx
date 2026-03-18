@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import { SITE_URL } from "@/lib/constants";
 
 const docsContent: Record<
   string,
@@ -110,7 +111,13 @@ export async function generateMetadata({
   const { slug } = await params;
   const doc = docsContent[slug];
   if (!doc) return {};
-  return { title: doc.title, description: doc.description };
+  return {
+    title: doc.title,
+    description: doc.description,
+    alternates: {
+      canonical: `${SITE_URL}/docs/${slug}`,
+    },
+  };
 }
 
 export default async function DocPage({

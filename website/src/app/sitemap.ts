@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllSlugs } from "@/lib/templates";
 import { SITE_URL } from "@/lib/constants";
+import kbArticles from "@/data/kb-articles.json";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const templatePages = getAllSlugs().map((slug) => ({
@@ -16,6 +17,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.6,
+  }));
+
+  const kbPages = kbArticles.map((article) => ({
+    url: `${SITE_URL}/kb/${article.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.5,
   }));
 
   return [
@@ -40,10 +48,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...templatePages,
     ...docPages,
     {
+      url: `${SITE_URL}/kb`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.6,
+    },
+    ...kbPages,
+    {
+      url: `${SITE_URL}/faq`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
       url: `${SITE_URL}/pricing`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.6,
+    },
+    {
+      url: `${SITE_URL}/support`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
     },
     {
       url: `${SITE_URL}/about`,

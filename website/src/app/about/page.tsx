@@ -2,12 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { buttonVariants } from "@/lib/button-variants";
 import { cn } from "@/lib/utils";
-import { SITE_NAME } from "@/lib/constants";
+import { SITE_NAME, SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "About",
   description:
     "DrupalReady provides production-ready Drupal 11 templates for agencies, governments, and nonprofits.",
+  alternates: {
+    canonical: `${SITE_URL}/about`,
+  },
 };
 
 export default function AboutPage() {

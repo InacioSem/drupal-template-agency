@@ -5,10 +5,14 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import articles from "@/data/kb-articles.json";
+import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Knowledge Base",
   description: "Guides, tutorials, and best practices for DrupalReady templates.",
+  alternates: {
+    canonical: `${SITE_URL}/kb`,
+  },
 };
 
 const iconMap: Record<string, LucideIcon> = {

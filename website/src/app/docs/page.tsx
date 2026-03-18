@@ -2,10 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BookOpen, Wrench, Rocket } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Documentation",
   description: "Learn how to install, customize, and deploy DrupalReady templates.",
+  alternates: {
+    canonical: `${SITE_URL}/docs`,
+  },
 };
 
 const docs = [
